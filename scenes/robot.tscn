@@ -8,6 +8,7 @@
 
 [node name="Robot" type="CharacterBody3D" unique_id=2051323718]
 script = ExtResource("1_8mo4m")
+movement_speed = null
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=2115972102]
 
@@ -27,3 +28,5 @@ pixel_size = 0.05
 axis = 1
 texture_filter = 0
 texture = ExtResource("3_i42o3")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

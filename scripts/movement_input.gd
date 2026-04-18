@@ -1,9 +1,24 @@
+class_name MovementInput
 extends Node3D
+
+@onready var currentlySelectedPlayer : PlayerAgent = $Robot
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("left_mouse_click"):
-		var player = get_tree().get_first_node_in_group("player")
-		player.set_target_position(_get_3d_mouse_position(event.position))
+		var mouseIntersectionVector = _get_3d_mouse_position(event.position)
+		
+		# If intersecting with PlayerAgent, select PlayerAgent and DON'T move. 
+		# Else, move currently selected PlayerAgent.
+		
+		currentlySelectedPlayer.set_target_position(mouseIntersectionVector)
+		
+		#if true:
+			#pass
+		#else:
+			#var player = currentlySelectedPlayer
+			#player.set_target_position(mouseIntersectionVector)
+				
+
 		
 func _get_3d_mouse_position(mousePosition2D):
 	var currentCamera = get_viewport().get_camera_3d()
@@ -17,3 +32,6 @@ func _get_3d_mouse_position(mousePosition2D):
 	
 	if result:
 		return result.position
+
+func _set_currently_selected_player(selectedPlayer : PlayerAgent):
+	currentlySelectedPlayer = selectedPlayer
