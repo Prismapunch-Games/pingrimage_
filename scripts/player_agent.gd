@@ -4,6 +4,7 @@ extends CharacterBody3D
 @export var movement_speed: float = 5.0
 
 @onready var selection_sprite : Sprite3D = $Sprite3D
+@onready var selection_tween : Tween = create_tween().set_loops()
 @export var selection_sprite_active: Color
 @export var selection_sprite_idle: Color
 
@@ -52,13 +53,24 @@ func _on_input_event(camera: Node, event: InputEvent, event_position: Vector3, n
 func toggle_selection_sprite_visual(toggle : bool):
 	if toggle:
 		selection_sprite.modulate = selection_sprite_active
+		_toggle_selection_tween(toggle)
 	else:
 		selection_sprite.modulate = selection_sprite_idle
+		_toggle_selection_tween(toggle)
 		
 
 func _clear_agent_selections():
 	for playerAgent in player_manager.deployedAgents:
-		playerAgent.toggle_selection_sprite_visual(false)
+		if playerAgent is PlayerAgent:
+			playerAgent.toggle_selection_sprite_visual(false)
+			
+func _toggle_selection_tween(toggle : bool):	
+	if toggle:
+		selection_tween.tween_property(selection_sprite, "scale", Vector2(1.2, 1.2), 0.5)
+		selection_tween.set_trans(Tween.TRANS_SINE)
+		selection_tween.tween_property(selection_sprite, "scale", Vector2(1.0, 1.0), 0.5)
+	else:
+		selection_tween.stop()
 
 func set_target_position(targetPosition):
 	if !targetPosition:
