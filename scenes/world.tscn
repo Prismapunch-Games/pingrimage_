@@ -20,7 +20,7 @@ script = ExtResource("1_4wyf3")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1087984057]
 environment = SubResource("Environment_e5uuo")
 
-[node name="tower" parent="." unique_id=1706091603 instance=ExtResource("2_i7141")]
+[node name="tower" parent="." unique_id=1549555759 instance=ExtResource("2_i7141")]
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 3.0719066, 0, 8.329947)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1396336961]
@@ -42,12 +42,9 @@ size = 25.0
 
 [node name="Robot" parent="." unique_id=2051323718 instance=ExtResource("2_rwgxs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.799757, 4.1068063, 6.3841915)
-movement_speed = 5.0
 
 [node name="Robot2" parent="." unique_id=909724928 instance=ExtResource("2_rwgxs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6490653, 4.1068063, 6.3841915)
-movement_speed = 5.0
 
 [node name="Robot3" parent="." unique_id=371713848 instance=ExtResource("2_rwgxs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28920436, 4.1068063, 10.430084)
-movement_speed = 5.0
