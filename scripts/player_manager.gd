@@ -1,8 +1,13 @@
-class_name MovementInput
+class_name PlayerManager
 extends Node3D
 
 @onready var currentlySelectedPlayer : PlayerAgent = $Robot
 @onready var currentCamera : Camera3D = get_viewport().get_camera_3d()
+
+var deployedAgents : Array
+
+func _ready() -> void:
+	deployedAgents = get_tree().get_nodes_in_group("player agent robot")
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("left_mouse_click"):

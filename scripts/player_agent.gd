@@ -2,13 +2,19 @@ class_name PlayerAgent
 extends CharacterBody3D
 
 @export var movement_speed: float = 5.0
+
+@onready var selection_sprite : Sprite3D = $Sprite3D
+@export var selection_sprite_active: Color
+@export var selection_sprite_idle: Color
+
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
-@onready var movement_manager : MovementInput
 #@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var player_manager : PlayerManager
 
 func _ready() -> void:
+	player_manager = get_tree().current_scene.get_node(".")
 	add_to_group("player agent robot")
-	movement_manager = get_tree().current_scene.get_node(".")
+	_clear_agent_selections()
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -36,14 +42,26 @@ func _physics_process(delta: float) -> void:
 	#else:
 		#animation_player.play("")
 
+func _on_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
+	if  event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		player_manager._set_currently_selected_player(self)
+		_clear_agent_selections()
+		toggle_selection_sprite_visual(true)
+		pass
+
+func toggle_selection_sprite_visual(toggle : bool):
+	if toggle:
+		selection_sprite.modulate = selection_sprite_active
+	else:
+		selection_sprite.modulate = selection_sprite_idle
+		
+
+func _clear_agent_selections():
+	for playerAgent in player_manager.deployedAgents:
+		playerAgent.toggle_selection_sprite_visual(false)
+
 func set_target_position(targetPosition):
 	if !targetPosition:
 		return
 		
 	navigation_agent.target_position = targetPosition
-
-
-func _on_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	if  event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		movement_manager._set_currently_selected_player(self)
-		pass
