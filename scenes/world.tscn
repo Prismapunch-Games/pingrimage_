@@ -46,8 +46,8 @@ size = 25.0
 [node name="Robot" parent="." unique_id=2051323718 instance=ExtResource("2_rwgxs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.799757, 4.1068063, 6.3841915)
 
-[node name="Robot2" parent="." unique_id=909724928 instance=ExtResource("2_rwgxs")]
+[node name="Robot2" parent="." unique_id=1120416145 instance=ExtResource("2_rwgxs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6490653, 4.1068063, 6.3841915)
 
-[node name="Robot3" parent="." unique_id=371713848 instance=ExtResource("2_rwgxs")]
+[node name="Robot3" parent="." unique_id=660446338 instance=ExtResource("2_rwgxs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28920436, 4.1068063, 10.430084)
