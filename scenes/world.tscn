@@ -496,6 +496,8 @@ _shader_parameters = {
 }
 shader_override_enabled = true
 shader_override = SubResource("Shader_e5uuo")
+show_navigation = true
+show_checkered = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_71j4m"]
 transparency = 4
@@ -524,8 +526,9 @@ mesh_list = Array[Terrain3DMeshAsset]([SubResource("Terrain3DMeshAsset_qfnet")])
 data_directory = "res://maps"
 material = SubResource("Terrain3DMaterial_k0juu")
 assets = SubResource("Terrain3DAssets_i7141")
+show_navigation = true
+show_checkered = true
 top_level = true
-metadata/_edit_lock_ = true
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1560967394]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 32, 32)
