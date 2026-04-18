@@ -35,4 +35,7 @@ func _physics_process(delta: float) -> void:
 		#animation_player.play("")
 
 func set_target_position(targetPosition):
+	if !targetPosition:
+		return
+		
 	navigation_agent.target_position = targetPosition
