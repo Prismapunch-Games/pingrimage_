@@ -4,7 +4,7 @@ extends CharacterBody3D
 @export var movement_speed: float = 5.0
 
 @onready var selection_sprite : Sprite3D = $Sprite3D
-@onready var selection_tween : Tween = create_tween().set_loops()
+@onready var selection_tween : Tween
 @export var selection_sprite_active: Color
 @export var selection_sprite_idle: Color
 
@@ -66,11 +66,13 @@ func _clear_agent_selections():
 			
 func _toggle_selection_tween(toggle : bool):	
 	if toggle:
-		selection_tween.tween_property(selection_sprite, "scale", Vector2(1.2, 1.2), 0.5)
+		selection_tween = create_tween().set_loops()
+		selection_tween.tween_property(selection_sprite, "scale", Vector3(1.2, 1.2, 1.2), 0.5)
 		selection_tween.set_trans(Tween.TRANS_SINE)
-		selection_tween.tween_property(selection_sprite, "scale", Vector2(1.0, 1.0), 0.5)
+		selection_tween.tween_property(selection_sprite, "scale", Vector3(1.0, 1.0, 1.0), 0.5)
 	else:
-		selection_tween.stop()
+		if selection_tween:
+			selection_tween.stop()
 
 func set_target_position(targetPosition):
 	if !targetPosition:
