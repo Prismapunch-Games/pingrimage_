@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 		calculatedVelocity.y = velocity.y
 		velocity = calculatedVelocity
 		
-		look_at(global_position + velocity, Vector3.UP, true)
+		look_at(global_position + velocity, Vector3.UP)
 	
 	#_set_animation()
 		
