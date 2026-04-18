@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://l1ke3hw6bi7t"]
+
+[ext_resource type="Texture2D" uid="uid://gkltx0pdt6ny" path="res://model import/robot/robot.png" id="1_cdoi1"]
+[ext_resource type="Texture2D" uid="uid://s62vhvg5dmto" path="res://model import/robot/robot_m.png" id="2_v0e30"]
+[ext_resource type="Texture2D" uid="uid://bxddvas3pkfs" path="res://model import/robot/robot_r.png" id="3_kfyja"]
+
+[resource]
+albedo_texture = ExtResource("1_cdoi1")
+metallic_texture = ExtResource("2_v0e30")
+metallic_texture_channel = 4
+roughness_texture = ExtResource("3_kfyja")
+texture_filter = 0
