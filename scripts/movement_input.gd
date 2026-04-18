@@ -21,7 +21,7 @@ func _handle_user_playfield_click(mousePosition2D):
 	var result = worldspace.intersect_ray(params)
 	
 	if result.collider is PlayerAgent:
-		currentlySelectedPlayer = result.collder
+		currentlySelectedPlayer = result.get("collider")
 	else:
 		currentlySelectedPlayer.set_target_position(result.position)
 
