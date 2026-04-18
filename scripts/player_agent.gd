@@ -72,7 +72,7 @@ func _toggle_selection_tween(toggle : bool):
 		selection_tween.tween_property(selection_sprite, "scale", Vector3(1.0, 1.0, 1.0), 0.5)
 	else:
 		if selection_tween:
-			selection_tween.stop()
+			selection_tween.kill()
 
 func set_target_position(targetPosition):
 	if !targetPosition:
