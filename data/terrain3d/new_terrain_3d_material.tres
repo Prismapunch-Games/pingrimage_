@@ -1,6 +1,6 @@
 [gd_resource type="Terrain3DMaterial" format=3 uid="uid://cnbk8tuu0f1pi"]
 
-[ext_resource type="Shader" path="res://topographic.gdshader" id="1_7drd8"]
+[ext_resource type="Shader" uid="uid://cgmk16fpq16gk" path="res://topographic.gdshader" id="1_7drd8"]
 
 [sub_resource type="Gradient" id="Gradient_7drd8"]
 offsets = PackedFloat32Array(0.2, 1)
