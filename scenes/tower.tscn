@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://c6bbcg7a8sdto"]
+
+[ext_resource type="Script" uid="uid://b5eo76ddpmroj" path="res://code/tower.gd" id="1_ay4al"]
+[ext_resource type="PackedScene" uid="uid://bmnic72wgmhg1" path="res://model import/tower/tower.glb" id="2_ktxwe"]
+[ext_resource type="Script" uid="uid://bk7wohy727qy0" path="res://code/transciever.gd" id="3_ktxwe"]
+[ext_resource type="Shader" uid="uid://b6kfr5h0afq3w" path="res://data/fresnel.gdshader" id="4_qrbg1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_jfguu"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_85u2j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xl0gn"]
+render_priority = 0
+shader = ExtResource("4_qrbg1")
+shader_parameter/sphere_color = Color(1, 1, 0, 1)
+shader_parameter/fresnel_color = Color(0, 0, 1, 1)
+shader_parameter/alpha = 1.0
+
+[node name="Tower" type="Node3D" unique_id=989064708]
+script = ExtResource("1_ay4al")
+
+[node name="Model" parent="." unique_id=618788830 instance=ExtResource("2_ktxwe")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="Transciever" type="Node3D" parent="." unique_id=885956449]
+script = ExtResource("3_ktxwe")
+
+[node name="Reciever" type="Area3D" parent="Transciever" unique_id=1433216078]
+
+[node name="Emitter2" type="ShapeCast3D" parent="Transciever" unique_id=706250445]
+shape = SubResource("SphereShape3D_jfguu")
+target_position = Vector3(0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Transciever/Emitter2" unique_id=322482392]
+mesh = SubResource("SphereMesh_85u2j")
+surface_material_override/0 = SubResource("ShaderMaterial_xl0gn")

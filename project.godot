@@ -15,9 +15,24 @@ run/main_scene="uid://cgdtbf0y4wr31"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://cjw8bqlrgrcx0"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/resizable=false
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/terrain_3d/plugin.cfg")
+
+[gui]
+
+theme/custom="uid://oherbyrl4x7b"
+theme/custom_font="uid://bxdioejvilaha"
 
 [input]
 
