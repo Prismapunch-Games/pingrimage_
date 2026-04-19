@@ -53,9 +53,9 @@ var signals_emitting: int = 0:
 
 func _ready():
 	on_signals_emitting_changed.connect(_on_signals_emitting_changed)
-	await get_tree().create_timer(0.1).timeout
-	if(!current_level_node):
-		load_level(levels[0])
+	#await get_tree().create_timer(1.0).timeout
+	#if(!current_level_node):
+		#load_level(levels[0])
 	
 func _on_signals_emitting_changed(amount: int):
 	if(amount <= 0 && current_charges <= 0 && !level_won):
