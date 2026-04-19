@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cdlrn7u6hpsey"]
 
+[ext_resource type="Script" uid="uid://8nqu7dn8bj8" path="res://code/emit_signal_button.gd" id="1_nt7q6"]
+
 [node name="UI" type="CanvasLayer" unique_id=1278659496]
 
 [node name="Main Container" type="Control" parent="." unique_id=1896131122]
@@ -109,3 +111,4 @@ vertical_alignment = 1
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 text = "EMIT SIGNAL"
+script = ExtResource("1_nt7q6")

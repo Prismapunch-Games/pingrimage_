@@ -12,10 +12,21 @@ extends CharacterBody3D
 #@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var player_manager : PlayerManager
 
+@onready var transciever: Transciever = $Transciever
+
 func _ready() -> void:
 	player_manager = get_tree().current_scene.get_node(".")
 	add_to_group("player agent robot")
 	_clear_agent_selections()
+	transciever.reciever.area_entered.connect(_on_recieved)
+	
+func _on_recieved(_body: Node):
+	if(_body is Area3D):
+		if(_body.get_parent() is Transciever):
+			if(_body.get_parent().last_signal_id == transciever.last_signal_id):
+				return
+			transciever.last_signal_id = _body.get_parent().last_signal_id
+			transciever.emitter_player.play("emit")
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():

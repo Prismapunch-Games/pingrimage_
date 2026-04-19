@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://scripts/player_manager.gd" id="1_4wyf3"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cnbk8tuu0f1pi" path="res://data/terrain3d/new_terrain_3d_material.tres" id="2_71j4m"]
-[ext_resource type="PackedScene" uid="uid://bmnic72wgmhg1" path="res://model import/tower/tower.glb" id="2_i7141"]
 [ext_resource type="PackedScene" uid="uid://cdlrn7u6hpsey" path="res://scenes/ui.tscn" id="2_qfnet"]
 [ext_resource type="PackedScene" uid="uid://ovgdes8vifut" path="res://scenes/robot.tscn" id="2_rwgxs"]
 [ext_resource type="Terrain3DAssets" uid="uid://cti34ixkuwwsb" path="res://data/terrain3d/new_terrain_3d_assets.tres" id="3_qfnet"]
+[ext_resource type="PackedScene" uid="uid://c6bbcg7a8sdto" path="res://scenes/tower.tscn" id="6_qfnet"]
 
 [sub_resource type="Environment" id="Environment_e5uuo"]
 background_mode = 1
@@ -22,9 +22,6 @@ script = ExtResource("1_4wyf3")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1087984057]
 environment = SubResource("Environment_e5uuo")
-
-[node name="tower" parent="." unique_id=1549555759 instance=ExtResource("2_i7141")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 3.0719066, 0, 8.329947)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1396336961]
 navigation_mesh = SubResource("NavigationMesh_e5uuo")
@@ -51,3 +48,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6490653, 4.1068063, 6.38419
 
 [node name="Robot3" parent="." unique_id=660446338 instance=ExtResource("2_rwgxs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28920436, 4.1068063, 10.430084)
+
+[node name="Tower" parent="." unique_id=989064708 instance=ExtResource("6_qfnet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.179, 3, 9.324)
