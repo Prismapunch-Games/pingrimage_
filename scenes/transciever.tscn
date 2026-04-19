@@ -46,7 +46,6 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_jfguu"]
 resource_name = "emit"
-length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -54,7 +53,7 @@ tracks/0/path = NodePath("Emitter:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0.05, 0.05, 0.05), Vector3(12, 12, 12)]
@@ -66,7 +65,7 @@ tracks/1/path = NodePath("Emitter/MeshInstance3D:surface_material_override/0:sha
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.8666667, 2),
+"times": PackedFloat32Array(0, 0.8666667, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [1.0, 1.0, 0.0]
@@ -78,10 +77,27 @@ tracks/2/path = NodePath("Emitter/CollisionShape3D:disabled")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"start_signal_emission"
+}, {
+"args": [],
+"method": &"end_signal_emission"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_85u2j"]
@@ -127,3 +143,5 @@ disabled = true
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Emitter" unique_id=1584928675]
 mesh = SubResource("SphereMesh_85u2j")
 surface_material_override/0 = SubResource("ShaderMaterial_jfguu")
+
+[node name="Ping" type="AudioStreamPlayer3D" parent="." unique_id=1117336225]

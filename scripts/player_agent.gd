@@ -35,6 +35,7 @@ func _physics_process(delta: float) -> void:
 		velocity.z = 0
 		animation_tree.set("parameters/walking/blend_position", 0.0)
 		_stop_sfx()
+		Global.remove_robot_movement(self)
 	else:
 		var next_path_position: Vector3 = navigation_agent.get_next_path_position()
 		var direction = global_position.direction_to(next_path_position)
@@ -52,8 +53,11 @@ func _on_recieved(_body: Node):
 		if(_body.get_parent() is Transciever):
 			if(_body.get_parent().last_signal_id == transciever.last_signal_id):
 				return
+			
 			animation_tree.get("parameters/playback").travel("emit")
 			transciever.last_signal_id = _body.get_parent().last_signal_id
+			transciever.proliferation_number = _body.get_parent().proliferation_number + 1
+			transciever.play_ping_sound(-1)
 			transciever.emitter_player.play("emit")
 
 func toggle_selection_sprite_visual(toggle : bool):
@@ -90,6 +94,7 @@ func set_target_position(targetPosition):
 		return
 		
 	navigation_agent.target_position = targetPosition
+	Global.add_robot_movement(self)
 	
 func _play_sfx(sfx : AudioStream):
 	if not audio_player.playing:

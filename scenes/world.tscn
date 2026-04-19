@@ -4,6 +4,7 @@
 [ext_resource type="Terrain3DMaterial" uid="uid://cnbk8tuu0f1pi" path="res://data/terrain3d/new_terrain_3d_material.tres" id="2_71j4m"]
 [ext_resource type="PackedScene" uid="uid://cdlrn7u6hpsey" path="res://scenes/ui.tscn" id="2_qfnet"]
 [ext_resource type="PackedScene" uid="uid://ovgdes8vifut" path="res://scenes/robot.tscn" id="2_rwgxs"]
+[ext_resource type="AudioStream" uid="uid://di6lsiryqhay" path="res://sounds/music/LudumDareEasy.mp3" id="3_4mrxx"]
 [ext_resource type="Terrain3DAssets" uid="uid://cti34ixkuwwsb" path="res://data/terrain3d/new_terrain_3d_assets.tres" id="3_qfnet"]
 [ext_resource type="PackedScene" uid="uid://c6bbcg7a8sdto" path="res://scenes/tower.tscn" id="6_qfnet"]
 [ext_resource type="PackedScene" uid="uid://ddmsvo27db5jo" path="res://scenes/tower_end.tscn" id="7_i7141"]
@@ -21,8 +22,18 @@ script = ExtResource("1_4wyf3")
 
 [node name="UI" parent="." unique_id=1278659496 instance=ExtResource("2_qfnet")]
 
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1560967394]
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 25, 25)
+projection = 1
+size = 25.0
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1087984057]
 environment = SubResource("Environment_e5uuo")
+
+[node name="Music" type="AudioStreamPlayer3D" parent="." unique_id=1623235843]
+stream = ExtResource("3_4mrxx")
+autoplay = true
+bus = &"Music"
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1396336961]
 navigation_mesh = SubResource("NavigationMesh_e5uuo")
@@ -35,11 +46,6 @@ collision_mode = 3
 vertex_spacing = 0.25
 top_level = true
 metadata/_edit_lock_ = true
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1560967394]
-transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 25, 25)
-projection = 1
-size = 25.0
 
 [node name="Robot" parent="." unique_id=2051323718 instance=ExtResource("2_rwgxs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.799757, 4.1068063, 6.3841915)

@@ -14,6 +14,7 @@ func _ready():
 	
 func _on_emit_signal():
 	transciever.emitter_player.play("emit")
+	transciever.play_ping_sound(0)
 	transciever.last_signal_id = randi()
 
 func _on_recieved(_body: Node):
@@ -21,4 +22,6 @@ func _on_recieved(_body: Node):
 		if(_body.get_parent() is Transciever):
 			if(_body.get_parent().last_signal_id == transciever.last_signal_id):
 				return
+			transciever.play_ping_sound(6)
+			Global.level_won = true
 			flare.show()

@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cdlrn7u6hpsey"]
 
 [ext_resource type="Script" uid="uid://8nqu7dn8bj8" path="res://code/emit_signal_button.gd" id="1_nt7q6"]
+[ext_resource type="Script" uid="uid://bsflq6pye0nb4" path="res://code/charges_label.gd" id="1_yev5y"]
+[ext_resource type="Script" uid="uid://dwcvxgllicj8y" path="res://code/level_end_screen.gd" id="2_x4jx1"]
 
 [node name="UI" type="CanvasLayer" unique_id=1278659496]
 
@@ -107,9 +109,61 @@ layout_mode = 2
 text = "Charges Remaining: 2 / 3"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("1_yev5y")
 
 [node name="Emit Signal" type="Button" parent="Main Container/Right/Bottom Right/MarginContainer/VBoxContainer" unique_id=1561522837]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
 text = "EMIT SIGNAL"
 script = ExtResource("1_nt7q6")
+
+[node name="Level End Screen" type="Panel" parent="Main Container" unique_id=1973693482]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -96.0
+offset_right = 128.0
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_x4jx1")
+
+[node name="MarginContainer" type="MarginContainer" parent="Main Container/Level End Screen" unique_id=178373038]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Container/Level End Screen/MarginContainer" unique_id=1834540489]
+layout_mode = 2
+
+[node name="Result Label" type="Label" parent="Main Container/Level End Screen/MarginContainer/VBoxContainer" unique_id=649428223]
+layout_mode = 2
+size_flags_vertical = 3
+text = "You died."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Next Level" type="Button" parent="Main Container/Level End Screen/MarginContainer/VBoxContainer" unique_id=843418491]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Next Level"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main Container/Level End Screen/MarginContainer/VBoxContainer" unique_id=2088119735]
+layout_mode = 2
+
+[node name="Main Menu" type="Button" parent="Main Container/Level End Screen/MarginContainer/VBoxContainer/HBoxContainer" unique_id=617221332]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Main Menu"
+
+[node name="Restart" type="Button" parent="Main Container/Level End Screen/MarginContainer/VBoxContainer/HBoxContainer" unique_id=645850039]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Restart"

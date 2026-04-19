@@ -35,6 +35,10 @@ func _handle_user_playfield_click(mousePosition2D):
 	
 	if currentlySelectedPlayer != null:
 		currentlySelectedPlayer.set_target_position(result.position)
+		print("making arrow)")
+		var arrow: Node3D = Global.direction_arrow_scene.instantiate()
+		add_child(arrow)
+		arrow.global_position = result.position + Vector3(0,0.01,0)
 			
 func _handle_user_agent_selection(mousePosition2D):
 	# If intersecting with PlayerAgent, select PlayerAgent and DON'T move. 
