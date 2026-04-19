@@ -1,7 +1,7 @@
 class_name PlayerManager
 extends Node3D
 
-@onready var currentlySelectedPlayer : PlayerAgent = $Robot
+@onready var currentlySelectedPlayer : PlayerAgent
 @onready var currentCamera : Camera3D = get_viewport().get_camera_3d()
 
 var deployedAgents : Array
@@ -10,8 +10,14 @@ func _ready() -> void:
 	deployedAgents = get_tree().get_nodes_in_group("player agent robot")
 
 func _unhandled_input(event: InputEvent) -> void: # This event is invoked on any input, in which we can decide what to do with the 'event' param.
-	if Input.is_action_just_pressed("left_mouse_click"):
+	if Input.is_action_just_pressed("primary_click"):
 		_handle_user_playfield_click(event.position)
+		
+	if Input.is_action_just_pressed("secondary_click"):
+		_handle_user_playfield_click(event.position)
+	
+	if Input.is_action_just_pressed("deselect_player_agent"):
+		_clear_currently_selected_player()
 		
 func _handle_user_playfield_click(mousePosition2D):
 	# If intersecting with PlayerAgent, select PlayerAgent and DON'T move. 
@@ -29,9 +35,16 @@ func _handle_user_playfield_click(mousePosition2D):
 		return
 	
 	if resultingCollider is PlayerAgent:
-		currentlySelectedPlayer = resultingCollider
+		_set_currently_selected_player(resultingCollider)
 	else:
-		currentlySelectedPlayer.set_target_position(result.position)
+		if currentlySelectedPlayer != null:
+			currentlySelectedPlayer.set_target_position(result.position)
 
 func _set_currently_selected_player(selectedPlayer : PlayerAgent):
 	currentlySelectedPlayer = selectedPlayer
+	currentlySelectedPlayer.configure_agent_selection_visual()
+	
+func _clear_currently_selected_player():
+	currentlySelectedPlayer = null
+	for agent : PlayerAgent in deployedAgents:
+		agent.toggle_selection_sprite_visual(false)

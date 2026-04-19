@@ -9,11 +9,8 @@ extends CharacterBody3D
 @export var selection_sprite_idle: Color
 
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
-#@onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var player_manager : PlayerManager
-
 @onready var transciever: Transciever = $Transciever
-
 @onready var animation_tree: AnimationTree = $AnimationTree
 
 func _ready() -> void:
@@ -23,7 +20,6 @@ func _ready() -> void:
 	transciever.reciever.area_entered.connect(_on_recieved)
 	
 func _on_recieved(_body: Node):
-	
 	if(_body is Area3D):
 		if(_body.get_parent() is Transciever):
 			if(_body.get_parent().last_signal_id == transciever.last_signal_id):
@@ -49,22 +45,14 @@ func _physics_process(delta: float) -> void:
 		animation_tree.set("parameters/walking/blend_position", min(velocity.length(), 1.0))
 		
 		look_at(global_position + velocity, Vector3.UP, true)
-	
-	#_set_animation()
 		
 	move_and_slide()
 	
-#func _set_animation():
-	#if velocity.x or velocity.z:
-		#animation_player.play("")
-	#else:
-		#animation_player.play("")
-
-func _on_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	# This event is invoked on input ONLY on this collison node. Thats why its different than _input.
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		_clear_agent_selections()
-		toggle_selection_sprite_visual(true)
+#func _on_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
+	## This event is invoked on input ONLY on this collison node. Thats why its different than _input.
+	#if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		#_clear_agent_selections()
+		#toggle_selection_sprite_visual(true)
 		
 func toggle_selection_sprite_visual(toggle : bool):
 	if toggle:
@@ -74,7 +62,6 @@ func toggle_selection_sprite_visual(toggle : bool):
 		selection_sprite.modulate = selection_sprite_idle
 		_toggle_selection_tween(toggle)
 		
-
 func _clear_agent_selections():
 	for playerAgent in player_manager.deployedAgents:
 		if playerAgent is PlayerAgent:
@@ -89,6 +76,13 @@ func _toggle_selection_tween(toggle : bool):
 	else:
 		if selection_tween:
 			selection_tween.kill()
+			
+func configure_agent_selection_visual():
+	for agent : PlayerAgent in player_manager.deployedAgents:
+		if (agent != player_manager.currentlySelectedPlayer):
+			agent.toggle_selection_sprite_visual(false)
+		else:
+			agent.toggle_selection_sprite_visual(true)
 
 func set_target_position(targetPosition):
 	if !targetPosition:
