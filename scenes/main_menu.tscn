@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dh0obbejb07bb"]
+
+[ext_resource type="PackedScene" uid="uid://b72m38ibq17i4" path="res://scenes/main_menu_ui.tscn" id="1_l6cm7"]
+[ext_resource type="PackedScene" uid="uid://c6bbcg7a8sdto" path="res://scenes/tower.tscn" id="2_bqqt6"]
+[ext_resource type="Terrain3DMaterial" uid="uid://cnbk8tuu0f1pi" path="res://data/terrain3d/new_terrain_3d_material.tres" id="2_rtw2f"]
+[ext_resource type="Terrain3DAssets" uid="uid://cti34ixkuwwsb" path="res://data/terrain3d/new_terrain_3d_assets.tres" id="3_oa1go"]
+[ext_resource type="PackedScene" uid="uid://ddmsvo27db5jo" path="res://scenes/tower_end.tscn" id="5_tbmy8"]
+[ext_resource type="PackedScene" uid="uid://bkgjy3cwumysk" path="res://scenes/melted_robot.tscn" id="6_jk1qb"]
+
+[sub_resource type="Environment" id="Environment_bqqt6"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_5dd4i"]
+resource_local_to_scene = true
+vertices = PackedVector3Array(-8.75875, 3.2532501, -4.5045004, -7.5075, 3.2532501, -5.5055003, -8.5085, 3.2532501, -5.5055003, -8.75875, 3.2532501, -4.7547503, -2.2522502, 3.2532501, 7.2572503, -2.2522502, 3.2532501, 9.5095005, 1.7517501, 3.2532501, 11.011001, 4.7547503, 3.2532501, 9.009001, 0.5005, 3.2532501, 1.7517501, -2.002, 3.2532501, 2.5025, -9.5095005, 3.2532501, -4.5045004, -9.75975, 3.2532501, -2.5025, -9.259251, 3.2532501, -2.002, -3.75375, 3.2532501, 11.2612505, -2.7527502, 3.2532501, 12.762751, 1.001, 3.2532501, 12.762751, -6.2562504, 3.2532501, 2.7527502, -6.5065002, 3.2532501, 3.2532501, -4.5045004, 3.2532501, 5.005, -11.011001, 3.2532501, -0.75075006, -11.2612505, 3.2532501, 1.25125, -9.259251, 3.2532501, 1.25125, -7.0070004, 3.2532501, 4.004, -6.2562504, 3.2532501, 4.7547503, -8.008, 3.2532501, 3.2532501, -11.2612505, 3.2532501, 4.004, -8.75875, 3.2532501, 2.5025)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(7, 4, 9), PackedInt32Array(7, 9, 8), PackedInt32Array(3, 0, 10), PackedInt32Array(10, 0, 11), PackedInt32Array(11, 0, 12), PackedInt32Array(13, 5, 14), PackedInt32Array(14, 5, 15), PackedInt32Array(15, 5, 6), PackedInt32Array(16, 18, 17), PackedInt32Array(11, 12, 19), PackedInt32Array(19, 12, 20), PackedInt32Array(20, 12, 21), PackedInt32Array(22, 17, 23), PackedInt32Array(23, 17, 18), PackedInt32Array(17, 22, 24), PackedInt32Array(24, 22, 25), PackedInt32Array(16, 9, 18), PackedInt32Array(18, 9, 4), PackedInt32Array(20, 21, 26), PackedInt32Array(24, 25, 26), PackedInt32Array(26, 25, 20)]
+
+[node name="MainMenu" type="Node3D" unique_id=1400279653]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1424782609]
+environment = SubResource("Environment_bqqt6")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1992316281]
+transform = Transform3D(0.12152537, 0.18679465, -0.9748535, -0.08359519, 0.98056954, 0.17746897, 0.98906195, 0.059926115, 0.13477921, -0.99413526, 4.7582016, 7.7617993)
+
+[node name="MainMenuUI" parent="." unique_id=1278659496 instance=ExtResource("1_l6cm7")]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1533793380]
+navigation_mesh = SubResource("NavigationMesh_5dd4i")
+
+[node name="Terrain3D" type="Terrain3D" parent="NavigationRegion3D" unique_id=1491087389]
+data_directory = "res://maps/tau_ceti_steppes_i"
+material = ExtResource("2_rtw2f")
+assets = ExtResource("3_oa1go")
+collision_mode = 3
+vertex_spacing = 0.25
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Start Tower" parent="." unique_id=989064708 instance=ExtResource("2_bqqt6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.821, 3, -1.6759996)
+
+[node name="End Tower" parent="." unique_id=1794542687 instance=ExtResource("5_tbmy8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9585443, 3, 8.982465)
+
+[node name="Melted Robot" parent="." unique_id=1549304419 instance=ExtResource("6_jk1qb")]
+transform = Transform3D(-0.110462844, 0, -0.9938803, 0, 1, 0, 0.9938803, 0, -0.110462844, 1.7232275, 3.000001, 9.68197)
