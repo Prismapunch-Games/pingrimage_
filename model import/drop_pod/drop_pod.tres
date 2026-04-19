@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bscsoprotkygv"]
+
+[ext_resource type="Texture2D" uid="uid://bvpi44mor8k54" path="res://model import/drop_pod/drop_pod.png" id="1_hyual"]
+[ext_resource type="Texture2D" uid="uid://dmy5k1ndhq3cv" path="res://model import/drop_pod/drop_pod_n.png" id="2_myyyk"]
+[ext_resource type="Texture2D" uid="uid://c2nw1mh0djgkn" path="res://model import/drop_pod/drop_pod_r.png" id="3_don1y"]
+
+[resource]
+albedo_texture = ExtResource("1_hyual")
+roughness_texture = ExtResource("3_don1y")
+normal_enabled = true
+normal_scale = 0.8
+normal_texture = ExtResource("2_myyyk")
+texture_filter = 0
