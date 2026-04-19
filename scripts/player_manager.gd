@@ -5,11 +5,7 @@ extends Node3D
 @onready var currentCamera : Camera3D = get_viewport().get_camera_3d()
 
 var deployedAgents : Array
-
-func _ready() -> void:
-	deployedAgents = get_tree().get_nodes_in_group("player agent robot")
 	
-
 func _unhandled_input(event: InputEvent) -> void: # This event is invoked on any input, in which we can decide what to do with the 'event' param.
 	if Input.is_action_just_pressed("primary_click"):
 		_handle_user_agent_selection(event.position)
@@ -67,3 +63,8 @@ func _clear_currently_selected_player():
 	currentlySelectedPlayer = null
 	for agent : PlayerAgent in deployedAgents:
 		agent.toggle_selection_sprite_visual(false)
+		
+func collect_deployed_agents():
+	deployedAgents.clear()
+	deployedAgents = get_tree().get_nodes_in_group("player agent robot")
+	print("Agents in level:", deployedAgents.size())
