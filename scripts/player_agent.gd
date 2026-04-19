@@ -33,15 +33,16 @@ func _physics_process(delta: float) -> void:
 		velocity.x = 0
 		velocity.z = 0
 		animation_tree.set("parameters/walking/blend_position", 0.0)
+		_stop_sfx()
 	else:
 		var next_path_position: Vector3 = navigation_agent.get_next_path_position()
 		var direction = global_position.direction_to(next_path_position)
 		var calculatedVelocity = direction * movement_speed
 		calculatedVelocity.y = velocity.y
 		velocity = calculatedVelocity
-		animation_tree.set("parameters/walking/blend_position", min(velocity.length(), 1.0))
-		
 		look_at(global_position + velocity, Vector3.UP, true)
+		animation_tree.set("parameters/walking/blend_position", min(velocity.length(), 1.0))
+		_play_sfx(walking_sound)
 		
 	move_and_slide()
 
@@ -88,3 +89,12 @@ func set_target_position(targetPosition):
 		return
 		
 	navigation_agent.target_position = targetPosition
+	
+func _play_sfx(sfx : AudioStream):
+	if not audio_player.playing:
+		audio_player.stream = sfx
+		audio_player.play()
+	
+func _stop_sfx():
+	if audio_player.playing:
+		audio_player.stop()
