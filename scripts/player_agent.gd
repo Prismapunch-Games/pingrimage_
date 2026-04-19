@@ -63,9 +63,8 @@ func toggle_selection_sprite_visual(toggle : bool):
 		_toggle_selection_tween(toggle)
 		
 func _clear_agent_selections():
-	for playerAgent in player_manager.deployedAgents:
-		if playerAgent is PlayerAgent:
-			playerAgent.toggle_selection_sprite_visual(false)
+	for playerAgent : PlayerAgent in player_manager.deployedAgents:
+		playerAgent.toggle_selection_sprite_visual(false)
 			
 func _toggle_selection_tween(toggle : bool):	
 	if toggle:
