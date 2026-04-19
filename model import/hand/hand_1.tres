@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cjusid8vv88gj"]
+
+[ext_resource type="Texture2D" uid="uid://dwy142g25b6p5" path="res://model import/hand/fun_pattern.png" id="1_mcmmt"]
+
+[resource]
+transparency = 1
+depth_draw_mode = 1
+albedo_texture = ExtResource("1_mcmmt")
+emission_enabled = true
+emission = Color(0.057607785, 0, 0.8224194, 1)
+emission_energy_multiplier = 2.32
+emission_texture = ExtResource("1_mcmmt")
+texture_filter = 0
