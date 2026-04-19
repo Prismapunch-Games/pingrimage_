@@ -56,7 +56,7 @@ func _on_recieved(_body: Node):
 			
 			animation_tree.get("parameters/playback").travel("emit")
 			transciever.last_signal_id = _body.get_parent().last_signal_id
-			transciever.proliferation_number = _body.get_parent().proliferation_number + 1
+			Global.proliferation_number += 1
 			transciever.play_ping_sound(-1)
 			transciever.emitter_player.play("emit")
 
@@ -90,6 +90,8 @@ func configure_agent_selection_visual():
 			agent.toggle_selection_sprite_visual(true)
 
 func set_target_position(targetPosition):
+	if(Global.level_won):
+		return
 	if !targetPosition:
 		return
 		

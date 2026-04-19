@@ -9,7 +9,7 @@ emission_enabled = true
 emission = Color(1, 0.32999998, 0.32999998, 1)
 texture_filter = 0
 
-[node name="Tower" unique_id=989064708 instance=ExtResource("1_vdhx1")]
+[node name="End Tower" unique_id=989064708 instance=ExtResource("1_vdhx1")]
 recieve_only = true
 
 [node name="Top Flare" parent="." index="0" unique_id=671481615]

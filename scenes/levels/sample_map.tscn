@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://sxr7jfr5c0ry"]
+
+[ext_resource type="Terrain3DMaterial" uid="uid://cnbk8tuu0f1pi" path="res://data/terrain3d/new_terrain_3d_material.tres" id="1_uys4u"]
+[ext_resource type="Terrain3DAssets" uid="uid://cti34ixkuwwsb" path="res://data/terrain3d/new_terrain_3d_assets.tres" id="2_giqpj"]
+[ext_resource type="PackedScene" uid="uid://c6bbcg7a8sdto" path="res://scenes/tower.tscn" id="5_6ysvs"]
+[ext_resource type="PackedScene" uid="uid://ddmsvo27db5jo" path="res://scenes/tower_end.tscn" id="6_4xn6t"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_e5uuo"]
+resource_local_to_scene = true
+
+[node name="Sample Map" type="Node3D" unique_id=1276502586]
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1963598391]
+navigation_mesh = SubResource("NavigationMesh_e5uuo")
+
+[node name="Terrain3D" type="Terrain3D" parent="NavigationRegion3D" unique_id=2063523170]
+material = ExtResource("1_uys4u")
+assets = ExtResource("2_giqpj")
+collision_mode = 3
+vertex_spacing = 0.25
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="Start Tower" parent="." unique_id=989064708 instance=ExtResource("5_6ysvs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.821, 3, -1.6759996)
+
+[node name="End Tower" parent="." unique_id=477450545 instance=ExtResource("6_4xn6t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9585443, 3, 8.982465)

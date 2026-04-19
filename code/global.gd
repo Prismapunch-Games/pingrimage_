@@ -53,12 +53,28 @@ var signals_emitting: int = 0:
 
 func _ready():
 	on_signals_emitting_changed.connect(_on_signals_emitting_changed)
+	load_level(levels[0])
 	
 func _on_signals_emitting_changed(amount: int):
 	if(amount <= 0 && current_charges <= 0 && !level_won):
 		print("you lose!")
 		on_level_complete.emit(false, 0.0)
-	elif(level_won):
+	elif(level_won && amount <= 0):
 		print("you win!")
 		on_level_complete.emit(true, 0.0)
 var level_won: bool = false
+
+var proliferation_number: int = 0
+
+var current_level_node: Node3D
+
+var levels: Array[PackedScene] = [preload("res://scenes/levels/tau_ceti_steppes_i.tscn")]
+
+func load_level(loading_scene: PackedScene):
+	proliferation_number = 0
+	level_won = 0
+	
+	if(current_level_node):
+		current_level_node.queue_free()
+	current_level_node = loading_scene.instantiate()
+	get_tree().root.call_deferred("add_child", current_level_node)

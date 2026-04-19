@@ -1,21 +1,12 @@
 [gd_scene format=3 uid="uid://cgdtbf0y4wr31"]
 
 [ext_resource type="Script" uid="uid://dhwiugf50sfx8" path="res://scripts/player_manager.gd" id="1_4wyf3"]
-[ext_resource type="Terrain3DMaterial" uid="uid://cnbk8tuu0f1pi" path="res://data/terrain3d/new_terrain_3d_material.tres" id="2_71j4m"]
 [ext_resource type="PackedScene" uid="uid://cdlrn7u6hpsey" path="res://scenes/ui.tscn" id="2_qfnet"]
-[ext_resource type="PackedScene" uid="uid://ovgdes8vifut" path="res://scenes/robot.tscn" id="2_rwgxs"]
 [ext_resource type="AudioStream" uid="uid://di6lsiryqhay" path="res://sounds/music/LudumDareEasy.mp3" id="3_4mrxx"]
-[ext_resource type="Terrain3DAssets" uid="uid://cti34ixkuwwsb" path="res://data/terrain3d/new_terrain_3d_assets.tres" id="3_qfnet"]
-[ext_resource type="PackedScene" uid="uid://c6bbcg7a8sdto" path="res://scenes/tower.tscn" id="6_qfnet"]
-[ext_resource type="PackedScene" uid="uid://ddmsvo27db5jo" path="res://scenes/tower_end.tscn" id="7_i7141"]
 
 [sub_resource type="Environment" id="Environment_e5uuo"]
 background_mode = 1
 background_color = Color(1, 1, 1, 1)
-
-[sub_resource type="NavigationMesh" id="NavigationMesh_e5uuo"]
-vertices = PackedVector3Array(-8.75875, 3.2532501, -4.5045004, -7.5075, 3.2532501, -5.5055003, -8.5085, 3.2532501, -5.5055003, -8.75875, 3.2532501, -4.7547503, -2.2522502, 3.2532501, 7.2572503, -2.2522502, 3.2532501, 9.5095005, 1.7517501, 3.2532501, 11.011001, 4.7547503, 3.2532501, 9.009001, 0.5005, 3.2532501, 1.7517501, -2.002, 3.2532501, 2.5025, -9.5095005, 3.2532501, -4.5045004, -9.75975, 3.2532501, -2.5025, -9.259251, 3.2532501, -2.002, -3.75375, 3.2532501, 11.2612505, -2.7527502, 3.2532501, 12.762751, 1.001, 3.2532501, 12.762751, -6.2562504, 3.2532501, 2.7527502, -6.5065002, 3.2532501, 3.2532501, -4.5045004, 3.2532501, 5.005, -11.011001, 3.2532501, -0.75075006, -11.2612505, 3.2532501, 1.25125, -9.259251, 3.2532501, 1.25125, -7.0070004, 3.2532501, 4.004, -6.2562504, 3.2532501, 4.7547503, -8.008, 3.2532501, 3.2532501, -11.2612505, 3.2532501, 4.004, -8.75875, 3.2532501, 2.5025)
-polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(7, 4, 9), PackedInt32Array(7, 9, 8), PackedInt32Array(3, 0, 10), PackedInt32Array(10, 0, 11), PackedInt32Array(11, 0, 12), PackedInt32Array(13, 5, 14), PackedInt32Array(14, 5, 15), PackedInt32Array(15, 5, 6), PackedInt32Array(16, 18, 17), PackedInt32Array(11, 12, 19), PackedInt32Array(19, 12, 20), PackedInt32Array(20, 12, 21), PackedInt32Array(22, 17, 23), PackedInt32Array(23, 17, 18), PackedInt32Array(17, 22, 24), PackedInt32Array(24, 22, 25), PackedInt32Array(16, 9, 18), PackedInt32Array(18, 9, 4), PackedInt32Array(20, 21, 26), PackedInt32Array(24, 25, 26), PackedInt32Array(26, 25, 20)]
 
 [node name="World" type="Node3D" unique_id=644942085]
 script = ExtResource("1_4wyf3")
@@ -34,30 +25,3 @@ environment = SubResource("Environment_e5uuo")
 stream = ExtResource("3_4mrxx")
 autoplay = true
 bus = &"Music"
-
-[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1396336961]
-navigation_mesh = SubResource("NavigationMesh_e5uuo")
-
-[node name="Terrain3D" type="Terrain3D" parent="NavigationRegion3D" unique_id=1135363450]
-data_directory = "res://maps"
-material = ExtResource("2_71j4m")
-assets = ExtResource("3_qfnet")
-collision_mode = 3
-vertex_spacing = 0.25
-top_level = true
-metadata/_edit_lock_ = true
-
-[node name="Robot" parent="." unique_id=2051323718 instance=ExtResource("2_rwgxs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.799757, 4.1068063, 6.3841915)
-
-[node name="Robot2" parent="." unique_id=1120416145 instance=ExtResource("2_rwgxs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6490653, 4.1068063, 6.3841915)
-
-[node name="Robot3" parent="." unique_id=660446338 instance=ExtResource("2_rwgxs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28920436, 4.1068063, 10.430084)
-
-[node name="Tower" parent="." unique_id=989064708 instance=ExtResource("6_qfnet")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.821, 3, -1.6759996)
-
-[node name="Tower2" parent="." unique_id=455213579 instance=ExtResource("7_i7141")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9585443, 3, 8.982465)

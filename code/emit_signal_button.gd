@@ -11,4 +11,4 @@ func _on_pressed():
 		Global.current_charges -= 1
 		
 func _on_robot_movement(robots_currently_moving: int):
-	disabled = Global.robots_currently_moving.size() > 0 || Global.signals_emitting > 0
+	disabled = Global.robots_currently_moving.size() > 0 || Global.signals_emitting > 0 || Global.level_won
