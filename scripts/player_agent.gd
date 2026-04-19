@@ -26,6 +26,7 @@ func _ready() -> void:
 	transciever.reciever.area_entered.connect(_on_recieved)
 
 func _physics_process(delta: float) -> void:
+	# Ensure NavigationAgent3D settings are configured to ensure .is_navigation_finished() resolves.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		

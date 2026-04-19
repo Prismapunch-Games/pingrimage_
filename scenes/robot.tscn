@@ -265,6 +265,9 @@ selection_sprite_idle = Color(1, 0, 0, 1)
 walking_sound = ExtResource("2_q5kvo")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=2115972102]
+path_desired_distance = 0.5
+target_desired_distance = 0.25
+path_height_offset = -1.0
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=76667349]
 volume_db = 1.0
