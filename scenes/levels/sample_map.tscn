@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://sxr7jfr5c0ry"]
 
 [ext_resource type="Terrain3DMaterial" uid="uid://cnbk8tuu0f1pi" path="res://data/terrain3d/new_terrain_3d_material.tres" id="1_uys4u"]
+[ext_resource type="Script" uid="uid://bwnsiw3m5lwwh" path="res://code/level.gd" id="1_y2flw"]
 [ext_resource type="Terrain3DAssets" uid="uid://cti34ixkuwwsb" path="res://data/terrain3d/new_terrain_3d_assets.tres" id="2_giqpj"]
 [ext_resource type="PackedScene" uid="uid://c6bbcg7a8sdto" path="res://scenes/tower.tscn" id="5_6ysvs"]
 [ext_resource type="PackedScene" uid="uid://ddmsvo27db5jo" path="res://scenes/tower_end.tscn" id="6_4xn6t"]
@@ -9,6 +10,7 @@
 resource_local_to_scene = true
 
 [node name="Sample Map" type="Node3D" unique_id=1276502586]
+script = ExtResource("1_y2flw")
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1963598391]
 navigation_mesh = SubResource("NavigationMesh_e5uuo")

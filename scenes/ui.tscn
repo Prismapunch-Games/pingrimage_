@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cdlrn7u6hpsey"]
 
+[ext_resource type="Script" uid="uid://3l44b6ws6m4w" path="res://code/level_name_label.gd" id="1_gdt2y"]
 [ext_resource type="Script" uid="uid://8nqu7dn8bj8" path="res://code/emit_signal_button.gd" id="1_nt7q6"]
 [ext_resource type="Script" uid="uid://bsflq6pye0nb4" path="res://code/charges_label.gd" id="1_yev5y"]
 [ext_resource type="Script" uid="uid://dwcvxgllicj8y" path="res://code/level_end_screen.gd" id="2_x4jx1"]
@@ -77,9 +78,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Tau Ceti Steppe III"
+text = "ERROR LAND 13"
 horizontal_alignment = 1
 vertical_alignment = 1
+script = ExtResource("1_gdt2y")
 
 [node name="Bottom Right" type="Panel" parent="Main Container/Right" unique_id=648037652]
 custom_minimum_size = Vector2(0, 96)
