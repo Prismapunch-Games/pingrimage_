@@ -56,10 +56,8 @@ func _physics_process(delta: float) -> void:
 
 func _on_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
 	if  event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		player_manager._set_currently_selected_player(self)
 		_clear_agent_selections()
 		toggle_selection_sprite_visual(true)
-		pass
 
 func toggle_selection_sprite_visual(toggle : bool):
 	if toggle:
