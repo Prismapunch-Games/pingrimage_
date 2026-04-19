@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bscsoprotkygv"]
+
+[ext_resource type="Texture2D" uid="uid://bvpi44mor8k54" path="res://model import/drop_pod/drop_pod.png" id="1_hyual"]
+
+[resource]
+albedo_texture = ExtResource("1_hyual")
+texture_filter = 0
