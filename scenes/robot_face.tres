@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://uhiyy738qute"]
+
+[ext_resource type="Texture2D" uid="uid://3phe6jfxjngi" path="res://model import/robot/robot_face.png" id="1_hayf0"]
+
+[resource]
+albedo_color = Color(0.26410323, 0.1017823, 0.32193062, 1)
+albedo_texture = ExtResource("1_hayf0")
+roughness = 0.35
+emission_enabled = true
+emission = Color(2.3102762e-06, 0.52331984, 0.40549973, 1)
+emission_energy_multiplier = 6.42
+emission_operator = 1
+emission_texture = ExtResource("1_hayf0")
+texture_filter = 0

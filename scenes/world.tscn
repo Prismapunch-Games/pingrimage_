@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cgdtbf0y4wr31"]
 
-[ext_resource type="Script" path="res://scripts/player_manager.gd" id="1_4wyf3"]
+[ext_resource type="Script" uid="uid://dhwiugf50sfx8" path="res://scripts/player_manager.gd" id="1_4wyf3"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cnbk8tuu0f1pi" path="res://data/terrain3d/new_terrain_3d_material.tres" id="2_71j4m"]
 [ext_resource type="PackedScene" uid="uid://cdlrn7u6hpsey" path="res://scenes/ui.tscn" id="2_qfnet"]
 [ext_resource type="PackedScene" uid="uid://ovgdes8vifut" path="res://scenes/robot.tscn" id="2_rwgxs"]

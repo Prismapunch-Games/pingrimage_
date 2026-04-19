@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://nodp814cpwte"]
+
+[ext_resource type="PackedScene" uid="uid://ga8ef6fel3o6" path="res://model import/robot/robot_melted.glb" id="1_8aj3r"]
+[ext_resource type="Material" uid="uid://l1ke3hw6bi7t" path="res://materials/robot_material.tres" id="2_usjuk"]
+[ext_resource type="Material" uid="uid://uhiyy738qute" path="res://scenes/robot_face.tres" id="3_usjuk"]
+
+[node name="robot_melted" unique_id=288747680 instance=ExtResource("1_8aj3r")]
+
+[node name="Body_002" parent="." index="0" unique_id=1368497893]
+surface_material_override/0 = ExtResource("2_usjuk")
+
+[node name="Arms_002" parent="." index="1" unique_id=2109038757]
+surface_material_override/0 = ExtResource("2_usjuk")
+
+[node name="neck_002" parent="." index="2" unique_id=176201215]
+surface_material_override/0 = ExtResource("2_usjuk")
+
+[node name="Antenae_1_002" parent="." index="3" unique_id=1283688544]
+surface_material_override/0 = ExtResource("2_usjuk")
+
+[node name="Arms_004" parent="." index="4" unique_id=1526502902]
+surface_material_override/0 = ExtResource("2_usjuk")
+
+[node name="HEAD_002" parent="." index="5" unique_id=178886622]
+surface_material_override/0 = ExtResource("2_usjuk")
+surface_material_override/1 = ExtResource("3_usjuk")
