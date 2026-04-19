@@ -1,18 +1,14 @@
 [gd_scene format=3 uid="uid://bschleh0gt8mj"]
 
 [ext_resource type="PackedScene" uid="uid://kwi6iu12gkc3" path="res://model import/drop_pod/drop_pod.glb" id="1_ek14b"]
-[ext_resource type="Material" uid="uid://bscsoprotkygv" path="res://scenes/drop_pod.tres" id="2_jww0e"]
+[ext_resource type="Material" uid="uid://bscsoprotkygv" path="res://model import/drop_pod/drop_pod.tres" id="2_jww0e"]
 
-[node name="drop_pod" unique_id=607276351 instance=ExtResource("1_ek14b")]
+[node name="drop_pod" unique_id=987113455 instance=ExtResource("1_ek14b")]
 
-[node name="Main_pod" parent="." index="0" unique_id=1558082327]
+[node name="Main_pod" parent="." index="0" unique_id=725165415]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
 surface_material_override/0 = ExtResource("2_jww0e")
 
-[node name="Pod_lid" parent="." index="1" unique_id=898064029]
+[node name="Pod_lid" parent="." index="1" unique_id=861704125]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 2.284862, 0)
-surface_material_override/0 = ExtResource("2_jww0e")
-
-[node name="Elevator_pad" parent="." index="2" unique_id=386349803]
-transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
 surface_material_override/0 = ExtResource("2_jww0e")
