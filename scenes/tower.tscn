@@ -1,13 +1,41 @@
 [gd_scene format=3 uid="uid://c6bbcg7a8sdto"]
 
 [ext_resource type="Script" uid="uid://b5eo76ddpmroj" path="res://code/tower.gd" id="1_ay4al"]
+[ext_resource type="Texture2D" uid="uid://b1m3b8bxok2jf" path="res://sprites/spark.png" id="2_jfguu"]
 [ext_resource type="PackedScene" uid="uid://ckvt0sdfshxmt" path="res://scenes/tower_model.tscn" id="2_ktxwe"]
 [ext_resource type="PackedScene" uid="uid://c6ksfcq5jycoc" path="res://scenes/transciever.tscn" id="3_ktxwe"]
+[ext_resource type="Texture2D" uid="uid://bac0dgimr1fwq" path="res://model import/tower/tower_light.png" id="3_qrbg1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jfguu"]
+albedo_texture = ExtResource("3_qrbg1")
+emission_enabled = true
+emission = Color(0.6695021, 0.99999994, 0.33510733, 1)
+texture_filter = 0
 
 [node name="Tower" type="Node3D" unique_id=989064708]
 script = ExtResource("1_ay4al")
 
+[node name="Top Flare" type="Sprite3D" parent="." unique_id=671481615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.5041, 0)
+modulate = Color(0, 16.184208, 0, 0.2509804)
+pixel_size = 0.0625
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_jfguu")
+
+[node name="Inner Flare" type="Sprite3D" parent="Top Flare" unique_id=1804982780]
+modulate = Color(0, 16.184208, 0, 0.5019608)
+pixel_size = 0.03125
+billboard = 1
+texture_filter = 0
+texture = ExtResource("2_jfguu")
+
 [node name="tower" parent="." unique_id=1394724850 instance=ExtResource("2_ktxwe")]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
+transform = Transform3D(3.695518, 0, 1.5307338, 0, 4, 0, -1.5307338, 0, 3.695518, 0, 0, 0)
+
+[node name="tower" parent="tower" index="0" unique_id=131834097]
+surface_material_override/1 = SubResource("StandardMaterial3D_jfguu")
 
 [node name="Transciever" parent="." unique_id=979394788 instance=ExtResource("3_ktxwe")]
+
+[editable path="tower"]

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ovgdes8vifut" path="res://scenes/robot.tscn" id="2_rwgxs"]
 [ext_resource type="Terrain3DAssets" uid="uid://cti34ixkuwwsb" path="res://data/terrain3d/new_terrain_3d_assets.tres" id="3_qfnet"]
 [ext_resource type="PackedScene" uid="uid://c6bbcg7a8sdto" path="res://scenes/tower.tscn" id="6_qfnet"]
+[ext_resource type="PackedScene" uid="uid://ddmsvo27db5jo" path="res://scenes/tower_end.tscn" id="7_i7141"]
 
 [sub_resource type="Environment" id="Environment_e5uuo"]
 background_mode = 1
@@ -50,4 +51,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6490653, 4.1068063, 6.38419
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28920436, 4.1068063, 10.430084)
 
 [node name="Tower" parent="." unique_id=989064708 instance=ExtResource("6_qfnet")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.179, 3, 9.324)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.821, 3, -1.6759996)
+
+[node name="Tower2" parent="." unique_id=455213579 instance=ExtResource("7_i7141")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9585443, 3, 8.982465)

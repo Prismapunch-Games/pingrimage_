@@ -14,6 +14,8 @@ extends CharacterBody3D
 
 @onready var transciever: Transciever = $Transciever
 
+@onready var animation_tree: AnimationTree = $AnimationTree
+
 func _ready() -> void:
 	player_manager = get_tree().current_scene.get_node(".")
 	add_to_group("player agent robot")
@@ -21,10 +23,12 @@ func _ready() -> void:
 	transciever.reciever.area_entered.connect(_on_recieved)
 	
 func _on_recieved(_body: Node):
+	
 	if(_body is Area3D):
 		if(_body.get_parent() is Transciever):
 			if(_body.get_parent().last_signal_id == transciever.last_signal_id):
 				return
+			animation_tree.get("parameters/playback").travel("emit")
 			transciever.last_signal_id = _body.get_parent().last_signal_id
 			transciever.emitter_player.play("emit")
 
@@ -35,12 +39,14 @@ func _physics_process(delta: float) -> void:
 	if navigation_agent.is_navigation_finished():
 		velocity.x = 0
 		velocity.z = 0
+		animation_tree.set("parameters/walking/blend_position", 0.0)
 	else:
 		var next_path_position: Vector3 = navigation_agent.get_next_path_position()
 		var direction = global_position.direction_to(next_path_position)
 		var calculatedVelocity = direction * movement_speed
 		calculatedVelocity.y = velocity.y
 		velocity = calculatedVelocity
+		animation_tree.set("parameters/walking/blend_position", min(velocity.length(), 1.0))
 		
 		look_at(global_position + velocity, Vector3.UP, true)
 	
