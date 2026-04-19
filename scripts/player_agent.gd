@@ -3,30 +3,27 @@ extends CharacterBody3D
 
 @export var movement_speed: float = 5.0
 
+# Selection Ring Variables
 @onready var selection_sprite : Sprite3D = $Sprite3D
 @onready var selection_tween : Tween
 @export var selection_sprite_active: Color
 @export var selection_sprite_idle: Color
 
+# Nodes
 @onready var navigation_agent: NavigationAgent3D = $NavigationAgent3D
 @onready var player_manager : PlayerManager
 @onready var transciever: Transciever = $Transciever
-@onready var animation_tree: AnimationTree = $AnimationTree
+@onready var animation_tree : AnimationTree = $AnimationTree
+
+# Audio
+@onready var audio_player : AudioStreamPlayer3D = $AudioStreamPlayer3D
+@export var walking_sound : AudioStream 
 
 func _ready() -> void:
 	player_manager = get_tree().current_scene.get_node(".")
 	add_to_group("player agent robot")
 	_clear_agent_selections()
 	transciever.reciever.area_entered.connect(_on_recieved)
-	
-func _on_recieved(_body: Node):
-	if(_body is Area3D):
-		if(_body.get_parent() is Transciever):
-			if(_body.get_parent().last_signal_id == transciever.last_signal_id):
-				return
-			animation_tree.get("parameters/playback").travel("emit")
-			transciever.last_signal_id = _body.get_parent().last_signal_id
-			transciever.emitter_player.play("emit")
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -47,13 +44,16 @@ func _physics_process(delta: float) -> void:
 		look_at(global_position + velocity, Vector3.UP, true)
 		
 	move_and_slide()
-	
-#func _on_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	## This event is invoked on input ONLY on this collison node. Thats why its different than _input.
-	#if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		#_clear_agent_selections()
-		#toggle_selection_sprite_visual(true)
-		
+
+func _on_recieved(_body: Node):
+	if(_body is Area3D):
+		if(_body.get_parent() is Transciever):
+			if(_body.get_parent().last_signal_id == transciever.last_signal_id):
+				return
+			animation_tree.get("parameters/playback").travel("emit")
+			transciever.last_signal_id = _body.get_parent().last_signal_id
+			transciever.emitter_player.play("emit")
+
 func toggle_selection_sprite_visual(toggle : bool):
 	if toggle:
 		selection_sprite.modulate = selection_sprite_active
