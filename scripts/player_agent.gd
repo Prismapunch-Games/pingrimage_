@@ -55,10 +55,11 @@ func _physics_process(delta: float) -> void:
 		#animation_player.play("")
 
 func _on_input_event(camera: Node, event: InputEvent, event_position: Vector3, normal: Vector3, shape_idx: int) -> void:
-	if  event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+	# This event is invoked on input ONLY on this collison node. Thats why its different than _input.
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		_clear_agent_selections()
 		toggle_selection_sprite_visual(true)
-
+		
 func toggle_selection_sprite_visual(toggle : bool):
 	if toggle:
 		selection_sprite.modulate = selection_sprite_active

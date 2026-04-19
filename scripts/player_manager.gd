@@ -9,14 +9,13 @@ var deployedAgents : Array
 func _ready() -> void:
 	deployedAgents = get_tree().get_nodes_in_group("player agent robot")
 
-func _input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void: # This event is invoked on any input, in which we can decide what to do with the 'event' param.
 	if Input.is_action_just_pressed("left_mouse_click"):
 		_handle_user_playfield_click(event.position)
 		
-		# If intersecting with PlayerAgent, select PlayerAgent and DON'T move. 
-		# Else, move currently selected PlayerAgent.
-		
 func _handle_user_playfield_click(mousePosition2D):
+	# If intersecting with PlayerAgent, select PlayerAgent and DON'T move. 
+	# Else, move currently selected PlayerAgent.
 	var params = PhysicsRayQueryParameters3D.new()
 	
 	params.from = currentCamera.project_ray_origin(mousePosition2D)
