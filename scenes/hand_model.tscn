@@ -1,28 +1,8 @@
 [gd_scene format=3 uid="uid://c13imuli531py"]
 
 [ext_resource type="PackedScene" uid="uid://lgqw0kquv5lt" path="res://model import/hand/hand.glb" id="1_mu2yt"]
-[ext_resource type="Texture2D" uid="uid://dwy142g25b6p5" path="res://model import/hand/fun_pattern.png" id="2_2t78x"]
-[ext_resource type="Texture2D" uid="uid://c8tp7d8j6tg5b" path="res://model import/hand/fun_pattern2.png" id="3_kfcbj"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m328l"]
-transparency = 1
-depth_draw_mode = 1
-albedo_texture = ExtResource("2_2t78x")
-emission_enabled = true
-emission = Color(0.057607785, 0, 0.8224194, 1)
-emission_energy_multiplier = 0.57
-emission_texture = ExtResource("2_2t78x")
-texture_filter = 0
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m00nb"]
-transparency = 1
-depth_draw_mode = 1
-albedo_color = Color(1, 1, 1, 0.6509804)
-albedo_texture = ExtResource("3_kfcbj")
-emission_enabled = true
-emission_energy_multiplier = 2.16
-emission_texture = ExtResource("3_kfcbj")
-texture_filter = 0
+[ext_resource type="Material" uid="uid://cjusid8vv88gj" path="res://model import/hand/hand_1.tres" id="2_mu2yt"]
+[ext_resource type="Material" uid="uid://cgk3ga2kcin3c" path="res://model import/hand/hand_2.tres" id="3_2t78x"]
 
 [sub_resource type="Animation" id="Animation_ltpkm"]
 length = 0.001
@@ -170,11 +150,49 @@ _data = {
 &"hand_texturee": SubResource("Animation_bmpxm")
 }
 
-[node name="hand2" unique_id=1280925198 instance=ExtResource("1_mu2yt")]
+[node name="hand2" unique_id=777659706 instance=ExtResource("1_mu2yt")]
 
-[node name="hand" parent="." index="8" unique_id=1984913163]
-surface_material_override/0 = SubResource("StandardMaterial3D_m328l")
-surface_material_override/1 = SubResource("StandardMaterial3D_m00nb")
+[node name="hand" parent="." index="0" unique_id=503512637]
+visible = false
+surface_material_override/0 = ExtResource("2_mu2yt")
+surface_material_override/1 = ExtResource("3_2t78x")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="hand" index="0" unique_id=1837341430]
 libraries/ = SubResource("AnimationLibrary_q8gkc")
+autoplay = &"RESET"
+
+[node name="hand_pat" parent="." index="1" unique_id=467562542]
+visible = false
+surface_material_override/0 = ExtResource("2_mu2yt")
+surface_material_override/1 = ExtResource("3_2t78x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="hand_pat" index="0" unique_id=1884736109]
+libraries/ = SubResource("AnimationLibrary_q8gkc")
+autoplay = &"hand_texturee"
+
+[node name="hand_thumbs_up" parent="." index="2" unique_id=608307467]
+visible = false
+surface_material_override/0 = ExtResource("2_mu2yt")
+surface_material_override/1 = ExtResource("3_2t78x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="hand_thumbs_up" index="0" unique_id=155108765]
+libraries/ = SubResource("AnimationLibrary_q8gkc")
+autoplay = &"RESET"
+
+[node name="hand_point" parent="." index="3" unique_id=996840534]
+visible = false
+surface_material_override/0 = ExtResource("2_mu2yt")
+surface_material_override/1 = ExtResource("3_2t78x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="hand_point" index="0" unique_id=1961310973]
+libraries/ = SubResource("AnimationLibrary_q8gkc")
+autoplay = &"hand_texturee"
+
+[node name="hand_thumbs_down" parent="." index="4" unique_id=1765223017]
+visible = false
+surface_material_override/0 = ExtResource("2_mu2yt")
+surface_material_override/1 = ExtResource("3_2t78x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="hand_thumbs_down" index="0" unique_id=1612192533]
+libraries/ = SubResource("AnimationLibrary_q8gkc")
+autoplay = &"RESET"
