@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://c6bbcg7a8sdto"]
 
 [ext_resource type="Script" uid="uid://b5eo76ddpmroj" path="res://code/tower.gd" id="1_ay4al"]
-[ext_resource type="PackedScene" uid="uid://bmnic72wgmhg1" path="res://model import/tower/tower.glb" id="2_ktxwe"]
+[ext_resource type="PackedScene" uid="uid://ckvt0sdfshxmt" path="res://scenes/tower_model.tscn" id="2_ktxwe"]
 [ext_resource type="PackedScene" uid="uid://c6ksfcq5jycoc" path="res://scenes/transciever.tscn" id="3_ktxwe"]
 
 [node name="Tower" type="Node3D" unique_id=989064708]
 script = ExtResource("1_ay4al")
 
-[node name="Model" parent="." unique_id=618788830 instance=ExtResource("2_ktxwe")]
-transform = Transform3D(-1.7484555e-07, 0, 4, 0, 4, 0, -4, 0, -1.7484555e-07, 0, 0, 0)
+[node name="tower" parent="." unique_id=1394724850 instance=ExtResource("2_ktxwe")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 
 [node name="Transciever" parent="." unique_id=979394788 instance=ExtResource("3_ktxwe")]
