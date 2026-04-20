@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dh0obbejb07bb"]
 
-[ext_resource type="PackedScene" uid="uid://b72m38ibq17i4" path="res://scenes/main_menu_ui.tscn" id="1_l6cm7"]
+[ext_resource type="PackedScene" uid="uid://ccvgi2rujv5t8" path="res://scenes/main_menu_ui.tscn" id="1_l6cm7"]
 [ext_resource type="PackedScene" uid="uid://c6bbcg7a8sdto" path="res://scenes/tower.tscn" id="2_bqqt6"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cnbk8tuu0f1pi" path="res://data/terrain3d/new_terrain_3d_material.tres" id="2_rtw2f"]
 [ext_resource type="Terrain3DAssets" uid="uid://cti34ixkuwwsb" path="res://data/terrain3d/new_terrain_3d_assets.tres" id="3_oa1go"]
