@@ -10,6 +10,7 @@ func _ready():
 	
 	if player_manager:
 		player_manager.collect_deployed_agents()
+		player_manager.collect_level_camera()
 	else:
 		push_error("(level.gd) Cannot find PlayerManager, therefor, cannot collect PlayerAgents.")
 

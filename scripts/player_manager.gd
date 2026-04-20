@@ -75,3 +75,8 @@ func collect_deployed_agents():
 		if(!is_instance_valid(agent)):
 			deployedAgents.erase(agent)
 	print("Agents in level:", deployedAgents.size())
+	
+func collect_level_camera():
+	currentCamera = get_viewport().get_camera_3d()
+	if not currentCamera:
+		push_error("(player_manager.gd) No camera found! This is bad!")
