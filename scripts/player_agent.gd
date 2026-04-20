@@ -20,7 +20,7 @@ extends CharacterBody3D
 @onready var drop_pod : Node3D = $DropPodMesh
 @onready var drop_pod_destination : Node3D = $DropPodDestination
 @export var robot_mesh : Node3D
-
+@onready var robot_mesh_starting_pos : Vector3
 @onready var drop_pod_tween : Tween
 
 # Audio
@@ -112,13 +112,16 @@ func _stop_sfx():
 	audio_player.stop()
 	
 func _trigger_intro_sequence():
-	robot_mesh.hide()
+	robot_mesh_starting_pos = robot_mesh.position
 	selection_sprite.hide()
 	drop_pod_tween = create_tween()
-	drop_pod_tween.tween_property(drop_pod, "position", robot_mesh.position, 0.5).set_trans(Tween.TRANS_SINE)
-	drop_pod_tween.tween_property(drop_pod, "scale", Vector3(1.2, 1.2, 1.2), 0.2).set_trans(Tween.TRANS_BOUNCE)
-	drop_pod_tween.tween_property(drop_pod, "scale", Vector3(1.0, 1.0, 1.0), 0.2).set_trans(Tween.TRANS_BOUNCE)
-	drop_pod_tween.tween_property(drop_pod, "position", drop_pod_destination.position, 0.5).set_trans(Tween.TRANS_SINE)
-	await get_tree().create_timer(0.9).timeout
-	robot_mesh.show()
+	drop_pod_tween.tween_property(robot_mesh, "position", (robot_mesh_starting_pos + Vector3(0, -5, 0)), 0)
+	drop_pod_tween.tween_property(drop_pod, "position", robot_mesh_starting_pos, 0.5).set_trans(Tween.TRANS_SINE)
+	drop_pod_tween.tween_property(drop_pod, "position", (robot_mesh_starting_pos + Vector3(0, -3.5, 0)), 0.5).set_trans(Tween.TRANS_SINE)
+	drop_pod_tween.tween_property(drop_pod, "scale", Vector3(1.2, 1.2, 1.2), 0.5).set_trans(Tween.TRANS_SINE)
+	drop_pod_tween.tween_property(robot_mesh, "position", robot_mesh_starting_pos, 2.5).set_trans(Tween.TRANS_SINE)
+	drop_pod_tween.tween_property(drop_pod, "scale", Vector3(1.0, 1.0, 1.0), 0.5).set_trans(Tween.TRANS_SINE)
+	drop_pod_tween.tween_property(drop_pod, "scale", Vector3(0, 0, 0), 0.5).set_trans(Tween.TRANS_SINE)
+	
+	await get_tree().create_timer(4).timeout
 	selection_sprite.show()
