@@ -291,6 +291,7 @@ text = "SFX"
 horizontal_alignment = 1
 
 [node name="Credits Panel" type="Panel" parent="Main Container" unique_id=2073155624]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

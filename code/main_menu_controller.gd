@@ -50,6 +50,7 @@ func credits():
 	pass
 
 func exit():
+	get_tree().quit()
 	pass
 	
 func close_all():
