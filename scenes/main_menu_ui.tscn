@@ -5,6 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://csw0qp3opn14v" path="res://scenes/main_menu/level_select_button.tscn" id="2_4pl3l"]
 [ext_resource type="Script" uid="uid://c4jwgcpc7htac" path="res://code/level_select_panel.gd" id="2_towyk"]
 [ext_resource type="Texture2D" uid="uid://do0lhi6g58t1p" path="res://sprites/close.png" id="3_j5441"]
+[ext_resource type="Script" uid="uid://bgirsgadel827" path="res://code/settings_controller.gd" id="6_vxllw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vxllw"]
+font_size = 24
 
 [node name="MainMenuUI" type="CanvasLayer" unique_id=1278659496 node_paths=PackedStringArray("play_button", "settings_button", "credits_button", "exit_button", "level_select_canvas", "settings_canvas", "credits_canvas")]
 script = ExtResource("1_j5441")
@@ -13,8 +17,8 @@ settings_button = NodePath("Main Container/Center/VBoxContainer/Settings")
 credits_button = NodePath("Main Container/Center/VBoxContainer/Credits")
 exit_button = NodePath("Main Container/Center/VBoxContainer/Exit")
 level_select_canvas = NodePath("Main Container/Level Select Panel")
-settings_canvas = NodePath("Main Container/Level Select Panel2")
-credits_canvas = NodePath("Main Container/Level Select Panel3")
+settings_canvas = NodePath("Main Container/Settings Panel")
+credits_canvas = NodePath("Main Container/Credits Panel")
 
 [node name="Main Container" type="Control" parent="." unique_id=1896131122]
 layout_mode = 3
@@ -98,6 +102,7 @@ layout_mode = 2
 text = "Log Out"
 
 [node name="Level Select Panel" type="Panel" parent="Main Container" unique_id=1915845106]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -180,7 +185,7 @@ color = Color(1, 0, 0, 1)
 layout_mode = 2
 color = Color(1, 0, 0, 1)
 
-[node name="Level Select Panel2" type="Panel" parent="Main Container" unique_id=934032862]
+[node name="Settings Panel" type="Panel" parent="Main Container" unique_id=934032862 node_paths=PackedStringArray("master_slider", "music_slider", "sfx_slider")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -193,77 +198,79 @@ offset_right = 264.0
 offset_bottom = 280.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_towyk")
+script = ExtResource("6_vxllw")
+master_slider = NodePath("HSlider")
+music_slider = NodePath("HSlider2")
+sfx_slider = NodePath("HSlider3")
 
-[node name="MarginContainer" type="MarginContainer" parent="Main Container/Level Select Panel2" unique_id=252961744]
+[node name="Label" type="Label" parent="Main Container/Settings Panel" unique_id=241565937]
 layout_mode = 0
-offset_right = 512.0
-offset_bottom = 512.0
-size_flags_vertical = 3
+anchor_left = 0.390625
+anchor_top = 0.1875
+anchor_right = 0.578125
+anchor_bottom = 0.25
+text = "Audio"
+label_settings = SubResource("LabelSettings_vxllw")
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Main Container/Level Select Panel2/MarginContainer" unique_id=804879724]
-layout_mode = 2
+[node name="HSlider" type="HSlider" parent="Main Container/Settings Panel" unique_id=1920441612]
+layout_mode = 0
+anchor_left = 0.296875
+anchor_top = 0.32421875
+anchor_right = 0.671875
+anchor_bottom = 0.359375
+max_value = 1.0
+step = 0.001
+metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Main Container/Level Select Panel2/MarginContainer/VBoxContainer" unique_id=1122160239]
-layout_mode = 2
-text = "Level Select"
+[node name="Label" type="Label" parent="Main Container/Settings Panel/HSlider" unique_id=1394067029]
+layout_mode = 0
+offset_left = 48.0
+offset_top = -22.0
+offset_right = 144.0
+offset_bottom = -6.0
+text = "Master"
+horizontal_alignment = 1
 
-[node name="Close Button" type="TextureButton" parent="Main Container/Level Select Panel2/MarginContainer/VBoxContainer/Label" unique_id=560502658]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -16.0
-offset_bottom = 16.0
-grow_horizontal = 0
-texture_normal = ExtResource("3_j5441")
+[node name="HSlider2" type="HSlider" parent="Main Container/Settings Panel" unique_id=525877220]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 240.0
+offset_right = 344.0
+offset_bottom = 258.0
+max_value = 1.0
+step = 0.001
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Main Container/Level Select Panel2/MarginContainer/VBoxContainer" unique_id=2011659258]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/scrollbar_h_separation = 4
+[node name="Label2" type="Label" parent="Main Container/Settings Panel/HSlider2" unique_id=1479304008]
+layout_mode = 0
+offset_left = 48.0
+offset_top = -24.0
+offset_right = 144.0
+offset_bottom = -8.0
+text = "Music"
+horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Main Container/Level Select Panel2/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1148280148]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
+[node name="HSlider3" type="HSlider" parent="Main Container/Settings Panel" unique_id=1942994498]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 310.0
+offset_right = 344.0
+offset_bottom = 328.0
+max_value = 1.0
+step = 0.001
 
-[node name="Level Select Button" parent="Main Container/Level Select Panel2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=380229378 instance=ExtResource("2_4pl3l")]
-layout_mode = 2
-color = Color(0, 1, 0, 1)
+[node name="Label3" type="Label" parent="Main Container/Settings Panel/HSlider3" unique_id=1269865547]
+layout_mode = 0
+offset_left = 48.0
+offset_top = -22.0
+offset_right = 144.0
+offset_bottom = -6.0
+text = "SFX"
+horizontal_alignment = 1
 
-[node name="Locked" parent="Main Container/Level Select Panel2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Level Select Button" index="2" unique_id=1985618501]
+[node name="Credits Panel" type="Panel" parent="Main Container" unique_id=2073155624]
 visible = false
-
-[node name="Level Select Button7" parent="Main Container/Level Select Panel2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1298338941 instance=ExtResource("2_4pl3l")]
-layout_mode = 2
-color = Color(0, 1, 0, 1)
-
-[node name="Level Select Button8" parent="Main Container/Level Select Panel2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1992334675 instance=ExtResource("2_4pl3l")]
-layout_mode = 2
-color = Color(0, 1, 0, 1)
-
-[node name="Level Select Button2" parent="Main Container/Level Select Panel2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1654348099 instance=ExtResource("2_4pl3l")]
-layout_mode = 2
-color = Color(1, 1, 0, 1)
-
-[node name="Level Select Button5" parent="Main Container/Level Select Panel2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=560929501 instance=ExtResource("2_4pl3l")]
-layout_mode = 2
-color = Color(1, 1, 0, 1)
-
-[node name="Level Select Button6" parent="Main Container/Level Select Panel2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1603864399 instance=ExtResource("2_4pl3l")]
-layout_mode = 2
-color = Color(1, 1, 0, 1)
-
-[node name="Level Select Button3" parent="Main Container/Level Select Panel2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=708761198 instance=ExtResource("2_4pl3l")]
-layout_mode = 2
-color = Color(1, 0, 0, 1)
-
-[node name="Level Select Button4" parent="Main Container/Level Select Panel2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1180468077 instance=ExtResource("2_4pl3l")]
-layout_mode = 2
-color = Color(1, 0, 0, 1)
-
-[node name="Level Select Panel3" type="Panel" parent="Main Container" unique_id=2073155624]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -276,22 +283,21 @@ offset_right = 264.0
 offset_bottom = 280.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("2_towyk")
 
-[node name="MarginContainer" type="MarginContainer" parent="Main Container/Level Select Panel3" unique_id=1862868294]
+[node name="MarginContainer" type="MarginContainer" parent="Main Container/Credits Panel" unique_id=1862868294]
 layout_mode = 0
 offset_right = 512.0
 offset_bottom = 512.0
 size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Main Container/Level Select Panel3/MarginContainer" unique_id=1293983508]
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Container/Credits Panel/MarginContainer" unique_id=1293983508]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Main Container/Level Select Panel3/MarginContainer/VBoxContainer" unique_id=114922999]
+[node name="Label" type="Label" parent="Main Container/Credits Panel/MarginContainer/VBoxContainer" unique_id=114922999]
 layout_mode = 2
 text = "Level Select"
 
-[node name="Close Button" type="TextureButton" parent="Main Container/Level Select Panel3/MarginContainer/VBoxContainer/Label" unique_id=1117732648]
+[node name="Close Button" type="TextureButton" parent="Main Container/Credits Panel/MarginContainer/VBoxContainer/Label" unique_id=1117732648]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -301,51 +307,50 @@ offset_bottom = 16.0
 grow_horizontal = 0
 texture_normal = ExtResource("3_j5441")
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Main Container/Level Select Panel3/MarginContainer/VBoxContainer" unique_id=164247885]
+[node name="ScrollContainer" type="ScrollContainer" parent="Main Container/Credits Panel/MarginContainer/VBoxContainer" unique_id=164247885]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/scrollbar_h_separation = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Main Container/Level Select Panel3/MarginContainer/VBoxContainer/ScrollContainer" unique_id=483324314]
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Container/Credits Panel/MarginContainer/VBoxContainer/ScrollContainer" unique_id=483324314]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Level Select Button" parent="Main Container/Level Select Panel3/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2009160509 instance=ExtResource("2_4pl3l")]
+[node name="Level Select Button" parent="Main Container/Credits Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=2009160509 instance=ExtResource("2_4pl3l")]
 layout_mode = 2
 color = Color(0, 1, 0, 1)
 
-[node name="Locked" parent="Main Container/Level Select Panel3/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Level Select Button" index="2" unique_id=1985618501]
+[node name="Locked" parent="Main Container/Credits Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Level Select Button" index="2" unique_id=1985618501]
 visible = false
 
-[node name="Level Select Button7" parent="Main Container/Level Select Panel3/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1404393044 instance=ExtResource("2_4pl3l")]
+[node name="Level Select Button7" parent="Main Container/Credits Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1404393044 instance=ExtResource("2_4pl3l")]
 layout_mode = 2
 color = Color(0, 1, 0, 1)
 
-[node name="Level Select Button8" parent="Main Container/Level Select Panel3/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1342103630 instance=ExtResource("2_4pl3l")]
+[node name="Level Select Button8" parent="Main Container/Credits Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1342103630 instance=ExtResource("2_4pl3l")]
 layout_mode = 2
 color = Color(0, 1, 0, 1)
 
-[node name="Level Select Button2" parent="Main Container/Level Select Panel3/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=681933748 instance=ExtResource("2_4pl3l")]
+[node name="Level Select Button2" parent="Main Container/Credits Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=681933748 instance=ExtResource("2_4pl3l")]
 layout_mode = 2
 color = Color(1, 1, 0, 1)
 
-[node name="Level Select Button5" parent="Main Container/Level Select Panel3/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1338484746 instance=ExtResource("2_4pl3l")]
+[node name="Level Select Button5" parent="Main Container/Credits Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1338484746 instance=ExtResource("2_4pl3l")]
 layout_mode = 2
 color = Color(1, 1, 0, 1)
 
-[node name="Level Select Button6" parent="Main Container/Level Select Panel3/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1301830395 instance=ExtResource("2_4pl3l")]
+[node name="Level Select Button6" parent="Main Container/Credits Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1301830395 instance=ExtResource("2_4pl3l")]
 layout_mode = 2
 color = Color(1, 1, 0, 1)
 
-[node name="Level Select Button3" parent="Main Container/Level Select Panel3/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1539552024 instance=ExtResource("2_4pl3l")]
+[node name="Level Select Button3" parent="Main Container/Credits Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1539552024 instance=ExtResource("2_4pl3l")]
 layout_mode = 2
 color = Color(1, 0, 0, 1)
 
-[node name="Level Select Button4" parent="Main Container/Level Select Panel3/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1943483923 instance=ExtResource("2_4pl3l")]
+[node name="Level Select Button4" parent="Main Container/Credits Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1943483923 instance=ExtResource("2_4pl3l")]
 layout_mode = 2
 color = Color(1, 0, 0, 1)
 
 [editable path="Main Container/Level Select Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Level Select Button"]
-[editable path="Main Container/Level Select Panel2/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Level Select Button"]
-[editable path="Main Container/Level Select Panel3/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Level Select Button"]
+[editable path="Main Container/Credits Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Level Select Button"]
