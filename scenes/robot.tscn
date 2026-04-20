@@ -7,10 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://cc1vyvxcb1vxb" path="res://sounds/sfx/steps/2.ogg" id="3_e20l1"]
 [ext_resource type="Texture2D" uid="uid://bp2i0j5gyqsxf" path="res://sprites/circle.png" id="3_i42o3"]
 [ext_resource type="PackedScene" uid="uid://bschleh0gt8mj" path="res://scenes/drop_pod_model.tscn" id="5_e20l1"]
-[ext_resource type="AudioStream" uid="uid://337vujd8nukt" path="res://sounds/sfx/LudumDareDropPodArrival.mp3" id="6_b4ksi"]
 [ext_resource type="AudioStream" uid="uid://djhhw41f4xsae" path="res://sounds/sfx/LudumDareDropPodImpact.mp3" id="7_pw6bu"]
-[ext_resource type="AudioStream" uid="uid://bqa34p1m1nr3n" path="res://sounds/sfx/LudumDareDropPodPulse.mp3" id="8_wpobb"]
-[ext_resource type="AudioStream" uid="uid://c4b001fysdxwt" path="res://sounds/sfx/LudumDareDropPodLeaving.mp3" id="9_doy2i"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ujkns"]
 playback_mode = 1
@@ -21,11 +18,8 @@ stream_1/stream = ExtResource("3_e20l1")
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_6skqc"]
 loop = false
-stream_count = 4
-stream_0 = ExtResource("6_b4ksi")
-stream_1 = ExtResource("7_pw6bu")
-stream_2 = ExtResource("8_wpobb")
-stream_3 = ExtResource("9_doy2i")
+stream_count = 1
+stream_0 = ExtResource("7_pw6bu")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e5uuo"]
 

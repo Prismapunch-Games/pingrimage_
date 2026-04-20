@@ -117,20 +117,18 @@ func _trigger_intro_sequence():
 	_trigger_intro_sound()
 	drop_pod_tween = create_tween()
 	drop_pod_tween.tween_property(robot_mesh, "position", (robot_mesh_starting_pos + Vector3(0, -5, 0)), 0)
-	drop_pod_tween.tween_property(drop_pod, "position", robot_mesh_starting_pos, 2).set_trans(Tween.TRANS_SINE)
-	drop_pod_tween.tween_property(drop_pod, "position", (robot_mesh_starting_pos + Vector3(0, -3.5, 0)), 9.5).set_trans(Tween.TRANS_SINE)
-	drop_pod_tween.tween_property(drop_pod, "scale", Vector3(1.2, 1.2, 1.2), 0.5).set_trans(Tween.TRANS_SINE)
-	drop_pod_tween.tween_property(robot_mesh, "position", robot_mesh_starting_pos, 5.5).set_trans(Tween.TRANS_SINE)
-	drop_pod_tween.tween_property(drop_pod, "scale", Vector3(1.0, 1.0, 1.0), 0.5).set_trans(Tween.TRANS_SINE)
-	drop_pod_tween.tween_property(drop_pod, "scale", Vector3(0, 0, 0), 8.8).set_trans(Tween.TRANS_SINE)
+	drop_pod_tween.tween_property(drop_pod, "position", robot_mesh_starting_pos, .5).set_trans(Tween.TRANS_SINE)
+	drop_pod_tween.tween_property(drop_pod, "position", (robot_mesh_starting_pos + Vector3(0, -3.5, 0)), .5).set_trans(Tween.TRANS_SINE)
+	drop_pod_tween.tween_property(drop_pod, "scale", Vector3(1.2, 1.2, 1.2), .5).set_trans(Tween.TRANS_SINE)
+	drop_pod_tween.tween_property(robot_mesh, "position", robot_mesh_starting_pos, 2).set_trans(Tween.TRANS_SINE)
+	drop_pod_tween.tween_property(drop_pod, "scale", Vector3(1.0, 1.0, 1.0), .5).set_trans(Tween.TRANS_SINE)
+	drop_pod_tween.tween_property(drop_pod, "scale", Vector3(0, 0, 0), .5).set_trans(Tween.TRANS_SINE)
 	
-	await get_tree().create_timer(15).timeout
+	await get_tree().create_timer(3).timeout
 	selection_sprite.show()
 	
 func _trigger_intro_sound():
 		pod_audio_player.play();
-		# Arrival is 2 sec
 		# Impact is 10 sec
 		# Pulse is 5.5 sec
-		# Leaving is 8.8 sec
 	

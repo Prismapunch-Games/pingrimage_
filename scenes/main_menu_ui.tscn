@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ccvgi2rujv5t8"]
 
 [ext_resource type="Script" uid="uid://cygtklhkppha5" path="res://code/main_menu_controller.gd" id="1_j5441"]
-[ext_resource type="Script" uid="uid://3l44b6ws6m4w" path="res://code/level_name_label.gd" id="1_wu84c"]
+[ext_resource type="Script" path="res://code/level_name_label.gd" id="1_wu84c"]
 [ext_resource type="PackedScene" uid="uid://csw0qp3opn14v" path="res://scenes/main_menu/level_select_button.tscn" id="2_4pl3l"]
 [ext_resource type="Script" uid="uid://c4jwgcpc7htac" path="res://code/level_select_panel.gd" id="2_towyk"]
 [ext_resource type="Texture2D" uid="uid://do0lhi6g58t1p" path="res://sprites/close.png" id="3_j5441"]
@@ -106,6 +106,7 @@ layout_mode = 2
 text = "Log Out"
 
 [node name="Level Select Panel" type="Panel" parent="Main Container" unique_id=1915845106]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -155,7 +156,6 @@ size_flags_vertical = 3
 
 [node name="Level Select Button" parent="Main Container/Level Select Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1131219015 instance=ExtResource("2_4pl3l")]
 layout_mode = 2
-color = Color(0, 1, 0, 1)
 
 [node name="Locked" parent="Main Container/Level Select Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Level Select Button" index="2" unique_id=1985618501]
 visible = false
@@ -298,10 +298,21 @@ texture_normal = ExtResource("3_j5441")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Main Container/Credits Panel" unique_id=984880489]
 layout_mode = 0
-offset_left = 112.0
-offset_top = 128.0
-offset_right = 384.0
-offset_bottom = 370.0
-text = "PRISMAPUNCH GAMES"
+offset_left = 72.0
+offset_top = 64.0
+offset_right = 440.0
+offset_bottom = 448.0
+bbcode_enabled = true
+text = "[center][b]PRISMAPUNCH GAMES presents[/b][/center]
+
+[center]PINGRIMAGE_[/center]
+
+[center][i]Created by[/i][/center]
+[center]Alex Dimitrijevic - Programming
+Alex Hartman - 3D Art
+Brooklyn DiPietrantonio - Programming
+Music by MOJA.A (Jeff Imam)[/center]
+
+[center][i]Part of Ludum Dare 59[/i][/center]"
 
 [editable path="Main Container/Level Select Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Level Select Button"]

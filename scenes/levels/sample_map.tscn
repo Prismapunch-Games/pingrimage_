@@ -36,3 +36,4 @@ projection = 1
 size = 25.0
 
 [node name="hand_parent" parent="." unique_id=1389968847 instance=ExtResource("6_uys4u")]
+visible = false
