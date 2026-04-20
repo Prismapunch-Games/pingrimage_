@@ -311,7 +311,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04940042, 0.16297877, 0.001
 [node name="DropPodMesh" parent="." unique_id=987113455 instance=ExtResource("5_e20l1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
 
-[node name="AudioStreamPlayer3DDropPod" type="AudioStreamPlayer3D" parent="." unique_id=225351292]
+[node name="AudioStreamPlayer3DDropPod" type="AudioStreamPlayer3D" parent="DropPodMesh" unique_id=225351292]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -50, 0)
 stream = SubResource("AudioStreamPlaylist_6skqc")
 volume_db = 5.0
 bus = &"SFX"

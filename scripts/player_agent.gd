@@ -24,7 +24,7 @@ extends CharacterBody3D
 
 # Audio
 @onready var audio_player : AudioStreamPlayer3D = $AudioStreamPlayer3DSteps
-@onready var pod_audio_player : AudioStreamPlayer3D = $AudioStreamPlayer3DDropPod
+@onready var pod_audio_player : AudioStreamPlayer3D = $DropPodMesh/AudioStreamPlayer3DDropPod
 
 func _ready() -> void:
 	player_manager = get_tree().current_scene.get_node(".")
