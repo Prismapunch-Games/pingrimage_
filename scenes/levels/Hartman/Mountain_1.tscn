@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://loie3hp3s18v"]
+
+[ext_resource type="PackedScene" uid="uid://sxr7jfr5c0ry" path="res://scenes/levels/sample_map.tscn" id="1_x654x"]
+[ext_resource type="PackedScene" uid="uid://cggh8lj64gh8n" path="res://scenes/tower_blue.tscn" id="2_1t0mw"]
+[ext_resource type="PackedScene" uid="uid://ovgdes8vifut" path="res://scenes/robot.tscn" id="2_pi3cs"]
+[ext_resource type="PackedScene" uid="uid://bkgjy3cwumysk" path="res://scenes/melted_robot.tscn" id="4_flnlm"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_pi3cs"]
+resource_local_to_scene = true
+vertices = PackedVector3Array(0.75075006, 3.2532501, -3.0030003, 1.5015001, 3.2532501, -1.001, 2.002, 3.2532501, -1.5015001, 3.2532501, 3.2532501, -4.5045004, 6.5065002, 3.2532501, -1.5015001, 6.75675, 3.2532501, -4.5045004, 15.515501, 3.2532501, -1.25125, 15.765751, 3.2532501, -4.7547503, 15.265251, 3.2532501, -5.5055003, 7.2572503, 3.2532501, -5.005, 8.75875, 3.2532501, -0.75075006, 0.5005, 3.2532501, -1.001, -0.5005, 3.2532501, -3.0030003, 0, 3.2532501, -0.25025, -2.002, 3.2532501, -4.25425, -4.5045004, 3.2532501, -3.2532501, -5.75575, 3.2532501, -2.002, 0, 3.2532501, 0.75075006, 1.5015001, 3.2532501, 9.009001, 1.7517501, 3.2532501, 10.760751, 3.75375, 3.2532501, 10.760751, 4.004, 3.2532501, 7.2572503, 3.5035002, 3.2532501, 2.7527502, 1.25125, 3.2532501, 2.5025, 0.5005, 3.2532501, 7.7577505, -5.75575, 3.2532501, 7.7577505, -12.012001, 3.2532501, -2.7527502, -12.262251, 3.2532501, -3.2532501, -13.763751, 3.2532501, -3.2532501, -17.5175, 3.2532501, 0, -17.26725, 3.2532501, 1.7517501, -15.265251, 3.2532501, 2.7527502, -9.259251, 3.2532501, -1.7517501, -11.2612505, 3.2532501, 8.75875, -7.7577505, 3.2532501, 8.75875, -7.5075, 3.2532501, 7.7577505, -12.762751, 3.2532501, 5.2552505, -2.7527502, 62.562504, -2.2522502, -2.2522502, 62.562504, -1.25125, -1.25125, 62.562504, -1.7517501, -1.7517501, 62.562504, -2.7527502, -7.7577505, 62.562504, -0.25025, -7.2572503, 62.562504, 0.5005, -6.2562504, 62.562504, 0, -6.75675, 62.562504, -0.75075006, -3.75375, 62.562504, 0.5005, -3.2532501, 62.562504, 1.5015001, -2.2522502, 62.562504, 1.001, -2.7527502, 62.562504, 0, 8.75875, 3.2532501, 8.5085, 9.009001, 3.2532501, 9.009001, 9.5095005, 3.2532501, 9.009001, 10.01, 3.2532501, 5.75575, 11.2612505, 3.2532501, 4.7547503, 15.015, 3.2532501, 4.5045004, 15.515501, 3.2532501, 2.7527502, 7.0070004, 3.2532501, 2.7527502, 7.2572503, 3.2532501, 8.5085, -5.75575, 62.562504, 3.5035002, -5.2552505, 62.562504, 4.5045004, -4.25425, 62.562504, 4.004, -4.7547503, 62.562504, 3.0030003, -8.75875, 62.562504, 6.5065002, -8.25825, 62.562504, 7.5075, -7.2572503, 62.562504, 7.0070004, -7.7577505, 62.562504, 6.0060005, -3.75375, 62.562504, 6.5065002, -3.2532501, 62.562504, 7.5075, -2.2522502, 62.562504, 7.0070004, -2.7527502, 62.562504, 6.0060005, 8.5085, 3.2532501, 10.01, 9.5095005, 3.2532501, 11.011001, 7.5075, 3.2532501, 10.26025, 7.5075, 3.2532501, 11.011001, 10.510501, 3.2532501, 12.012001, 6.2562504, 3.2532501, 12.262251, 1.7517501, 3.2532501, 14.014001, 11.5115, 3.2532501, 13.5135, 12.012001, 3.2532501, 12.012001, 15.515501, 3.2532501, 11.011001, 15.515501, 3.2532501, 8.5085, 13.26325, 3.2532501, 8.5085, 12.762751, 3.2532501, 11.5115, 13.763751, 3.2532501, 12.262251, 13.763751, 3.2532501, 12.762751, 4.25425, 3.2532501, 12.012001, -7.5075, 3.2532501, 10.26025, -10.01, 3.2532501, 12.262251, -2.002, 3.2532501, 13.763751, -2.2522502, 3.2532501, 11.2612505, -6.2562504, 3.2532501, 11.2612505, -8.5085, 3.2532501, 14.014001)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(0, 3, 2), PackedInt32Array(2, 3, 4), PackedInt32Array(4, 3, 5), PackedInt32Array(7, 6, 8), PackedInt32Array(8, 6, 10), PackedInt32Array(8, 10, 4), PackedInt32Array(8, 4, 9), PackedInt32Array(4, 5, 9), PackedInt32Array(0, 1, 11), PackedInt32Array(0, 11, 12), PackedInt32Array(12, 11, 13), PackedInt32Array(13, 17, 12), PackedInt32Array(12, 17, 14), PackedInt32Array(14, 17, 15), PackedInt32Array(15, 17, 16), PackedInt32Array(20, 19, 18), PackedInt32Array(18, 24, 20), PackedInt32Array(20, 24, 21), PackedInt32Array(21, 24, 22), PackedInt32Array(22, 24, 23), PackedInt32Array(23, 24, 17), PackedInt32Array(17, 24, 25), PackedInt32Array(17, 25, 16), PackedInt32Array(28, 27, 26), PackedInt32Array(30, 29, 31), PackedInt32Array(31, 29, 28), PackedInt32Array(31, 28, 26), PackedInt32Array(31, 26, 32), PackedInt32Array(34, 33, 35), PackedInt32Array(35, 33, 36), PackedInt32Array(35, 36, 25), PackedInt32Array(25, 36, 31), PackedInt32Array(25, 31, 32), PackedInt32Array(25, 32, 16), PackedInt32Array(40, 39, 37), PackedInt32Array(37, 39, 38), PackedInt32Array(44, 43, 41), PackedInt32Array(41, 43, 42), PackedInt32Array(48, 47, 45), PackedInt32Array(45, 47, 46), PackedInt32Array(50, 49, 51), PackedInt32Array(51, 49, 52), PackedInt32Array(54, 53, 55), PackedInt32Array(55, 53, 56), PackedInt32Array(49, 57, 52), PackedInt32Array(52, 57, 56), PackedInt32Array(52, 56, 53), PackedInt32Array(61, 60, 58), PackedInt32Array(58, 60, 59), PackedInt32Array(65, 64, 62), PackedInt32Array(62, 64, 63), PackedInt32Array(69, 68, 66), PackedInt32Array(66, 68, 67), PackedInt32Array(50, 51, 70), PackedInt32Array(70, 51, 71), PackedInt32Array(72, 70, 73), PackedInt32Array(73, 70, 71), PackedInt32Array(78, 77, 74), PackedInt32Array(74, 77, 75), PackedInt32Array(75, 77, 76), PackedInt32Array(83, 82, 79), PackedInt32Array(79, 82, 81), PackedInt32Array(79, 81, 80), PackedInt32Array(83, 84, 82), PackedInt32Array(82, 84, 78), PackedInt32Array(78, 84, 77), PackedInt32Array(20, 85, 19), PackedInt32Array(19, 85, 76), PackedInt32Array(71, 74, 73), PackedInt32Array(73, 74, 75), PackedInt32Array(75, 76, 85), PackedInt32Array(86, 87, 34), PackedInt32Array(34, 87, 33), PackedInt32Array(89, 88, 90), PackedInt32Array(90, 88, 91), PackedInt32Array(86, 90, 87), PackedInt32Array(87, 90, 91)]
+
+[node name="Tau Ceti Mountain I" unique_id=1276502586 instance=ExtResource("1_x654x")]
+difficulty = 2
+
+[node name="NavigationRegion3D" parent="." index="0" unique_id=1963598391]
+navigation_mesh = SubResource("NavigationMesh_pi3cs")
+
+[node name="Terrain3D" parent="NavigationRegion3D" index="0" unique_id=2063523170]
+data_directory = "res://maps/level_xxx_5"
+
+[node name="Robot" parent="NavigationRegion3D" index="1" unique_id=2051323718 instance=ExtResource("2_pi3cs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 4, 4)
+
+[node name="Robot2" parent="NavigationRegion3D" index="2" unique_id=1529112715 instance=ExtResource("2_pi3cs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4, 1)
+
+[node name="Robot7" parent="NavigationRegion3D" index="3" unique_id=288709015 instance=ExtResource("2_pi3cs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 4, 0)
+
+[node name="Robot3" parent="NavigationRegion3D" index="4" unique_id=476835547 instance=ExtResource("2_pi3cs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4, -2)
+
+[node name="Robot5" parent="NavigationRegion3D" index="5" unique_id=1561349464 instance=ExtResource("2_pi3cs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 4, 6)
+
+[node name="Robot8" parent="NavigationRegion3D" index="6" unique_id=597588682 instance=ExtResource("2_pi3cs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 6)
+
+[node name="Robot6" parent="NavigationRegion3D" index="7" unique_id=541527715 instance=ExtResource("2_pi3cs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 4, 6)
+
+[node name="Start Tower" parent="." index="1" unique_id=989064708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.821, 3, 3.3240004)
+
+[node name="Tower" parent="." index="2" unique_id=1059136487 instance=ExtResource("2_1t0mw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 3, 4)
+
+[node name="Tower2" parent="." index="3" unique_id=618307537 instance=ExtResource("2_1t0mw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 3, 12)
+
+[node name="Tower3" parent="." index="4" unique_id=1547821607 instance=ExtResource("2_1t0mw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 3, -4)
+
+[node name="End Tower" parent="." index="5" unique_id=477450545]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.04146, 3, 16.982464)
+visible = false
+recieve_only = false
+
+[node name="Melted Robot" parent="." index="7" unique_id=1549304419 instance=ExtResource("4_flnlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 3, 9)
+
+[node name="Melted Robot4" parent="." index="8" unique_id=257908632 instance=ExtResource("4_flnlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 3, 3)
+
+[node name="Melted Robot2" parent="." index="9" unique_id=1764376561 instance=ExtResource("4_flnlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 3)
+
+[node name="Melted Robot5" parent="." index="10" unique_id=2055549896 instance=ExtResource("4_flnlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 3, 4)
+
+[node name="Melted Robot3" parent="." index="11" unique_id=1761666807 instance=ExtResource("4_flnlm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 3, -3)

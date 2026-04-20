@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://dh3vj8s8jqbkk"]
+
+[ext_resource type="PackedScene" uid="uid://sxr7jfr5c0ry" path="res://scenes/levels/sample_map.tscn" id="1_txow2"]
+[ext_resource type="PackedScene" uid="uid://cggh8lj64gh8n" path="res://scenes/tower_blue.tscn" id="2_4t0wh"]
+[ext_resource type="PackedScene" uid="uid://ovgdes8vifut" path="res://scenes/robot.tscn" id="2_ury4r"]
+[ext_resource type="PackedScene" uid="uid://bkgjy3cwumysk" path="res://scenes/melted_robot.tscn" id="4_hqhf3"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_8gkj8"]
+resource_local_to_scene = true
+vertices = PackedVector3Array(20.02, 3.2532501, -4.7547503, 19.019001, 3.2532501, -6.2562504, 16.5165, 3.2532501, -7.7577505, 13.763751, 3.2532501, -8.008, 8.5085, 3.2532501, 17.26725, 11.76175, 3.2532501, 17.26725, 13.26325, 3.2532501, 16.76675, 18.018002, 3.2532501, 12.512501, 3.0030003, 3.2532501, 16.26625, -17.26725, 3.2532501, 11.5115, -16.016, 3.2532501, 15.265251, -14.514501, 3.2532501, 16.016, -9.259251, 3.2532501, 15.265251, -17.5175, 3.2532501, 6.75675, -18.768751, 3.2532501, 0, -18.768751, 3.2532501, 3.5035002, 12.012001, 3.2532501, -8.75875, 20.77075, 3.2532501, 6.0060005, 21.271252, 3.2532501, 2.2522502, 19.26925, 3.2532501, 10.510501, 21.271252, 3.2532501, -1.25125, -9.009001, 3.2532501, -10.26025, -15.265251, 3.2532501, -8.75875, -16.76675, 3.2532501, -6.5065002, -5.2552505, 3.2532501, -10.26025, -4.7547503, 60.5605, -6.2562504, -4.25425, 60.5605, -5.2552505, -3.2532501, 60.5605, -5.75575, -3.75375, 60.5605, -6.75675, -0.75075006, 60.5605, -6.2562504, -0.25025, 60.5605, -5.2552505, 0.5005, 60.5605, -5.75575, 0, 60.5605, -6.75675, 3.0030003, 60.5605, -6.2562504, 3.5035002, 60.5605, -5.2552505, 4.5045004, 60.5605, -5.75575, 4.004, 60.5605, -6.75675, -0.5005, 60.5605, -2.5025, 0.25025, 60.5605, -2.2522502, 0, 60.5605, -2.7527502, 3.2532501, 60.5605, -2.5025, 4.25425, 60.5605, -2.2522502, 4.004, 60.5605, -2.7527502, -0.25025, 60.810753, -1.25125, -0.25025, 60.810753, -0.75075006, 0, 60.810753, -0.75075006, 0, 60.810753, -1.25125, 3.5035002, 60.810753, -1.25125, 3.5035002, 60.810753, -0.75075006, 4.004, 60.810753, -0.75075006, 4.004, 60.810753, -1.25125, -0.5005, 60.5605, 0, -0.25025, 60.5605, 0.5005, 0.25025, 60.5605, 0.25025, 3.2532501, 60.5605, 0, 3.5035002, 60.5605, 0.5005, 4.25425, 60.5605, 0.25025)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 8), PackedInt32Array(6, 8, 7), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 9, 12), PackedInt32Array(12, 9, 13), PackedInt32Array(13, 15, 14), PackedInt32Array(3, 0, 16), PackedInt32Array(16, 0, 18), PackedInt32Array(16, 18, 17), PackedInt32Array(16, 17, 7), PackedInt32Array(17, 19, 7), PackedInt32Array(0, 20, 18), PackedInt32Array(22, 21, 23), PackedInt32Array(23, 21, 24), PackedInt32Array(23, 24, 14), PackedInt32Array(14, 24, 13), PackedInt32Array(12, 13, 8), PackedInt32Array(8, 13, 24), PackedInt32Array(8, 24, 16), PackedInt32Array(8, 16, 7), PackedInt32Array(28, 27, 25), PackedInt32Array(25, 27, 26), PackedInt32Array(32, 31, 29), PackedInt32Array(29, 31, 30), PackedInt32Array(36, 35, 33), PackedInt32Array(33, 35, 34), PackedInt32Array(37, 39, 38), PackedInt32Array(40, 42, 41), PackedInt32Array(46, 45, 43), PackedInt32Array(43, 45, 44), PackedInt32Array(50, 49, 47), PackedInt32Array(47, 49, 48), PackedInt32Array(53, 52, 51), PackedInt32Array(56, 55, 54)]
+
+[node name="Tau Ceti Quarry II" unique_id=1276502586 instance=ExtResource("1_txow2")]
+difficulty = 1
+
+[node name="NavigationRegion3D" parent="." index="0" unique_id=1963598391]
+navigation_mesh = SubResource("NavigationMesh_8gkj8")
+
+[node name="Terrain3D" parent="NavigationRegion3D" index="0" unique_id=2063523170]
+data_directory = "res://maps/level_xx_6"
+
+[node name="Robot" parent="NavigationRegion3D" index="1" unique_id=2051323718 instance=ExtResource("2_ury4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 4, 8)
+
+[node name="Robot2" parent="NavigationRegion3D" index="2" unique_id=755491960 instance=ExtResource("2_ury4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 1)
+
+[node name="Robot3" parent="NavigationRegion3D" index="3" unique_id=1869559197 instance=ExtResource("2_ury4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 4, 6)
+
+[node name="Robot4" parent="NavigationRegion3D" index="4" unique_id=1405477118 instance=ExtResource("2_ury4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 4, -3)
+
+[node name="Robot5" parent="NavigationRegion3D" index="5" unique_id=26611293 instance=ExtResource("2_ury4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4, -3)
+
+[node name="Robot6" parent="NavigationRegion3D" index="6" unique_id=426138576 instance=ExtResource("2_ury4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 4, 5)
+
+[node name="Robot7" parent="NavigationRegion3D" index="7" unique_id=1641051750 instance=ExtResource("2_ury4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+
+[node name="Robot8" parent="NavigationRegion3D" index="8" unique_id=114439975 instance=ExtResource("2_ury4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 4, 2)
+
+[node name="Tower" parent="." index="1" unique_id=989064708 instance=ExtResource("2_4t0wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 3, 4)
+
+[node name="Tower2" parent="." index="2" unique_id=2053477160 instance=ExtResource("2_4t0wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 3, -4)
+
+[node name="Tower3" parent="." index="3" unique_id=2006751398 instance=ExtResource("2_4t0wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, 3, 12)
+
+[node name="Start Tower" parent="." index="4" unique_id=989064708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.821, 3, 3.3240004)
+
+[node name="End Tower" parent="." index="5" unique_id=477450545]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.041454, 3, 9.982465)
+visible = false
+recieve_only = false
+
+[node name="Melted Robot" parent="." index="7" unique_id=1549304419 instance=ExtResource("4_hqhf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 3, 4)
+
+[node name="Melted Robot2" parent="." index="8" unique_id=291948603 instance=ExtResource("4_hqhf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 3, 4)
+
+[node name="Melted Robot5" parent="." index="9" unique_id=286385570 instance=ExtResource("4_hqhf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 3, -4)
+
+[node name="Melted Robot3" parent="." index="10" unique_id=1347539809 instance=ExtResource("4_hqhf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 3, -5)
+
+[node name="Melted Robot4" parent="." index="11" unique_id=2124789290 instance=ExtResource("4_hqhf3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 3, 12)

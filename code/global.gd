@@ -85,9 +85,13 @@ signal on_level_changed(level_name: String)
 
 var levels: Array[PackedScene] = [
 	preload("res://scenes/levels/tutorial_simulation_i.tscn"),
+	preload("res://scenes/levels/Hartman/Canyon_1.tscn"),
+	preload("res://scenes/levels/Hartman/Canyon_2.tscn"),
+	preload("res://scenes/levels/Hartman/Canyon_3.tscn"),
 	preload("res://scenes/levels/tau_ceti_steppes_i.tscn"),
-	preload("res://scenes/levels/Hartman/level_x.tscn"),
-	preload("res://scenes/levels/Hartman/level_x_2.tscn"),
+	preload("res://scenes/levels/Hartman/Quarry_1.tscn"),
+	preload("res://scenes/levels/Hartman/Quarry_2.tscn"),
+	preload("res://scenes/levels/Hartman/Mountain_1.tscn"),
 	]
 	
 var unlocked_levels: Array[String] = ["Tutorial Simulation I", "Tau Ceti Steppes I"]
