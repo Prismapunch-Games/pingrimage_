@@ -5,6 +5,7 @@
 [ext_resource type="Terrain3DAssets" uid="uid://cti34ixkuwwsb" path="res://data/terrain3d/new_terrain_3d_assets.tres" id="2_giqpj"]
 [ext_resource type="PackedScene" uid="uid://c6bbcg7a8sdto" path="res://scenes/tower.tscn" id="5_6ysvs"]
 [ext_resource type="PackedScene" uid="uid://ddmsvo27db5jo" path="res://scenes/tower_end.tscn" id="6_4xn6t"]
+[ext_resource type="PackedScene" uid="uid://cm6y2574ptglm" path="res://scenes/hand.tscn" id="6_uys4u"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_e5uuo"]
 resource_local_to_scene = true
@@ -33,3 +34,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9585443, 3, 8.982465)
 transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 25, 25)
 projection = 1
 size = 25.0
+
+[node name="hand_parent" parent="." unique_id=1389968847 instance=ExtResource("6_uys4u")]
