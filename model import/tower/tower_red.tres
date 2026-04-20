@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dchd05hmrsg0"]
+
+[ext_resource type="Texture2D" uid="uid://b6lpc33ijr142" path="res://model import/tower/tower.png" id="1_y1gqx"]
+[ext_resource type="Texture2D" uid="uid://w2eshn7qqe8o" path="res://model import/tower/tower_r.png" id="2_f3ill"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_color = Color(0.71648276, 0.68711627, 0.40222892, 1)
+albedo_texture = ExtResource("1_y1gqx")
+roughness_texture = ExtResource("2_f3ill")
+texture_filter = 0

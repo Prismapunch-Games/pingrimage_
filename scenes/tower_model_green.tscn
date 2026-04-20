@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://t5ycqbmjbwx8"]
+
+[ext_resource type="PackedScene" uid="uid://bmnic72wgmhg1" path="res://model import/tower/tower.glb" id="1_u02br"]
+[ext_resource type="Texture2D" uid="uid://b3w48xuwuj135" path="res://model import/tower/tower_green.png" id="2_u02br"]
+[ext_resource type="Texture2D" uid="uid://w2eshn7qqe8o" path="res://model import/tower/tower_r.png" id="3_ivpin"]
+[ext_resource type="Texture2D" uid="uid://bac0dgimr1fwq" path="res://model import/tower/tower_light.png" id="4_gmf7u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kghw1"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_color = Color(0.79, 0.77025, 0.59250003, 1)
+albedo_texture = ExtResource("2_u02br")
+roughness_texture = ExtResource("3_ivpin")
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lx17q"]
+albedo_texture = ExtResource("4_gmf7u")
+emission_enabled = true
+emission = Color(0.6695021, 0.99999994, 0.33510733, 1)
+texture_filter = 0
+
+[node name="tower" unique_id=1394724850 instance=ExtResource("1_u02br")]
+
+[node name="tower" parent="." index="0" unique_id=1494175074]
+surface_material_override/0 = SubResource("StandardMaterial3D_kghw1")
+surface_material_override/1 = SubResource("StandardMaterial3D_lx17q")
