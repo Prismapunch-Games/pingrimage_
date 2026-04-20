@@ -10,6 +10,7 @@ vertices = PackedVector3Array(-8.75875, 3.2532501, -4.5045004, -7.5075, 3.253250
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(7, 4, 9), PackedInt32Array(7, 9, 8), PackedInt32Array(3, 0, 10), PackedInt32Array(10, 0, 11), PackedInt32Array(11, 0, 12), PackedInt32Array(13, 5, 14), PackedInt32Array(14, 5, 15), PackedInt32Array(15, 5, 6), PackedInt32Array(16, 18, 17), PackedInt32Array(11, 12, 19), PackedInt32Array(19, 12, 20), PackedInt32Array(20, 12, 21), PackedInt32Array(22, 17, 23), PackedInt32Array(23, 17, 18), PackedInt32Array(17, 22, 24), PackedInt32Array(24, 22, 25), PackedInt32Array(16, 9, 18), PackedInt32Array(18, 9, 4), PackedInt32Array(20, 21, 26), PackedInt32Array(24, 25, 26), PackedInt32Array(26, 25, 20)]
 
 [node name="Tau Ceti Steppes I" unique_id=1276502586 instance=ExtResource("1_a4qtq")]
+difficulty = 1
 
 [node name="NavigationRegion3D" parent="." index="0" unique_id=1963598391]
 navigation_mesh = SubResource("NavigationMesh_a4qtq")

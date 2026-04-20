@@ -100,6 +100,7 @@ func load_level(loading_scene: PackedScene):
 		await current_level_node.tree_exited
 	var new_level: Node = loading_scene.instantiate()
 	get_node("/root/World").call_deferred("add_child", new_level)
+	await new_level.ready
 	on_level_start.emit()
 	
 func load_next_level():
@@ -117,3 +118,15 @@ var can_select_robots: bool = true
 
 signal on_set_tutorial_text(new_text: String)
 signal on_tutorial_text_closed
+
+enum LEVEL_DIFFICULTY {
+	EASY,
+	MEDIUM,
+	HARD
+}
+
+var level_difficulties: Dictionary[LEVEL_DIFFICULTY, AudioStream] = {
+	LEVEL_DIFFICULTY.EASY: preload("res://sounds/music/LudumDareEasy.mp3"),
+	LEVEL_DIFFICULTY.MEDIUM: preload("res://sounds/music/LudumDareMedium.mp3"),
+	LEVEL_DIFFICULTY.HARD: preload("res://sounds/music/LudumDareMedium.mp3"),
+}

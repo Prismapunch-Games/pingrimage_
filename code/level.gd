@@ -1,5 +1,7 @@
 extends Node3D
 
+@export var difficulty: Global.LEVEL_DIFFICULTY = Global.LEVEL_DIFFICULTY.EASY
+
 func _ready():
 	Global.current_level_node = self
 	Global.on_level_changed.emit(name)
