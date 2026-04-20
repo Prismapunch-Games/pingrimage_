@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c6bbcg7a8sdto" path="res://scenes/tower.tscn" id="1_vdhx1"]
 [ext_resource type="Texture2D" uid="uid://bac0dgimr1fwq" path="res://model import/tower/tower_light.png" id="2_k0nna"]
+[ext_resource type="PackedScene" uid="uid://ckvt0sdfshxmt" path="res://scenes/tower_model.tscn" id="3_k0nna"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fmik8"]
 albedo_texture = ExtResource("2_k0nna")
@@ -18,7 +19,13 @@ modulate = Color(16.184208, 0, 0, 0.5019608)
 [node name="Inner Flare" parent="Top Flare" index="0" unique_id=1804982780]
 modulate = Color(16.184208, 0, 0, 0.5019608)
 
-[node name="tower" parent="tower" parent_id_path=PackedInt32Array(1394724850) index="0" unique_id=131834097]
+[node name="tower" parent="." index="1" unique_id=1394724850]
+visible = false
+
+[node name="tower" parent="tower" index="0" unique_id=532921238]
 surface_material_override/1 = SubResource("StandardMaterial3D_fmik8")
+
+[node name="tower2" parent="." index="3" unique_id=910395136 instance=ExtResource("3_k0nna")]
+transform = Transform3D(3.695518, 0, 1.5307338, 0, 4, 0, -1.5307338, 0, 3.695518, 0, 0, 0)
 
 [editable path="tower"]

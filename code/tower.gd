@@ -22,7 +22,7 @@ func _on_recieved(_body: Node):
 	if(_body is Area3D):
 		if(_body.get_parent() is Transciever):
 			if(_body.get_parent().last_signal_id == transciever.last_signal_id):
-				return
+				return false
 			transciever.play_ping_sound(6)
 			Global.level_won = true
 			flare.show()

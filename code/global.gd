@@ -130,3 +130,6 @@ var level_difficulties: Dictionary[LEVEL_DIFFICULTY, AudioStream] = {
 	LEVEL_DIFFICULTY.MEDIUM: preload("res://sounds/music/LudumDareMedium.mp3"),
 	LEVEL_DIFFICULTY.HARD: preload("res://sounds/music/LudumDareMedium.mp3"),
 }
+
+var blue_towers_activated: int = 0
+var blue_towers_in_level: int = 0
