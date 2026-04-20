@@ -1,9 +1,10 @@
 [gd_scene format=4 uid="uid://bkgjy3cwumysk"]
 
-[ext_resource type="Script" uid="uid://htgr3h6ghb7q" path="res://code/melted_robot.gd" id="1_8vfty"]
+[ext_resource type="Script" path="res://code/melted_robot.gd" id="1_8vfty"]
 [ext_resource type="Material" uid="uid://l1ke3hw6bi7t" path="res://materials/robot_material.tres" id="2_c560v"]
 [ext_resource type="PackedScene" uid="uid://c6ksfcq5jycoc" path="res://scenes/transciever.tscn" id="3_c560v"]
 [ext_resource type="Material" uid="uid://uhiyy738qute" path="res://scenes/robot_face.tres" id="3_nqb25"]
+[ext_resource type="Texture2D" uid="uid://dxnhvjmk4k8x0" path="res://model import/robot/melted_oil.png" id="4_nqb25"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mgolq"]
 
@@ -227,6 +228,46 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_huopn")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t7oxt"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_aoixx"]
+_surfaces = [{
+"aabb": AABB(-0.15735286, -0.0025167707, -0.17649902, 0.33563316, 0.0050177313, 0.33566782),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("//8AAMOBAAAAAP//O34AAMGBIFsAAAAAPX7epP//AAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jc4ds"]
+resource_name = "robot_melted_oil"
+_surfaces = [{
+"aabb": AABB(-0.15735286, -0.0025167707, -0.17649902, 0.33563316, 0.0050177313, 0.33566782),
+"attribute_data": PackedByteArray("BgAGAPj/+P/4/wYABgD4/w=="),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"material": SubResource("StandardMaterial3D_t7oxt"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("//8AAMOBExcAAP//O34TF8GBIFsAABMXPX7epP//Exe7ygYWu8oGFrvKBha7ygYW")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_aoixx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_228cm"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("4_nqb25")
+roughness = 0.06
+texture_filter = 0
+
 [sub_resource type="Animation" id="Animation_c560v"]
 length = 0.001
 tracks/0/type = "value"
@@ -324,6 +365,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03656706, 0.09487177, 0.016
 mesh = SubResource("ArrayMesh_sar7w")
 surface_material_override/0 = ExtResource("2_c560v")
 surface_material_override/1 = ExtResource("3_nqb25")
+
+[node name="oil" type="MeshInstance3D" parent="robot_melted" unique_id=532557672]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.0018384436, 0.00053980947, -0.0062059304)
+mesh = SubResource("ArrayMesh_jc4ds")
+surface_material_override/0 = SubResource("StandardMaterial3D_228cm")
 
 [node name="Transciever" parent="." unique_id=979394788 instance=ExtResource("3_c560v")]
 

@@ -3,24 +3,36 @@
 [ext_resource type="PackedScene" uid="uid://ga8ef6fel3o6" path="res://model import/robot/robot_melted.glb" id="1_8aj3r"]
 [ext_resource type="Material" uid="uid://l1ke3hw6bi7t" path="res://materials/robot_material.tres" id="2_usjuk"]
 [ext_resource type="Material" uid="uid://uhiyy738qute" path="res://scenes/robot_face.tres" id="3_usjuk"]
+[ext_resource type="Texture2D" uid="uid://dxnhvjmk4k8x0" path="res://model import/robot/melted_oil.png" id="4_nlmn2"]
 
-[node name="robot_melted" unique_id=288747680 instance=ExtResource("1_8aj3r")]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ciuxw"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("4_nlmn2")
+roughness = 0.06
+texture_filter = 0
 
-[node name="Body_002" parent="." index="0" unique_id=1368497893]
+[node name="robot_melted" unique_id=339352186 instance=ExtResource("1_8aj3r")]
+
+[node name="Body_002" parent="." index="0" unique_id=730507632]
 surface_material_override/0 = ExtResource("2_usjuk")
 
-[node name="Arms_002" parent="." index="1" unique_id=2109038757]
+[node name="Arms_002" parent="." index="1" unique_id=1444909884]
 surface_material_override/0 = ExtResource("2_usjuk")
 
-[node name="neck_002" parent="." index="2" unique_id=176201215]
+[node name="neck_002" parent="." index="2" unique_id=1130642339]
 surface_material_override/0 = ExtResource("2_usjuk")
 
-[node name="Antenae_1_002" parent="." index="3" unique_id=1283688544]
+[node name="Antenae_1_002" parent="." index="3" unique_id=1746381766]
 surface_material_override/0 = ExtResource("2_usjuk")
 
-[node name="Arms_004" parent="." index="4" unique_id=1526502902]
+[node name="Arms_004" parent="." index="4" unique_id=1237748522]
 surface_material_override/0 = ExtResource("2_usjuk")
 
-[node name="HEAD_002" parent="." index="5" unique_id=178886622]
+[node name="HEAD_002" parent="." index="5" unique_id=17340871]
 surface_material_override/0 = ExtResource("2_usjuk")
 surface_material_override/1 = ExtResource("3_usjuk")
+
+[node name="oil" parent="." index="6" unique_id=922651630]
+surface_material_override/0 = SubResource("StandardMaterial3D_ciuxw")
