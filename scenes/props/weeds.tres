@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bhu1g7txbmopt"]
+
+[ext_resource type="Texture2D" uid="uid://ctmxsatger7b1" path="res://model import/fauna/weeds.png" id="1_hyv1h"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_color = Color(0.69328284, 0.63272053, 0.98592156, 1)
+albedo_texture = ExtResource("1_hyv1h")
+texture_filter = 0

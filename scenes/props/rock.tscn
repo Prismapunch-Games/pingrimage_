@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dunkv17nqbqll"]
+
+[ext_resource type="PackedScene" uid="uid://bruxi1ywr17lt" path="res://model import/fauna/rock.glb" id="1_1i8qa"]
+[ext_resource type="Material" uid="uid://3kso1udt23y3" path="res://scenes/props/pumice.tres" id="2_1i8qa"]
+
+[node name="rock" unique_id=801409714 instance=ExtResource("1_1i8qa")]
+
+[node name="rock" parent="." index="0" unique_id=748552008]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_1i8qa")

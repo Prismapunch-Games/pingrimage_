@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cympwiiymfe21"]
+
+[ext_resource type="Texture2D" uid="uid://cpk3i1isnc1fe" path="res://model import/fauna/strange_tree.png" id="1_fs8x4"]
+
+[resource]
+albedo_color = Color(0.5723915, 0.61057836, 0.99960655, 1)
+albedo_texture = ExtResource("1_fs8x4")
+texture_filter = 0

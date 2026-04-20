@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c6smli6knh5t5"]
+
+[ext_resource type="PackedScene" uid="uid://cskbssq4ocvoo" path="res://model import/fauna/flower.glb" id="1_kejma"]
+[ext_resource type="Material" uid="uid://cympwiiymfe21" path="res://scenes/props/tree.tres" id="2_7jkvu"]
+[ext_resource type="Material" uid="uid://cf3q5y168cjeg" path="res://scenes/props/flowers.tres" id="3_pdugv"]
+
+[node name="flower" unique_id=1307083659 instance=ExtResource("1_kejma")]
+
+[node name="flower" parent="." index="0" unique_id=430510572]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
+surface_material_override/0 = ExtResource("2_7jkvu")
+surface_material_override/1 = ExtResource("3_pdugv")

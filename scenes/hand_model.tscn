@@ -153,7 +153,6 @@ _data = {
 [node name="hand2" unique_id=777659706 instance=ExtResource("1_mu2yt")]
 
 [node name="hand" parent="." index="0" unique_id=503512637]
-visible = false
 surface_material_override/0 = ExtResource("2_mu2yt")
 surface_material_override/1 = ExtResource("3_2t78x")
 

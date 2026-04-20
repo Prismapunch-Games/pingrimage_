@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cmg6yt8t0k33v"]
+
+[ext_resource type="PackedScene" uid="uid://kxmhq0k1e4na" path="res://model import/fauna/tree.glb" id="1_7ot8u"]
+[ext_resource type="Material" uid="uid://cympwiiymfe21" path="res://scenes/props/tree.tres" id="2_njeto"]
+
+[node name="tree" unique_id=2082211184 instance=ExtResource("1_7ot8u")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
+
+[node name="tree" parent="." index="0" unique_id=221665361]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0010965765, 0)
+surface_material_override/0 = ExtResource("2_njeto")
