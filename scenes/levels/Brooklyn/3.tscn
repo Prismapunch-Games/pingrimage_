@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://csowt5cjmxn70"]
 
 [ext_resource type="PackedScene" uid="uid://sxr7jfr5c0ry" path="res://scenes/levels/sample_map.tscn" id="1_60bqk"]
+[ext_resource type="PackedScene" uid="uid://ovgdes8vifut" path="res://scenes/robot.tscn" id="2_ioo5w"]
 
-[sub_resource type="NavigationMesh" id="NavigationMesh_ioo5w"]
+[sub_resource type="NavigationMesh" id="NavigationMesh_60bqk"]
 resource_local_to_scene = true
 
 [node name="3" unique_id=1276502586 instance=ExtResource("1_60bqk")]
 
 [node name="NavigationRegion3D" parent="." index="0" unique_id=1963598391]
-navigation_mesh = SubResource("NavigationMesh_ioo5w")
+navigation_mesh = SubResource("NavigationMesh_60bqk")
 
 [node name="Terrain3D" parent="NavigationRegion3D" index="0" unique_id=2063523170]
 data_directory = "res://scenes/levels/Brooklyn/Data/3_Terrain"
@@ -23,3 +24,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.751221, 3, 0.36070347)
 transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 2.9585443, 28, 33.982464)
 projection = 1
 size = 25.0
+
+[node name="Robot" parent="." index="4" unique_id=2051323718 instance=ExtResource("2_ioo5w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4930563, 3.9415503, 2.2686586)
+
+[node name="Robot2" parent="." index="5" unique_id=909748032 instance=ExtResource("2_ioo5w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.177596, 3.9415503, 2.7314186)
+
+[node name="Robot3" parent="." index="6" unique_id=2077476690 instance=ExtResource("2_ioo5w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.898442, 3.9415503, 10.89541)
+
+[node name="Robot4" parent="." index="7" unique_id=1009714488 instance=ExtResource("2_ioo5w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.034436, 3.9415503, 20.339308)
+
+[node name="Robot5" parent="." index="8" unique_id=1914456460 instance=ExtResource("2_ioo5w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.217802, 3.9415503, 20.011848)
+
+[node name="Robot6" parent="." index="9" unique_id=1551766409 instance=ExtResource("2_ioo5w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.265583, 3.9415503, 10.879702)
+
+[node name="Robot7" parent="." index="10" unique_id=248829914 instance=ExtResource("2_ioo5w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.278055, 3.9415503, 17.493935)
+
+[node name="Robot8" parent="." index="11" unique_id=519071481 instance=ExtResource("2_ioo5w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.949217, 3.9415503, 2.3530912)
