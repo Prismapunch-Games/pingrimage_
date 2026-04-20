@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://i07roea6jxwh" path="res://sounds/sfx/steps/1.ogg" id="2_r08md"]
 [ext_resource type="AudioStream" uid="uid://cc1vyvxcb1vxb" path="res://sounds/sfx/steps/2.ogg" id="3_tawmf"]
 [ext_resource type="PackedScene" uid="uid://xbs0yadhgir3" path="res://scenes/robot_model.tscn" id="4_e2fac"]
+[ext_resource type="PackedScene" uid="uid://bc2d7clsrf7us" path="res://model import/robot/robot_2.glb" id="4_r08md"]
 [ext_resource type="PackedScene" uid="uid://bschleh0gt8mj" path="res://scenes/drop_pod_model.tscn" id="5_hvodg"]
 [ext_resource type="PackedScene" uid="uid://c6ksfcq5jycoc" path="res://scenes/transciever.tscn" id="6_v11ug"]
 [ext_resource type="Texture2D" uid="uid://bp2i0j5gyqsxf" path="res://sprites/circle.png" id="7_4s2op"]
@@ -267,10 +268,11 @@ states/walking/node = SubResource("AnimationNodeBlendSpace1D_ujkns")
 states/walking/position = Vector2(619, 75)
 transitions = ["walking", "emit", SubResource("AnimationNodeStateMachineTransition_b4ksi"), "emit", "walking", SubResource("AnimationNodeStateMachineTransition_pw6bu"), "Start", "walking", SubResource("AnimationNodeStateMachineTransition_q5kvo")]
 
-[node name="Robot" type="CharacterBody3D" unique_id=2051323718]
+[node name="Robot" type="CharacterBody3D" unique_id=2051323718 node_paths=PackedStringArray("robot_mesh")]
 script = ExtResource("1_1u0y6")
 selection_sprite_active = Color(0, 1, 0, 1)
 selection_sprite_idle = Color(1, 0, 0, 1)
+robot_mesh = NodePath("robot_2")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=2115972102]
 path_desired_distance = 0.5
@@ -282,8 +284,12 @@ stream = SubResource("AudioStreamRandomizer_ujkns")
 volume_db = 5.0
 bus = &"SFX"
 
+[node name="robot_2" parent="." unique_id=430217194 instance=ExtResource("4_r08md")]
+transform = Transform3D(-3.496911e-07, 0, -8, 0, 8, 0, 8, 0, -3.496911e-07, 0, -1, -0.2898206)
+
 [node name="RobotMesh" parent="." unique_id=2109731548 instance=ExtResource("4_e2fac")]
 transform = Transform3D(-3.496911e-07, 0, -8, 0, 8, 0, 8, 0, -3.496911e-07, 0, -0.9998339, -0.2890103)
+visible = false
 
 [node name="Arms" parent="RobotMesh" index="1" unique_id=1234253730]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0009074658, 0.114906, 0.012114415)
@@ -326,4 +332,5 @@ texture = ExtResource("7_4s2op")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 
+[editable path="robot_2"]
 [editable path="RobotMesh"]

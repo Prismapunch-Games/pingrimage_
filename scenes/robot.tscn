@@ -267,10 +267,11 @@ states/walking/node = SubResource("AnimationNodeBlendSpace1D_ujkns")
 states/walking/position = Vector2(619, 75)
 transitions = ["walking", "emit", SubResource("AnimationNodeStateMachineTransition_b4ksi"), "emit", "walking", SubResource("AnimationNodeStateMachineTransition_pw6bu"), "Start", "walking", SubResource("AnimationNodeStateMachineTransition_q5kvo")]
 
-[node name="Robot" type="CharacterBody3D" unique_id=2051323718]
+[node name="Robot" type="CharacterBody3D" unique_id=2051323718 node_paths=PackedStringArray("robot_mesh")]
 script = ExtResource("1_8mo4m")
 selection_sprite_active = Color(0, 1, 0, 1)
 selection_sprite_idle = Color(1, 0, 0, 1)
+robot_mesh = NodePath("RobotMesh")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=2115972102]
 path_desired_distance = 0.5

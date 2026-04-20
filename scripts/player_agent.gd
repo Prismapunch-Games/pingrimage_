@@ -2,6 +2,7 @@ class_name PlayerAgent
 extends CharacterBody3D
 
 @export var movement_speed: float = 5.0
+@export var is_femmebot : bool = false
 
 # Selection Ring Variables
 @onready var selection_sprite : Sprite3D = $Sprite3D
@@ -18,7 +19,7 @@ extends CharacterBody3D
 # Intro Sequence
 @onready var drop_pod : Node3D = $DropPodMesh
 @onready var drop_pod_destination : Node3D = $DropPodDestination
-@onready var robot_mesh : Node3D = $RobotMesh
+@export var robot_mesh : Node3D
 
 @onready var drop_pod_tween : Tween
 
