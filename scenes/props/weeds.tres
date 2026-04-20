@@ -7,6 +7,6 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 cull_mode = 2
-albedo_color = Color(0.69328284, 0.63272053, 0.98592156, 1)
+albedo_color = Color(0.39036128, 0.3870605, 0.97063607, 1)
 albedo_texture = ExtResource("1_hyv1h")
 texture_filter = 0

@@ -3,6 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://biwjvvb7epo7d" path="res://model import/fauna/flowers.png" id="1_qm3va"]
 
 [resource]
-albedo_color = Color(0.31320608, 0.26465055, 0.7968048, 1)
+albedo_color = Color(0.4067292, 0.4410246, 0.93623024, 1)
 albedo_texture = ExtResource("1_qm3va")
 texture_filter = 0

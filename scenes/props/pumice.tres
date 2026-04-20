@@ -3,6 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://dokt4vrnqanf8" path="res://model import/fauna/pumice.png" id="1_y7ytu"]
 
 [resource]
-albedo_color = Color(0.60542464, 0.62392217, 0.98600346, 1)
+albedo_color = Color(0.4212759, 0.31051412, 0.9045716, 1)
 albedo_texture = ExtResource("1_y7ytu")
 texture_filter = 0

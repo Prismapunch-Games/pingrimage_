@@ -6,6 +6,6 @@
 [node name="weeds" unique_id=856475105 instance=ExtResource("1_ufw8b")]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
 
-[node name="weeds" parent="." index="0" unique_id=1355851546]
+[node name="weeds" parent="." index="0" unique_id=1936893623]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
 surface_material_override/0 = ExtResource("2_ufw8b")
