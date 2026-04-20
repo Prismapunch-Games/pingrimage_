@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Project Jewels"
-run/main_scene="uid://cgdtbf0y4wr31"
+run/main_scene="uid://dh0obbejb07bb"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/image="uid://b0j5dxtf24i14"
 config/icon="res://icon.svg"

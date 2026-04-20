@@ -27,7 +27,7 @@ extends CharacterBody3D
 @onready var pod_audio_player : AudioStreamPlayer3D = $DropPodMesh/AudioStreamPlayer3DDropPod
 
 func _ready() -> void:
-	player_manager = get_tree().current_scene.get_node(".")
+	player_manager = get_tree().root.get_node("World")
 	add_to_group("player agent robot")
 	transciever.reciever.area_entered.connect(_on_recieved)
 	_trigger_intro_sequence()
