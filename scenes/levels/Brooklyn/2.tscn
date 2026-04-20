@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://biu83pni33ll2"]
+
+[ext_resource type="PackedScene" uid="uid://sxr7jfr5c0ry" path="res://scenes/levels/sample_map.tscn" id="1_eih0b"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_bseln"]
+resource_local_to_scene = true
+
+[node name="2" unique_id=1276502586 instance=ExtResource("1_eih0b")]
+
+[node name="NavigationRegion3D" parent="." index="0" unique_id=1963598391]
+navigation_mesh = SubResource("NavigationMesh_bseln")
+
+[node name="Terrain3D" parent="NavigationRegion3D" index="0" unique_id=2063523170]
+data_directory = "res://scenes/levels/Brooklyn/Data/2_Terrain"
+
+[node name="Start Tower" parent="." index="1" unique_id=989064708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.06179, 3, 24.179066)
+
+[node name="End Tower" parent="." index="2" unique_id=477450545]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.315243, 3, 0.8388376)
+
+[node name="Camera3D" type="Camera3D" parent="." index="3" unique_id=1126713655]
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 2.9585443, 28, 33.982464)
+projection = 1
+size = 25.0
