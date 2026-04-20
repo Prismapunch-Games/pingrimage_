@@ -20,6 +20,7 @@ stream_0/stream = ExtResource("2_r08md")
 stream_1/stream = ExtResource("3_tawmf")
 
 [sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_oog6m"]
+loop = false
 stream_count = 4
 stream_0 = ExtResource("6_hvodg")
 stream_1 = ExtResource("7_v11ug")
