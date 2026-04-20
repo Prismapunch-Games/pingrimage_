@@ -3,13 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://sxr7jfr5c0ry" path="res://scenes/levels/sample_map.tscn" id="1_60bqk"]
 [ext_resource type="PackedScene" uid="uid://ovgdes8vifut" path="res://scenes/robot.tscn" id="2_ioo5w"]
 
-[sub_resource type="NavigationMesh" id="NavigationMesh_60bqk"]
+[sub_resource type="NavigationMesh" id="NavigationMesh_ioo5w"]
 resource_local_to_scene = true
 
 [node name="3" unique_id=1276502586 instance=ExtResource("1_60bqk")]
 
 [node name="NavigationRegion3D" parent="." index="0" unique_id=1963598391]
-navigation_mesh = SubResource("NavigationMesh_60bqk")
+navigation_mesh = SubResource("NavigationMesh_ioo5w")
 
 [node name="Terrain3D" parent="NavigationRegion3D" index="0" unique_id=2063523170]
 data_directory = "res://scenes/levels/Brooklyn/Data/3_Terrain"
@@ -19,11 +19,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.689384, 3, 5.5984545)
 
 [node name="End Tower" parent="." index="2" unique_id=477450545]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.751221, 3, 0.36070347)
-
-[node name="Camera3D" type="Camera3D" parent="." index="3" unique_id=1324904059]
-transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 2.9585443, 28, 33.982464)
-projection = 1
-size = 25.0
 
 [node name="Robot" parent="." index="4" unique_id=2051323718 instance=ExtResource("2_ioo5w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.4930563, 3.9415503, 2.2686586)

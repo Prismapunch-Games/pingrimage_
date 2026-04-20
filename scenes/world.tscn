@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dhwiugf50sfx8" path="res://scripts/player_manager.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://cdlrn7u6hpsey" path="res://scenes/ui.tscn" id="2_qfnet"]
 [ext_resource type="AudioStream" uid="uid://di6lsiryqhay" path="res://sounds/music/LudumDareEasy.mp3" id="3_4mrxx"]
-[ext_resource type="Script" uid="uid://de43y8mxdxsuq" path="res://code/music_handler.gd" id="4_71j4m"]
+[ext_resource type="Script" path="res://code/music_handler.gd" id="4_71j4m"]
 [ext_resource type="PackedScene" uid="uid://sscain25pgqy" path="res://scenes/levels/tutorial_simulation_i.tscn" id="4_k0juu"]
 
 [sub_resource type="Environment" id="Environment_e5uuo"]
@@ -14,11 +14,6 @@ background_color = Color(1, 1, 1, 1)
 script = ExtResource("1_4wyf3")
 
 [node name="UI" parent="." unique_id=1278659496 instance=ExtResource("2_qfnet")]
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1560967394]
-transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 25, 25)
-projection = 1
-size = 25.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1087984057]
 environment = SubResource("Environment_e5uuo")

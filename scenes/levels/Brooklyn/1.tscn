@@ -22,11 +22,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.074644, 3, 1.2313261)
 [node name="End Tower" parent="." index="2" unique_id=477450545]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.921953, 3, 23.315067)
 
-[node name="Camera3D" type="Camera3D" parent="." index="3" unique_id=860653632]
-transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 2.9585443, 28, 33.982464)
-projection = 1
-size = 25.0
-
 [node name="Robot" parent="." index="4" unique_id=2051323718 instance=ExtResource("2_3ld0a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.345987, 4, 6.9820614)
 

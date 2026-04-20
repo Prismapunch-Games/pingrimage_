@@ -28,3 +28,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.821, 3, -1.6759996)
 
 [node name="End Tower" parent="." unique_id=477450545 instance=ExtResource("6_4xn6t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9585443, 3, 8.982465)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=40187549]
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, 0, 25, 25)
+projection = 1
+size = 25.0
