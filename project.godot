@@ -13,7 +13,7 @@ config_version=5
 config/name="Project Jewels"
 run/main_scene="uid://dh0obbejb07bb"
 config/features=PackedStringArray("4.6", "Forward Plus")
-boot_splash/image="uid://rp1lc5fi20wo"
+boot_splash/image="uid://dqe2nj4e8l82x"
 config/icon="res://icon.svg"
 
 [audio]
