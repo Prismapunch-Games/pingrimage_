@@ -284,7 +284,6 @@ bus = &"SFX"
 
 [node name="RobotMesh" parent="." unique_id=2109731548 instance=ExtResource("2_rcrfe")]
 transform = Transform3D(-3.496911e-07, 0, -8, 0, 8, 0, 8, 0, -3.496911e-07, 0, -0.9998339, -0.2890103)
-visible = false
 
 [node name="Arms" parent="RobotMesh" index="1" unique_id=1234253730]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0009074658, 0.114906, 0.012114415)
@@ -319,7 +318,6 @@ parameters/walking/blend_position = -0.00082439184
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1434264856]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.81237555, -0.030513138)
-visible = false
 modulate = Color(1, 0, 0, 1)
 pixel_size = 0.05
 axis = 1
