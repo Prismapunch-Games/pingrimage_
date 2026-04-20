@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://csw0qp3opn14v"]
+
+[ext_resource type="Script" uid="uid://bi10l45vue4j7" path="res://code/level_select_button.gd" id="1_0dcsm"]
+[ext_resource type="Texture2D" uid="uid://chvy6r6w5bipp" path="res://sprites/locked.png" id="1_j3mgb"]
+[ext_resource type="Texture2D" uid="uid://e240mch2qahy" path="res://sprites/fader.png" id="2_7v1k8"]
+
+[node name="Level Select Button" type="Button" unique_id=1131219015]
+custom_minimum_size = Vector2(0, 64)
+text = "Tau Ceti Steppes I"
+icon_alignment = 1
+script = ExtResource("1_0dcsm")
+
+[node name="Difficulty Color R" type="TextureRect" parent="." unique_id=1167386438]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -130.0
+offset_top = -30.0
+offset_right = -2.0
+offset_bottom = 30.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("2_7v1k8")
+
+[node name="Difficulty Color L" type="TextureRect" parent="." unique_id=1052424382]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 2.0
+offset_top = -30.0
+offset_right = 130.0
+offset_bottom = 30.0
+grow_vertical = 2
+texture = ExtResource("2_7v1k8")
+flip_h = true
+
+[node name="Locked" type="ColorRect" parent="." unique_id=1985618501]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.2509804)
+
+[node name="TextureRect" type="TextureRect" parent="Locked" unique_id=1010099594]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_j3mgb")

@@ -1,10 +1,18 @@
 [gd_scene format=3 uid="uid://ovgdes8vifut"]
 
 [ext_resource type="Script" uid="uid://defgy6ialkhg5" path="res://scripts/player_agent.gd" id="1_8mo4m"]
-[ext_resource type="AudioStream" uid="uid://c8sbnaebwiukc" path="res://sounds/sfx/agent_walk.mp3" id="2_q5kvo"]
+[ext_resource type="AudioStream" uid="uid://i07roea6jxwh" path="res://sounds/sfx/steps/1.ogg" id="2_q5kvo"]
 [ext_resource type="PackedScene" uid="uid://xbs0yadhgir3" path="res://scenes/robot_model.tscn" id="2_rcrfe"]
 [ext_resource type="PackedScene" uid="uid://c6ksfcq5jycoc" path="res://scenes/transciever.tscn" id="2_xwnim"]
+[ext_resource type="AudioStream" uid="uid://cc1vyvxcb1vxb" path="res://sounds/sfx/steps/2.ogg" id="3_e20l1"]
 [ext_resource type="Texture2D" uid="uid://bp2i0j5gyqsxf" path="res://sprites/circle.png" id="3_i42o3"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ujkns"]
+playback_mode = 1
+random_pitch = 1.122462
+streams_count = 2
+stream_0/stream = ExtResource("2_q5kvo")
+stream_1/stream = ExtResource("3_e20l1")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e5uuo"]
 
@@ -262,7 +270,6 @@ transitions = ["walking", "emit", SubResource("AnimationNodeStateMachineTransiti
 script = ExtResource("1_8mo4m")
 selection_sprite_active = Color(0, 1, 0, 1)
 selection_sprite_idle = Color(1, 0, 0, 1)
-walking_sound = ExtResource("2_q5kvo")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=2115972102]
 path_desired_distance = 0.5
@@ -270,19 +277,20 @@ target_desired_distance = 0.25
 path_height_offset = -1.0
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=76667349]
-volume_db = 1.0
+stream = SubResource("AudioStreamRandomizer_ujkns")
+volume_db = 5.0
 bus = &"SFX"
 
 [node name="Mesh" parent="." unique_id=2109731548 instance=ExtResource("2_rcrfe")]
 transform = Transform3D(-3.496911e-07, 0, -8, 0, 8, 0, 8, 0, -3.496911e-07, 0, -0.9998339, -0.2890103)
 
-[node name="Arms" parent="Mesh" index="1" unique_id=1234253730]
+[node name="Arms" parent="Mesh" index="1" unique_id=396249639]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0009074658, 0.114906, 0.012114415)
 
-[node name="Antenae_1" parent="Mesh" index="5" unique_id=42983182]
+[node name="Antenae_1" parent="Mesh" index="5" unique_id=31529597]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0.0607153, 0.2584392, 0.001434559)
 
-[node name="HEAD" parent="Mesh" index="7" unique_id=992750907]
+[node name="HEAD" parent="Mesh" index="7" unique_id=774616464]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04940042, 0.16297877, 0.0014345438)
 
 [node name="Transciever" parent="." unique_id=979394788 instance=ExtResource("2_xwnim")]

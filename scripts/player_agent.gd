@@ -17,7 +17,6 @@ extends CharacterBody3D
 
 # Audio
 @onready var audio_player : AudioStreamPlayer3D = $AudioStreamPlayer3D
-@export var walking_sound : AudioStream 
 
 func _ready() -> void:
 	player_manager = get_tree().current_scene.get_node(".")
@@ -44,7 +43,7 @@ func _physics_process(delta: float) -> void:
 		velocity = calculatedVelocity
 		look_at(global_position + velocity, Vector3.UP, true)
 		animation_tree.set("parameters/walking/blend_position", min(velocity.length(), 1.0))
-		_play_sfx(walking_sound)
+		_play_sfx()
 		
 	move_and_slide()
 
@@ -98,11 +97,9 @@ func set_target_position(targetPosition):
 	navigation_agent.target_position = targetPosition
 	Global.add_robot_movement(self)
 	
-func _play_sfx(sfx : AudioStream):
-	if not audio_player.playing:
-		audio_player.stream = sfx
+func _play_sfx():
+	if(!audio_player.playing):
 		audio_player.play()
 	
 func _stop_sfx():
-	if audio_player.playing:
-		audio_player.stop()
+	audio_player.stop()

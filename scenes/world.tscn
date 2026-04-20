@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dhwiugf50sfx8" path="res://scripts/player_manager.gd" id="1_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://cdlrn7u6hpsey" path="res://scenes/ui.tscn" id="2_qfnet"]
 [ext_resource type="AudioStream" uid="uid://di6lsiryqhay" path="res://sounds/music/LudumDareEasy.mp3" id="3_4mrxx"]
+[ext_resource type="PackedScene" uid="uid://c03ef1dyqgjry" path="res://scenes/levels/tau_ceti_steppes_i.tscn" id="4_k0juu"]
 
 [sub_resource type="Environment" id="Environment_e5uuo"]
 background_mode = 1
@@ -25,3 +26,5 @@ environment = SubResource("Environment_e5uuo")
 stream = ExtResource("3_4mrxx")
 autoplay = true
 bus = &"Music"
+
+[node name="Tau Ceti Steppes I" parent="." unique_id=1276502586 instance=ExtResource("4_k0juu")]

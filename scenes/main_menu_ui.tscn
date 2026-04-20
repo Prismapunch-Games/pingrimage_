@@ -1,6 +1,9 @@
-[gd_scene format=3 uid="uid://b72m38ibq17i4"]
+[gd_scene format=3 uid="uid://ccvgi2rujv5t8"]
 
-[ext_resource type="Script" path="res://code/level_name_label.gd" id="1_wu84c"]
+[ext_resource type="Script" uid="uid://3l44b6ws6m4w" path="res://code/level_name_label.gd" id="1_wu84c"]
+[ext_resource type="PackedScene" uid="uid://csw0qp3opn14v" path="res://scenes/main_menu/level_select_button.tscn" id="2_4pl3l"]
+[ext_resource type="Script" uid="uid://c4jwgcpc7htac" path="res://code/level_select_panel.gd" id="2_towyk"]
+[ext_resource type="Texture2D" uid="uid://do0lhi6g58t1p" path="res://sprites/close.png" id="3_j5441"]
 
 [node name="MainMenuUI" type="CanvasLayer" unique_id=1278659496]
 
@@ -13,7 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Left" type="Panel" parent="Main Container" unique_id=938269157]
+[node name="Center" type="Panel" parent="Main Container" unique_id=938269157]
 custom_minimum_size = Vector2(192, 0)
 layout_mode = 1
 anchors_preset = 9
@@ -24,7 +27,7 @@ offset_right = 736.0
 offset_bottom = -152.0
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Main Container/Left" unique_id=1925878508]
+[node name="MarginContainer" type="MarginContainer" parent="Main Container/Center" unique_id=1925878508]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,34 +39,30 @@ offset_bottom = -8.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Main Container/Left/MarginContainer" unique_id=1707347176]
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Container/Center/MarginContainer" unique_id=1707347176]
 layout_mode = 2
 
-[node name="Play" type="Button" parent="Main Container/Left/MarginContainer/VBoxContainer" unique_id=866643819]
+[node name="Play" type="Button" parent="Main Container/Center/MarginContainer/VBoxContainer" unique_id=866643819]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
-toggle_mode = true
 text = "Engage"
 
-[node name="Settings" type="Button" parent="Main Container/Left/MarginContainer/VBoxContainer" unique_id=1566509324]
+[node name="Settings" type="Button" parent="Main Container/Center/MarginContainer/VBoxContainer" unique_id=1566509324]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
-toggle_mode = true
 text = "Settings"
 
-[node name="Credits" type="Button" parent="Main Container/Left/MarginContainer/VBoxContainer" unique_id=709018160]
+[node name="Credits" type="Button" parent="Main Container/Center/MarginContainer/VBoxContainer" unique_id=709018160]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
-toggle_mode = true
-text = "Source Code"
+text = "Credits"
 
-[node name="Exit" type="Button" parent="Main Container/Left/MarginContainer/VBoxContainer" unique_id=675217825]
+[node name="Exit" type="Button" parent="Main Container/Center/MarginContainer/VBoxContainer" unique_id=675217825]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
-toggle_mode = true
 text = "Log Out"
 
-[node name="Right" type="Control" parent="Main Container" unique_id=229697087]
+[node name="Logo" type="Control" parent="Main Container" unique_id=229697087]
 custom_minimum_size = Vector2(192, 0)
 layout_mode = 1
 anchors_preset = 5
@@ -75,7 +74,7 @@ offset_right = 96.0
 offset_bottom = 272.0
 grow_horizontal = 2
 
-[node name="Top Right" type="Panel" parent="Main Container/Right" unique_id=2086943880]
+[node name="Top Right" type="Panel" parent="Main Container/Logo" unique_id=2086943880]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 1
 anchors_preset = 10
@@ -83,7 +82,7 @@ anchor_right = 1.0
 offset_bottom = 64.0
 grow_horizontal = 2
 
-[node name="Label" type="Label" parent="Main Container/Right/Top Right" unique_id=692903806]
+[node name="Label" type="Label" parent="Main Container/Logo/Top Right" unique_id=692903806]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -94,3 +93,88 @@ text = "PLACEHOLDER NAME MOMENT"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_wu84c")
+
+[node name="Level Select Panel" type="Panel" parent="Main Container" unique_id=1915845106]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_towyk")
+
+[node name="MarginContainer" type="MarginContainer" parent="Main Container/Level Select Panel" unique_id=1889358877]
+layout_mode = 0
+offset_right = 512.0
+offset_bottom = 512.0
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Container/Level Select Panel/MarginContainer" unique_id=1975555935]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Main Container/Level Select Panel/MarginContainer/VBoxContainer" unique_id=2116379032]
+layout_mode = 2
+text = "Level Select"
+
+[node name="Close Button" type="TextureButton" parent="Main Container/Level Select Panel/MarginContainer/VBoxContainer/Label" unique_id=1056600041]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -16.0
+offset_bottom = 16.0
+grow_horizontal = 0
+texture_normal = ExtResource("3_j5441")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Main Container/Level Select Panel/MarginContainer/VBoxContainer" unique_id=491817523]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/scrollbar_h_separation = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main Container/Level Select Panel/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1053240023]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Level Select Button" parent="Main Container/Level Select Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1131219015 instance=ExtResource("2_4pl3l")]
+layout_mode = 2
+color = Color(0, 1, 0, 1)
+
+[node name="Locked" parent="Main Container/Level Select Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Level Select Button" index="2" unique_id=1985618501]
+visible = false
+
+[node name="Level Select Button7" parent="Main Container/Level Select Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1371780190 instance=ExtResource("2_4pl3l")]
+layout_mode = 2
+color = Color(0, 1, 0, 1)
+
+[node name="Level Select Button8" parent="Main Container/Level Select Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=818154547 instance=ExtResource("2_4pl3l")]
+layout_mode = 2
+color = Color(0, 1, 0, 1)
+
+[node name="Level Select Button2" parent="Main Container/Level Select Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=957001890 instance=ExtResource("2_4pl3l")]
+layout_mode = 2
+color = Color(1, 1, 0, 1)
+
+[node name="Level Select Button5" parent="Main Container/Level Select Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=262681145 instance=ExtResource("2_4pl3l")]
+layout_mode = 2
+color = Color(1, 1, 0, 1)
+
+[node name="Level Select Button6" parent="Main Container/Level Select Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=366284237 instance=ExtResource("2_4pl3l")]
+layout_mode = 2
+color = Color(1, 1, 0, 1)
+
+[node name="Level Select Button3" parent="Main Container/Level Select Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=828460968 instance=ExtResource("2_4pl3l")]
+layout_mode = 2
+color = Color(1, 0, 0, 1)
+
+[node name="Level Select Button4" parent="Main Container/Level Select Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer" unique_id=1027097821 instance=ExtResource("2_4pl3l")]
+layout_mode = 2
+color = Color(1, 0, 0, 1)
+
+[editable path="Main Container/Level Select Panel/MarginContainer/VBoxContainer/ScrollContainer/VBoxContainer/Level Select Button"]

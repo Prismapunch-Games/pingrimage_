@@ -16,62 +16,12 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Left" type="Panel" parent="Main Container" unique_id=938269157]
-custom_minimum_size = Vector2(192, 0)
+[node name="Top Right" type="Panel" parent="Main Container" unique_id=2086943880]
+custom_minimum_size = Vector2(192, 64)
 layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 192.0
-grow_vertical = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="Main Container/Left" unique_id=1925878508]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Main Container/Left/MarginContainer" unique_id=1707347176]
-layout_mode = 2
-
-[node name="Robot Button" type="Button" parent="Main Container/Left/MarginContainer/VBoxContainer" unique_id=866643819]
-custom_minimum_size = Vector2(0, 64)
-layout_mode = 2
-toggle_mode = true
-text = "Robot a"
-
-[node name="Robot Button2" type="Button" parent="Main Container/Left/MarginContainer/VBoxContainer" unique_id=1566509324]
-custom_minimum_size = Vector2(0, 64)
-layout_mode = 2
-toggle_mode = true
-text = "Robot b"
-
-[node name="Robot Button3" type="Button" parent="Main Container/Left/MarginContainer/VBoxContainer" unique_id=709018160]
-custom_minimum_size = Vector2(0, 64)
-layout_mode = 2
-toggle_mode = true
-text = "Robot c"
-
-[node name="Right" type="Control" parent="Main Container" unique_id=229697087]
-custom_minimum_size = Vector2(192, 0)
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 0
-grow_vertical = 2
-
-[node name="Top Right" type="Panel" parent="Main Container/Right" unique_id=2086943880]
-custom_minimum_size = Vector2(0, 64)
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
 offset_bottom = 64.0
-grow_horizontal = 2
 
-[node name="Label" type="Label" parent="Main Container/Right/Top Right" unique_id=692903806]
+[node name="Label" type="Label" parent="Main Container/Top Right" unique_id=692903806]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -82,6 +32,16 @@ text = "ERROR LAND 13"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_gdt2y")
+
+[node name="Right" type="Control" parent="Main Container" unique_id=229697087]
+custom_minimum_size = Vector2(192, 0)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
 
 [node name="Bottom Right" type="Panel" parent="Main Container/Right" unique_id=648037652]
 custom_minimum_size = Vector2(0, 96)

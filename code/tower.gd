@@ -13,6 +13,7 @@ func _ready():
 		transciever.reciever.area_entered.connect(_on_recieved)
 	
 func _on_emit_signal():
+	Global.proliferation_number = 0
 	transciever.emitter_player.play("emit")
 	transciever.play_ping_sound(0)
 	transciever.last_signal_id = randi()
