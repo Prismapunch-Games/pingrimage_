@@ -21,7 +21,7 @@ extends CharacterBody3D
 func _ready() -> void:
 	player_manager = get_tree().current_scene.get_node(".")
 	add_to_group("player agent robot")
-	_clear_agent_selections()
+	#_clear_agent_selections()
 	transciever.reciever.area_entered.connect(_on_recieved)
 
 func _physics_process(delta: float) -> void:

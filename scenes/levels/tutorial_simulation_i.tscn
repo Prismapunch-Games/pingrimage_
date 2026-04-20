@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://sscain25pgqy"]
+
+[ext_resource type="PackedScene" uid="uid://sxr7jfr5c0ry" path="res://scenes/levels/sample_map.tscn" id="1_2h4is"]
+[ext_resource type="Script" uid="uid://c7kiyjy7cpm4a" path="res://code/tutorial_handler.gd" id="2_kavx8"]
+[ext_resource type="PackedScene" uid="uid://ovgdes8vifut" path="res://scenes/robot.tscn" id="2_qjo2b"]
+[ext_resource type="Texture2D" uid="uid://diceffl4ylntf" path="res://model import/Arrow/arrow.png" id="4_y0xkw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kavx8"]
+transparency = 1
+albedo_color = Color(0, 1, 0, 0.5019608)
+
+[sub_resource type="SphereMesh" id="SphereMesh_y0xkw"]
+material = SubResource("StandardMaterial3D_kavx8")
+radius = 1.5
+height = 3.0
+
+[sub_resource type="Animation" id="Animation_kavx8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_y0xkw"]
+resource_name = "throb"
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(0.5, 0.5, 0.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cqyg2"]
+_data = {
+&"RESET": SubResource("Animation_kavx8"),
+&"throb": SubResource("Animation_y0xkw")
+}
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_kavx8"]
+resource_local_to_scene = true
+vertices = PackedVector3Array(15.765751, 3.2532501, -9.5095005, 16.5165, 3.2532501, -10.26025, 16.016, 3.2532501, -13.0130005, 10.760751, 3.2532501, 1.7517501, 11.2612505, 3.2532501, 3.0030003, 15.015, 3.2532501, 3.2532501, 15.515501, 3.2532501, 0.5005, 15.515501, 3.2532501, -8.25825, 14.014001, 3.2532501, -14.7647505, 11.2612505, 3.2532501, -15.015, 6.0060005, 3.2532501, -15.765751, 4.5045004, 3.2532501, -15.015, 10.01, 3.2532501, 1.7517501, 9.75975, 3.2532501, 2.2522502, 10.760751, 3.2532501, -15.515501, -17.5175, 3.2532501, 10.760751, -15.765751, 3.2532501, 12.762751, -14.264251, 3.2532501, 13.5135, -19.5195, 3.2532501, 6.5065002, -22.272251, 3.2532501, -12.762751, -24.024002, 3.2532501, -9.75975, -24.024002, 3.2532501, -7.7577505, -23.023, 3.2532501, -4.25425, -19.019001, 3.2532501, -15.015, -22.022001, 3.2532501, 1.25125, -21.021002, 3.2532501, 4.5045004, -22.77275, 3.2532501, 0.5005, -7.5075, 3.2532501, -13.763751, -8.75875, 3.2532501, -14.014001, -8.5085, 3.2532501, 14.7647505, -9.5095005, 3.2532501, -14.7647505, 14.014001, 3.2532501, 6.75675, 10.26025, 3.2532501, 3.2532501, 12.012001, 3.2532501, 11.011001, -1.7517501, 3.2532501, 14.514501, 0.25025, 3.2532501, 14.514501, -2.7527502, 3.2532501, 15.015, -6.0060005, 3.2532501, -13.763751, 2.002, 3.2532501, -14.014001, -4.5045004, 3.2532501, -14.514501, 2.7527502, 3.2532501, 15.265251, 8.5085, 3.0030003, 15.015, 7.2572503, 3.2532501, 15.265251)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(4, 3, 5), PackedInt32Array(5, 3, 6), PackedInt32Array(0, 7, 2), PackedInt32Array(2, 7, 8), PackedInt32Array(8, 7, 9), PackedInt32Array(10, 9, 11), PackedInt32Array(11, 9, 7), PackedInt32Array(11, 7, 6), PackedInt32Array(11, 6, 12), PackedInt32Array(12, 13, 11), PackedInt32Array(10, 14, 9), PackedInt32Array(6, 3, 12), PackedInt32Array(16, 15, 17), PackedInt32Array(17, 15, 18), PackedInt32Array(20, 19, 21), PackedInt32Array(21, 19, 22), PackedInt32Array(22, 19, 23), PackedInt32Array(25, 24, 18), PackedInt32Array(18, 24, 22), PackedInt32Array(24, 26, 22), PackedInt32Array(27, 23, 28), PackedInt32Array(17, 18, 29), PackedInt32Array(29, 18, 22), PackedInt32Array(29, 22, 23), PackedInt32Array(29, 23, 27), PackedInt32Array(23, 30, 28), PackedInt32Array(4, 5, 32), PackedInt32Array(32, 5, 31), PackedInt32Array(32, 31, 33), PackedInt32Array(33, 35, 34), PackedInt32Array(34, 36, 29), PackedInt32Array(33, 34, 13), PackedInt32Array(13, 34, 29), PackedInt32Array(13, 29, 37), PackedInt32Array(37, 29, 27), PackedInt32Array(39, 38, 37), PackedInt32Array(37, 38, 13), PackedInt32Array(41, 42, 33), PackedInt32Array(33, 42, 40), PackedInt32Array(33, 40, 35), PackedInt32Array(32, 33, 13), PackedInt32Array(38, 11, 13)]
+
+[sub_resource type="Animation" id="Animation_tofek"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -6.2831855, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ssiut"]
+resource_name = "spin"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -6.2831855, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xyb27"]
+_data = {
+&"RESET": SubResource("Animation_tofek"),
+&"spin": SubResource("Animation_ssiut")
+}
+
+[node name="Tutorial Simulation I" unique_id=1276502586 instance=ExtResource("1_2h4is")]
+
+[node name="Tutorial Handler" type="Node3D" parent="." index="0" unique_id=1421591272]
+script = ExtResource("2_kavx8")
+
+[node name="Movement Area" type="MeshInstance3D" parent="." index="1" unique_id=425707445]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, -1.7408614, 2.952301, 0.8180351)
+visible = false
+mesh = SubResource("SphereMesh_y0xkw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Movement Area" index="0" unique_id=199918610]
+libraries/ = SubResource("AnimationLibrary_cqyg2")
+autoplay = &"throb"
+
+[node name="NavigationRegion3D" parent="." index="2" unique_id=1963598391]
+navigation_mesh = SubResource("NavigationMesh_kavx8")
+
+[node name="Terrain3D" parent="NavigationRegion3D" index="0" unique_id=2063523170]
+data_directory = "res://maps/tutorial_simulation_i"
+
+[node name="Start Tower" parent="." index="3" unique_id=989064708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.547316, 3, 1.6121798)
+
+[node name="End Tower" parent="." index="4" unique_id=477450545]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3117533, 3, 0.91685295)
+
+[node name="Robot" parent="." index="5" unique_id=2051323718 instance=ExtResource("2_qjo2b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7408614, 4, 10.120903)
+
+[node name="Select Arrow" type="Sprite3D" parent="Robot" index="8" unique_id=1012230602]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 0, 1.5, 0)
+visible = false
+flip_v = true
+pixel_size = 0.05
+texture_filter = 0
+texture = ExtResource("4_y0xkw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Robot/Select Arrow" index="0" unique_id=886015537]
+libraries/ = SubResource("AnimationLibrary_xyb27")
+autoplay = &"spin"

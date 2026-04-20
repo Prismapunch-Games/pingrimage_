@@ -7,6 +7,7 @@ extends Panel
 
 func _ready():
 	Global.on_level_complete.connect(_on_level_complete)
+	Global.on_level_start.connect(func():hide())
 	next_level_button.pressed.connect(_on_next_level_button_pressed)
 	main_menu_button.pressed.connect(_on_main_menu_button_pressed)
 	restart_button.pressed.connect(_on_restart_button_pressed)

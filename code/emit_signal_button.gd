@@ -4,6 +4,7 @@ func _ready():
 	pressed.connect(_on_pressed)
 	Global.on_robot_movement.connect(_on_robot_movement)
 	Global.on_signals_emitting_changed.connect(_on_robot_movement)
+	Global.on_level_start.connect(func():disabled = false)
 	
 func _on_pressed():
 	if(Global.current_charges > 0):

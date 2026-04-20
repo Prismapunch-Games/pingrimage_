@@ -56,6 +56,9 @@ func _handle_user_agent_selection(mousePosition2D):
 		_set_currently_selected_player(resultingCollider)
 
 func _set_currently_selected_player(selectedPlayer : PlayerAgent):
+	if(!Global.can_select_robots):
+		return
+	Global.on_robot_selected.emit()
 	currentlySelectedPlayer = selectedPlayer
 	currentlySelectedPlayer.configure_agent_selection_visual()
 	
@@ -65,6 +68,10 @@ func _clear_currently_selected_player():
 		agent.toggle_selection_sprite_visual(false)
 		
 func collect_deployed_agents():
+	currentlySelectedPlayer = null
 	deployedAgents.clear()
 	deployedAgents = get_tree().get_nodes_in_group("player agent robot")
+	for agent in deployedAgents:
+		if(!is_instance_valid(agent)):
+			deployedAgents.erase(agent)
 	print("Agents in level:", deployedAgents.size())

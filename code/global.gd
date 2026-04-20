@@ -17,20 +17,27 @@ signal on_charges_changed(charges, max_charges)
 signal emit_signal
 
 signal on_level_complete(win: bool, time: float)
+signal on_level_start
 
 var robots_currently_moving: Array[PlayerAgent] = []
 		
 signal on_robot_movement(robots_currently_moving: int)
 
+signal on_robot_end_movement(robot: PlayerAgent)
+
 func add_robot_movement(robot: PlayerAgent):
-	if(robot in robots_currently_moving):
+	if(robots_currently_moving.has(robot)):
 		return
+	print("ROBOT MOVING")
 	robots_currently_moving.append(robot)
 	on_robot_movement.emit(robots_currently_moving.size())
 	
 func remove_robot_movement(robot: PlayerAgent):
+	if(!(robots_currently_moving.has(robot))):
+		return
 	robots_currently_moving.erase(robot)
 	on_robot_movement.emit(robots_currently_moving.size())
+	on_robot_end_movement.emit(robot)
 	
 var direction_arrow_scene: PackedScene = preload("res://scenes/direction_arrow.tscn")
 
@@ -45,11 +52,16 @@ var ping_sounds: Array[AudioStream] = [
 	]
 	
 signal on_signals_emitting_changed(signal_amount: int)
+signal on_all_signals_finished
 	
 var signals_emitting: int = 0: 
 	set(value):
 		signals_emitting = value
 		on_signals_emitting_changed.emit(signals_emitting)
+		if(signals_emitting == 0):
+			on_all_signals_finished.emit()
+			
+signal on_robot_selected
 
 func _ready():
 	on_signals_emitting_changed.connect(_on_signals_emitting_changed)
@@ -71,13 +83,37 @@ var proliferation_number: int = 0
 var current_level_node: Node3D
 signal on_level_changed(level_name: String)
 
-var levels: Array[PackedScene] = [preload("res://scenes/levels/tau_ceti_steppes_i.tscn")]
+var levels: Array[PackedScene] = [
+	preload("res://scenes/levels/tutorial_simulation_i.tscn"),
+	preload("res://scenes/levels/tau_ceti_steppes_i.tscn"),
+	preload("res://scenes/levels/Hartman/level_x.tscn"),
+	preload("res://scenes/levels/Hartman/level_x_2.tscn"),
+	]
 
 func load_level(loading_scene: PackedScene):
 	proliferation_number = 0
-	level_won = 0
+	level_won = false
+	current_charges = 3
 	
 	if(current_level_node):
 		current_level_node.queue_free()
+		await current_level_node.tree_exited
 	var new_level: Node = loading_scene.instantiate()
-	get_tree().root.call_deferred("add_child", new_level)
+	get_node("/root/World").call_deferred("add_child", new_level)
+	on_level_start.emit()
+	
+func load_next_level():
+	if(current_level_node):
+		var packed_scene = load(current_level_node.scene_file_path)
+		var current_level_index = levels.find(packed_scene)
+		if(current_level_index >= levels.size()):
+			print("end of levels reached")
+			return
+		load_level(levels[current_level_index + 1])
+	
+#tutorial stuff	
+	
+var can_select_robots: bool = true
+
+signal on_set_tutorial_text(new_text: String)
+signal on_tutorial_text_closed

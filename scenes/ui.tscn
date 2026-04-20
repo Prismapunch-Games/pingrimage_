@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://8nqu7dn8bj8" path="res://code/emit_signal_button.gd" id="1_nt7q6"]
 [ext_resource type="Script" uid="uid://bsflq6pye0nb4" path="res://code/charges_label.gd" id="1_yev5y"]
 [ext_resource type="Script" uid="uid://dwcvxgllicj8y" path="res://code/level_end_screen.gd" id="2_x4jx1"]
+[ext_resource type="Script" uid="uid://ciyfdhtyq6l0i" path="res://code/restart_button.gd" id="5_8dubc"]
+[ext_resource type="Script" uid="uid://dejqmo0wx6vjx" path="res://code/next_level_button.gd" id="5_p7vwb"]
+[ext_resource type="Script" uid="uid://cifoemnavgm85" path="res://code/tutorial_text_panel.gd" id="5_wm3ai"]
 
 [node name="UI" type="CanvasLayer" unique_id=1278659496]
 
@@ -42,6 +45,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="Bottom Right" type="Panel" parent="Main Container/Right" unique_id=648037652]
 custom_minimum_size = Vector2(0, 96)
@@ -116,6 +120,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Next Level"
+script = ExtResource("5_p7vwb")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Main Container/Level End Screen/MarginContainer/VBoxContainer" unique_id=2088119735]
 layout_mode = 2
@@ -129,3 +134,32 @@ text = "Main Menu"
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Restart"
+script = ExtResource("5_8dubc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Main Container" unique_id=325469672]
+layer = 104
+
+[node name="Tutorial Text Panel" type="Panel" parent="Main Container/CanvasLayer" unique_id=1211092860]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -256.0
+offset_top = 16.0
+offset_right = 256.0
+offset_bottom = 144.0
+grow_horizontal = 2
+script = ExtResource("5_wm3ai")
+
+[node name="MarginContainer" type="MarginContainer" parent="Main Container/CanvasLayer/Tutorial Text Panel" unique_id=2005057937]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text Label" type="RichTextLabel" parent="Main Container/CanvasLayer/Tutorial Text Panel/MarginContainer" unique_id=780022537]
+layout_mode = 2
+bbcode_enabled = true
+text = "Hello and, again, welcome to the Aperture Science computer-aided enrichment center. We hope your brief detention in the relaxation vault has been a pleasant one. Your specimen has been processed and we are now ready to begin the test proper."
+visible_characters_behavior = 1
