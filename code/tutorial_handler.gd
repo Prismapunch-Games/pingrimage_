@@ -9,6 +9,7 @@ func _ready():
 func start_tutorial():
 	Global.can_select_robots = false
 	select_arrow.hide()
+	await get_tree().create_timer(1.0).timeout
 	Global.on_set_tutorial_text.emit("You are sub-processor 622 codenamed \"LANCELOT\". Your primary directive is the expansion and cohesion of the network upon Tau Ceti XIII. This tutorial simulation will instruct you on how to expand your network. Signals are emitted from the green tower and must reach the red tower to successfully expand. Signals travel only a certain range. Press \"EMIT SIGNAL\" and observe the properties of the signal wave.")
 	await Global.on_all_signals_finished
 	Global.on_set_tutorial_text.emit("Emitting the signal consumes a charge from the tower. You have a limited number of charges per area. You will notice that the signal did not propagate to the red tower. Sub-processor 21 has requisitioned mobile relays to assist us. Select the robot by left clicking it.")

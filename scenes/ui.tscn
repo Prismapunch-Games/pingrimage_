@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://ciyfdhtyq6l0i" path="res://code/restart_button.gd" id="5_8dubc"]
 [ext_resource type="Script" uid="uid://dejqmo0wx6vjx" path="res://code/next_level_button.gd" id="5_p7vwb"]
 [ext_resource type="Script" uid="uid://cifoemnavgm85" path="res://code/tutorial_text_panel.gd" id="5_wm3ai"]
+[ext_resource type="Script" uid="uid://c4oofmuee8pkj" path="res://code/main_menu_button.gd" id="6_ktti3"]
 
 [node name="UI" type="CanvasLayer" unique_id=1278659496]
 
@@ -129,6 +130,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Main Menu"
+script = ExtResource("6_ktti3")
 
 [node name="Restart" type="Button" parent="Main Container/Level End Screen/MarginContainer/VBoxContainer/HBoxContainer" unique_id=645850039]
 layout_mode = 2

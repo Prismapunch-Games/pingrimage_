@@ -94,7 +94,7 @@ var levels: Array[PackedScene] = [
 	preload("res://scenes/levels/Hartman/Mountain_1.tscn"),
 	]
 	
-var unlocked_levels: Array[String] = ["Tutorial Simulation I", "Tau Ceti Steppes I"]
+var unlocked_levels: Array[String] = ["Tutorial Simulation I"]
 var force_load_level: PackedScene
 
 func load_level(loading_scene: PackedScene):
