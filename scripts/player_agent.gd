@@ -124,7 +124,7 @@ func _trigger_intro_sequence():
 	drop_pod_tween.tween_property(drop_pod, "scale", Vector3(1.0, 1.0, 1.0), 0.5).set_trans(Tween.TRANS_SINE)
 	drop_pod_tween.tween_property(drop_pod, "scale", Vector3(0, 0, 0), 8.8).set_trans(Tween.TRANS_SINE)
 	
-	await get_tree().create_timer(4).timeout
+	await get_tree().create_timer(15).timeout
 	selection_sprite.show()
 	
 func _trigger_intro_sound():
