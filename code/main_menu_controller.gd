@@ -6,6 +6,9 @@ extends Node
 @export var credits_button : Button
 @export var exit_button : Button
 
+@export var settings_exit_button : TextureButton
+@export var credits_exit_button : TextureButton
+
 @export var level_select_canvas : CanvasItem
 @export var settings_canvas : CanvasItem
 @export var credits_canvas : CanvasItem
@@ -16,6 +19,8 @@ func _ready() -> void:
 	settings_button.pressed.connect(settings)
 	credits_button.pressed.connect(credits)
 	exit_button.pressed.connect(exit)
+	settings_exit_button.pressed.connect(close_all)
+	credits_exit_button.pressed.connect(close_all)
 	
 	level_select_canvas.visible = false;
 	settings_canvas.visible = false;
@@ -45,4 +50,10 @@ func credits():
 	pass
 
 func exit():
+	pass
+	
+func close_all():
+	level_select_canvas.visible = false;
+	settings_canvas.visible = false;
+	credits_canvas.visible = false;
 	pass
