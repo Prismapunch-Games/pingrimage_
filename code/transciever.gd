@@ -9,7 +9,7 @@ var proliferation_number: int = 0
 
 func play_ping_sound(index: int):
 	if(index == -1):
-		ping_sound.stream = Global.ping_sounds[Global.proliferation_number]
+		ping_sound.stream = Global.ping_sounds[Global.proliferation_number % 6]
 	else:
 		ping_sound.stream = Global.ping_sounds[index]
 	ping_sound.play()

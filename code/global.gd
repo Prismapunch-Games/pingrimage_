@@ -106,7 +106,7 @@ func load_next_level():
 	if(current_level_node):
 		var packed_scene = load(current_level_node.scene_file_path)
 		var current_level_index = levels.find(packed_scene)
-		if(current_level_index >= levels.size()):
+		if(current_level_index >= levels.size() - 1):
 			print("end of levels reached")
 			return
 		load_level(levels[current_level_index + 1])
