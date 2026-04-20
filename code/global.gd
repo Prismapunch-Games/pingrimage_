@@ -115,7 +115,7 @@ func load_next_level():
 		var packed_scene = load(current_level_node.scene_file_path)
 		var current_level_index = levels.find(packed_scene)
 		if(current_level_index >= levels.size() - 1):
-			print("end of levels reached")
+			on_game_complete.emit()
 			return
 		load_level(levels[current_level_index + 1])
 	
@@ -140,3 +140,6 @@ var level_difficulties: Dictionary[LEVEL_DIFFICULTY, AudioStream] = {
 
 var blue_towers_activated: int = 0
 var blue_towers_in_level: int = 0
+
+
+signal on_game_complete

@@ -6,6 +6,8 @@
 [ext_resource type="Terrain3DAssets" uid="uid://cti34ixkuwwsb" path="res://data/terrain3d/new_terrain_3d_assets.tres" id="3_oa1go"]
 [ext_resource type="PackedScene" uid="uid://ddmsvo27db5jo" path="res://scenes/tower_end.tscn" id="5_tbmy8"]
 [ext_resource type="PackedScene" uid="uid://bkgjy3cwumysk" path="res://scenes/melted_robot.tscn" id="6_jk1qb"]
+[ext_resource type="AudioStream" uid="uid://dc3047heopxdx" path="res://sounds/music/LudumDareTitleTheme1.mp3" id="7_tbmy8"]
+[ext_resource type="AudioStream" uid="uid://d38kt3rjr7twq" path="res://sounds/music/LudumDareTitleTheme2.mp3" id="8_jk1qb"]
 
 [sub_resource type="Environment" id="Environment_bqqt6"]
 background_mode = 1
@@ -15,6 +17,13 @@ background_color = Color(1, 1, 1, 1)
 resource_local_to_scene = true
 vertices = PackedVector3Array(-8.75875, 3.2532501, -4.5045004, -7.5075, 3.2532501, -5.5055003, -8.5085, 3.2532501, -5.5055003, -8.75875, 3.2532501, -4.7547503, -2.2522502, 3.2532501, 7.2572503, -2.2522502, 3.2532501, 9.5095005, 1.7517501, 3.2532501, 11.011001, 4.7547503, 3.2532501, 9.009001, 0.5005, 3.2532501, 1.7517501, -2.002, 3.2532501, 2.5025, -9.5095005, 3.2532501, -4.5045004, -9.75975, 3.2532501, -2.5025, -9.259251, 3.2532501, -2.002, -3.75375, 3.2532501, 11.2612505, -2.7527502, 3.2532501, 12.762751, 1.001, 3.2532501, 12.762751, -6.2562504, 3.2532501, 2.7527502, -6.5065002, 3.2532501, 3.2532501, -4.5045004, 3.2532501, 5.005, -11.011001, 3.2532501, -0.75075006, -11.2612505, 3.2532501, 1.25125, -9.259251, 3.2532501, 1.25125, -7.0070004, 3.2532501, 4.004, -6.2562504, 3.2532501, 4.7547503, -8.008, 3.2532501, 3.2532501, -11.2612505, 3.2532501, 4.004, -8.75875, 3.2532501, 2.5025)
 polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Array(5, 4, 6), PackedInt32Array(6, 4, 7), PackedInt32Array(7, 4, 9), PackedInt32Array(7, 9, 8), PackedInt32Array(3, 0, 10), PackedInt32Array(10, 0, 11), PackedInt32Array(11, 0, 12), PackedInt32Array(13, 5, 14), PackedInt32Array(14, 5, 15), PackedInt32Array(15, 5, 6), PackedInt32Array(16, 18, 17), PackedInt32Array(11, 12, 19), PackedInt32Array(19, 12, 20), PackedInt32Array(20, 12, 21), PackedInt32Array(22, 17, 23), PackedInt32Array(23, 17, 18), PackedInt32Array(17, 22, 24), PackedInt32Array(24, 22, 25), PackedInt32Array(16, 9, 18), PackedInt32Array(18, 9, 4), PackedInt32Array(20, 21, 26), PackedInt32Array(24, 25, 26), PackedInt32Array(26, 25, 20)]
+
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_5dd4i"]
+loop = false
+fade_time = 0.0
+stream_count = 2
+stream_0 = ExtResource("7_tbmy8")
+stream_1 = ExtResource("8_jk1qb")
 
 [node name="MainMenu" type="Node3D" unique_id=1400279653]
 
@@ -46,3 +55,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9585443, 3, 8.982465)
 
 [node name="Melted Robot" parent="." unique_id=1549304419 instance=ExtResource("6_jk1qb")]
 transform = Transform3D(-0.110462844, 0, -0.9938803, 0, 1, 0, 0.9938803, 0, -0.110462844, 1.7232275, 3.000001, 9.68197)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=2047331572]
+stream = SubResource("AudioStreamPlaylist_5dd4i")
+autoplay = true
+bus = &"Music"
