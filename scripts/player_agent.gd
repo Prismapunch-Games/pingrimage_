@@ -15,14 +15,21 @@ extends CharacterBody3D
 @onready var transciever: Transciever = $Transciever
 @onready var animation_tree : AnimationTree = $AnimationTree
 
+# Intro Sequence
+@onready var drop_pod : Node3D = $DropPodMesh
+@onready var drop_pod_destination : Node3D = $DropPodDestination
+@onready var robot_mesh : Node3D = $RobotMesh
+
+@onready var drop_pod_tween : Tween
+
 # Audio
 @onready var audio_player : AudioStreamPlayer3D = $AudioStreamPlayer3D
 
 func _ready() -> void:
 	player_manager = get_tree().current_scene.get_node(".")
 	add_to_group("player agent robot")
-	#_clear_agent_selections()
 	transciever.reciever.area_entered.connect(_on_recieved)
+	_trigger_intro_sequence()
 
 func _physics_process(delta: float) -> void:
 	# Ensure NavigationAgent3D settings are configured to ensure .is_navigation_finished() resolves.
@@ -74,9 +81,8 @@ func _clear_agent_selections():
 func _toggle_selection_tween(toggle : bool):	
 	if toggle:
 		selection_tween = create_tween().set_loops()
-		selection_tween.tween_property(selection_sprite, "scale", Vector3(1.2, 1.2, 1.2), 0.5)
-		selection_tween.set_trans(Tween.TRANS_SINE)
-		selection_tween.tween_property(selection_sprite, "scale", Vector3(1.0, 1.0, 1.0), 0.5)
+		selection_tween.tween_property(selection_sprite, "scale", Vector3(1.2, 1.2, 1.2), 0.5).set_trans(Tween.TRANS_SINE)
+		selection_tween.tween_property(selection_sprite, "scale", Vector3(1.0, 1.0, 1.0), 0.5).set_trans(Tween.TRANS_SINE)
 	else:
 		if selection_tween:
 			selection_tween.kill()
@@ -103,3 +109,15 @@ func _play_sfx():
 	
 func _stop_sfx():
 	audio_player.stop()
+	
+func _trigger_intro_sequence():
+	robot_mesh.hide()
+	selection_sprite.hide()
+	drop_pod_tween = create_tween()
+	drop_pod_tween.tween_property(drop_pod, "position", robot_mesh.position, 0.5).set_trans(Tween.TRANS_SINE)
+	drop_pod_tween.tween_property(drop_pod, "scale", Vector3(1.2, 1.2, 1.2), 0.2).set_trans(Tween.TRANS_BOUNCE)
+	drop_pod_tween.tween_property(drop_pod, "scale", Vector3(1.0, 1.0, 1.0), 0.2).set_trans(Tween.TRANS_BOUNCE)
+	drop_pod_tween.tween_property(drop_pod, "position", drop_pod_destination.position, 0.5).set_trans(Tween.TRANS_SINE)
+	await get_tree().create_timer(0.9).timeout
+	robot_mesh.show()
+	selection_sprite.show()

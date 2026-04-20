@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c6ksfcq5jycoc" path="res://scenes/transciever.tscn" id="2_xwnim"]
 [ext_resource type="AudioStream" uid="uid://cc1vyvxcb1vxb" path="res://sounds/sfx/steps/2.ogg" id="3_e20l1"]
 [ext_resource type="Texture2D" uid="uid://bp2i0j5gyqsxf" path="res://sprites/circle.png" id="3_i42o3"]
+[ext_resource type="PackedScene" uid="uid://bschleh0gt8mj" path="res://scenes/drop_pod_model.tscn" id="5_e20l1"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ujkns"]
 playback_mode = 1
@@ -21,7 +22,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Mesh/Arms:rotation")
+tracks/0/path = NodePath("RobotMesh/Arms:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -33,7 +34,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Mesh/Arms_001:position")
+tracks/1/path = NodePath("RobotMesh/Arms_001:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -45,7 +46,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Mesh/Legs_001:rotation")
+tracks/2/path = NodePath("RobotMesh/Legs_001:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -57,7 +58,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Mesh/Legs:rotation")
+tracks/3/path = NodePath("RobotMesh/Legs:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -69,7 +70,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Mesh:position")
+tracks/4/path = NodePath("RobotMesh:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -81,7 +82,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Mesh/HEAD:rotation")
+tracks/5/path = NodePath("RobotMesh/HEAD:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -93,7 +94,7 @@ tracks/5/keys = {
 tracks/6/type = "value"
 tracks/6/imported = false
 tracks/6/enabled = true
-tracks/6/path = NodePath("Mesh/Arms_001:rotation")
+tracks/6/path = NodePath("RobotMesh/Arms_001:rotation")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
@@ -105,7 +106,7 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Mesh/Antenae_1:rotation")
+tracks/7/path = NodePath("RobotMesh/Antenae_1:rotation")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
@@ -121,7 +122,7 @@ step = 0.125
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Mesh/HEAD:rotation")
+tracks/0/path = NodePath("RobotMesh/HEAD:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -133,7 +134,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Mesh/Antenae_1:rotation")
+tracks/1/path = NodePath("RobotMesh/Antenae_1:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -154,7 +155,7 @@ step = 0.125
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Mesh/Arms:rotation")
+tracks/0/path = NodePath("RobotMesh/Arms:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -166,7 +167,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Mesh/Arms_001:rotation")
+tracks/1/path = NodePath("RobotMesh/Arms_001:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -178,7 +179,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Mesh/Legs_001:rotation")
+tracks/2/path = NodePath("RobotMesh/Legs_001:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -190,7 +191,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Mesh/Legs:rotation")
+tracks/3/path = NodePath("RobotMesh/Legs:rotation")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -202,7 +203,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Mesh:position")
+tracks/4/path = NodePath("RobotMesh:position")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -214,7 +215,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Mesh/HEAD:rotation")
+tracks/5/path = NodePath("RobotMesh/HEAD:rotation")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -281,17 +282,24 @@ stream = SubResource("AudioStreamRandomizer_ujkns")
 volume_db = 5.0
 bus = &"SFX"
 
-[node name="Mesh" parent="." unique_id=2109731548 instance=ExtResource("2_rcrfe")]
+[node name="RobotMesh" parent="." unique_id=2109731548 instance=ExtResource("2_rcrfe")]
 transform = Transform3D(-3.496911e-07, 0, -8, 0, 8, 0, 8, 0, -3.496911e-07, 0, -0.9998339, -0.2890103)
+visible = false
 
-[node name="Arms" parent="Mesh" index="1" unique_id=396249639]
+[node name="Arms" parent="RobotMesh" index="1" unique_id=1234253730]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0009074658, 0.114906, 0.012114415)
 
-[node name="Antenae_1" parent="Mesh" index="5" unique_id=31529597]
+[node name="Antenae_1" parent="RobotMesh" index="5" unique_id=42983182]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0.0607153, 0.2584392, 0.001434559)
 
-[node name="HEAD" parent="Mesh" index="7" unique_id=774616464]
+[node name="HEAD" parent="RobotMesh" index="7" unique_id=992750907]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04940042, 0.16297877, 0.0014345438)
+
+[node name="DropPodMesh" parent="." unique_id=987113455 instance=ExtResource("5_e20l1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.81051, 0)
+
+[node name="DropPodDestination" type="Node3D" parent="." unique_id=1431870850]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 31.437344, 0)
 
 [node name="Transciever" parent="." unique_id=979394788 instance=ExtResource("2_xwnim")]
 
@@ -311,6 +319,7 @@ parameters/walking/blend_position = -0.00082439184
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=1434264856]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.81237555, -0.030513138)
+visible = false
 modulate = Color(1, 0, 0, 1)
 pixel_size = 0.05
 axis = 1
@@ -319,4 +328,4 @@ texture = ExtResource("3_i42o3")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 
-[editable path="Mesh"]
+[editable path="RobotMesh"]
