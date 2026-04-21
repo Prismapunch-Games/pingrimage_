@@ -7,6 +7,9 @@ func _ready():
 	Global.on_level_changed.emit(name)
 	Global.unlocked_levels.append(name)
 	
+	if(!name.contains("Tutorial")):
+		Global.can_select_robots = true
+	
 	var player_manager : PlayerManager = get_tree().root.get_node("World")
 	
 	if player_manager:

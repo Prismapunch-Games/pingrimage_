@@ -62,7 +62,7 @@ func _handle_user_agent_selection(mousePosition2D):
 		_set_currently_selected_player(resultingCollider)
 
 func _set_currently_selected_player(selectedPlayer : PlayerAgent):
-	if(!Global.can_select_robots):
+	if(Global.can_select_robots == false):
 		return
 	Global.on_robot_selected.emit()
 	currentlySelectedPlayer = selectedPlayer
