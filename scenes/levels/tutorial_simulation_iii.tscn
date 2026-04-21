@@ -23,13 +23,13 @@ process_mode = 4
 visible = false
 
 [node name="Tower" parent="." index="5" unique_id=989064708 instance=ExtResource("2_vfpa8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.098, 3, 8.927)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.170125, 3, 2.2504954)
 
 [node name="Tower2" parent="." index="6" unique_id=1788956141 instance=ExtResource("2_vfpa8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6066308, 3, -1.6190672)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38999414, 3, -6.0130444)
 
 [node name="Robot" parent="." index="7" unique_id=2051323718 instance=ExtResource("3_g04bj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.989588, 4.0000005, 7.9624066)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1498966, 4.0000005, 3.7198887)
 
 [node name="Tutorial 3" type="Node3D" parent="." index="8" unique_id=2076202566]
 script = ExtResource("4_g04bj")

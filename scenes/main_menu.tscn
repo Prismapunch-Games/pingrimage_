@@ -58,5 +58,6 @@ transform = Transform3D(-0.110462844, 0, -0.9938803, 0, 1, 0, 0.9938803, 0, -0.1
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=2047331572]
 stream = SubResource("AudioStreamPlaylist_5dd4i")
+volume_db = -10.0
 autoplay = true
 bus = &"Music"
