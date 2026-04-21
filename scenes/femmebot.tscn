@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://defgy6ialkhg5" path="res://scripts/player_agent.gd" id="1_1u0y6"]
 [ext_resource type="AudioStream" uid="uid://i07roea6jxwh" path="res://sounds/sfx/steps/1.ogg" id="2_r08md"]
 [ext_resource type="AudioStream" uid="uid://cc1vyvxcb1vxb" path="res://sounds/sfx/steps/2.ogg" id="3_tawmf"]
-[ext_resource type="PackedScene" path="res://scenes/big_robot_model.tscn" id="4_r08md"]
+[ext_resource type="PackedScene" uid="uid://b1j22fddd2xbi" path="res://scenes/big_robot_model.tscn" id="4_r08md"]
 [ext_resource type="PackedScene" uid="uid://bschleh0gt8mj" path="res://scenes/drop_pod_model.tscn" id="5_hvodg"]
 [ext_resource type="AudioStream" uid="uid://337vujd8nukt" path="res://sounds/sfx/LudumDareDropPodArrival.mp3" id="6_hvodg"]
 [ext_resource type="PackedScene" uid="uid://c6ksfcq5jycoc" path="res://scenes/transciever.tscn" id="6_v11ug"]
@@ -28,30 +28,6 @@ stream_2 = ExtResource("8_4s2op")
 stream_3 = ExtResource("9_7ypci")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e5uuo"]
-
-[sub_resource type="Animation" id="Animation_rcrfe"]
-length = 0.001
-
-[sub_resource type="Animation" id="Animation_e20l1"]
-resource_name = "emit"
-step = 0.125
-
-[sub_resource type="Animation" id="Animation_xwnim"]
-resource_name = "stand"
-
-[sub_resource type="Animation" id="Animation_q5kvo"]
-resource_name = "walk"
-length = 0.5
-loop_mode = 1
-step = 0.125
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_e20l1"]
-_data = {
-&"RESET": SubResource("Animation_rcrfe"),
-&"emit": SubResource("Animation_e20l1"),
-&"stand": SubResource("Animation_xwnim"),
-&"walk": SubResource("Animation_q5kvo")
-}
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_sycts"]
 animation = &"emit"
@@ -87,12 +63,228 @@ states/walking/node = SubResource("AnimationNodeBlendSpace1D_ujkns")
 states/walking/position = Vector2(619, 75)
 transitions = ["walking", "emit", SubResource("AnimationNodeStateMachineTransition_b4ksi"), "emit", "walking", SubResource("AnimationNodeStateMachineTransition_pw6bu"), "Start", "walking", SubResource("AnimationNodeStateMachineTransition_q5kvo")]
 
+[sub_resource type="Animation" id="Animation_rcrfe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RobotMeshParent/RobotMesh/Arms:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RobotMeshParent/RobotMesh/Arms_001:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.0009074649, 0.114906, -0.011540344)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RobotMeshParent/RobotMesh/Legs_001:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RobotMeshParent/RobotMesh/Legs:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RobotMeshParent/RobotMesh:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.9998339, -0.2890103)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RobotMeshParent/RobotMesh/HEAD:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("RobotMeshParent/RobotMesh/Arms_001:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("RobotMeshParent/RobotMesh/Antenae_1:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_e20l1"]
+resource_name = "emit"
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RobotMeshParent/RobotMesh/HEAD:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.8939756, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0.014482028), Vector3(1.500393e-08, 2.6557225e-09, 0.3648569), Vector3(0, -6.2831855, 0.3647738), Vector3(0, -6.2831855, 0.013962634)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RobotMeshParent/RobotMesh/Antenae_1:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.8939756, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.5003932e-08, 2.6557252e-09, 0.35037488), Vector3(0, -6.2831855, 0.35081118), Vector3(0, -6.2831855, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_xwnim"]
+resource_name = "stand"
+
+[sub_resource type="Animation" id="Animation_q5kvo"]
+resource_name = "walk"
+length = 0.5
+loop_mode = 1
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RobotMeshParent/RobotMesh/Arms:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.3089969), Vector3(0, 0, 0), Vector3(0, 0, -1.3089969), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("RobotMeshParent/RobotMesh/Arms_001:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.0009074649, 0.114906, -0.011540344), Vector3(0, 0, -1.3089969), Vector3(0, 0, 0), Vector3(0, 0, 1.3089969), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RobotMeshParent/RobotMesh/Legs_001:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -1.3089969), Vector3(0, 0, 0), Vector3(0, 0, 1.3089969), Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RobotMeshParent/RobotMesh/Legs:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1.3089969), Vector3(0, 0, 0), Vector3(0, 0, -1.3089969), Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RobotMeshParent/RobotMesh:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.9998339, -0.2890103), Vector3(0, -0.8, -0.289), Vector3(0, -0.9998339, -0.2890103), Vector3(0, -0.8, -0.289), Vector3(0, -0.9998339, -0.2890103)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("RobotMeshParent/RobotMesh/HEAD:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0.12217305), Vector3(0, 0, 0), Vector3(0, 0, 0.12217305), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hvodg"]
+_data = {
+&"RESET": SubResource("Animation_rcrfe"),
+&"emit": SubResource("Animation_e20l1"),
+&"stand": SubResource("Animation_xwnim"),
+&"walk": SubResource("Animation_q5kvo")
+}
+
 [node name="Robot" type="CharacterBody3D" unique_id=2051323718 node_paths=PackedStringArray("robot_mesh")]
 script = ExtResource("1_1u0y6")
 is_femmebot = true
 selection_sprite_active = Color(0, 1, 0, 1)
 selection_sprite_idle = Color(1, 0, 0, 1)
-robot_mesh = NodePath("FemmebotMeshParent")
+robot_mesh = NodePath("RobotMeshParent")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=2115972102]
 path_desired_distance = 0.5
@@ -104,10 +296,10 @@ stream = SubResource("AudioStreamRandomizer_2ytpy")
 volume_db = 5.0
 bus = &"SFX"
 
-[node name="FemmebotMeshParent" type="Node3D" parent="." unique_id=789680816]
+[node name="RobotMeshParent" type="Node3D" parent="." unique_id=789680816]
 
-[node name="Femmebot" parent="FemmebotMeshParent" unique_id=2109731548 instance=ExtResource("4_r08md")]
-transform = Transform3D(-3.934025e-07, 0, -9, 0, 9, 0, 9, 0, -3.934025e-07, 0, -1, -0.2835728)
+[node name="RobotMesh" parent="RobotMeshParent" unique_id=2109731548 instance=ExtResource("4_r08md")]
+transform = Transform3D(-3.934025e-07, 0, -9, 0, 9, 0, 9, 0, -3.934025e-07, 0, -0.9998339, -0.2890103)
 
 [node name="DropPodMesh" parent="." unique_id=987113455 instance=ExtResource("5_hvodg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
@@ -119,18 +311,14 @@ volume_db = 5.0
 bus = &"SFX"
 
 [node name="Transciever" parent="." unique_id=979394788 instance=ExtResource("6_v11ug")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1248554580]
 shape = SubResource("CapsuleShape3D_e5uuo")
 debug_color = Color(0, 0.6, 0.69803923, 1)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1452769609]
-active = false
-libraries/ = SubResource("AnimationLibrary_e20l1")
-
 [node name="AnimationTree" type="AnimationTree" parent="." unique_id=1566238767]
 tree_root = SubResource("AnimationNodeStateMachine_wpobb")
-anim_player = NodePath("../AnimationPlayer")
 parameters/conditions/emit = false
 parameters/walking/blend_position = -0.00082439184
 
@@ -141,5 +329,9 @@ pixel_size = 0.05
 axis = 1
 texture_filter = 0
 texture = ExtResource("7_4s2op")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=165733172]
+active = false
+libraries/ = SubResource("AnimationLibrary_hvodg")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
