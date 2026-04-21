@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://cdlrn7u6hpsey" path="res://scenes/ui.tscn" id="2_qfnet"]
 [ext_resource type="AudioStream" uid="uid://di6lsiryqhay" path="res://sounds/music/LudumDareEasy.mp3" id="3_4mrxx"]
 [ext_resource type="Script" uid="uid://de43y8mxdxsuq" path="res://code/music_handler.gd" id="4_71j4m"]
-[ext_resource type="PackedScene" uid="uid://sscain25pgqy" path="res://scenes/levels/tutorial_simulation_i.tscn" id="5_71j4m"]
+[ext_resource type="PackedScene" uid="uid://c03ef1dyqgjry" path="res://scenes/levels/tau_ceti_steppes_i.tscn" id="5_71j4m"]
 
 [sub_resource type="Environment" id="Environment_e5uuo"]
 background_mode = 1
-background_color = Color(1, 1, 1, 1)
+background_color = Color(0.9672236, 0.94827205, 0.92156875, 1)
 
 [node name="World" type="Node3D" unique_id=644942085]
 script = ExtResource("1_4wyf3")
@@ -24,4 +24,4 @@ autoplay = true
 bus = &"Music"
 script = ExtResource("4_71j4m")
 
-[node name="Tutorial Simulation I" parent="." unique_id=1276502586 instance=ExtResource("5_71j4m")]
+[node name="Tau Ceti Steppes I" parent="." unique_id=1276502586 instance=ExtResource("5_71j4m")]
