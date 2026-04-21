@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://c4mq2orbxq1o2"]
+
+[ext_resource type="PackedScene" uid="uid://sxr7jfr5c0ry" path="res://scenes/levels/sample_map.tscn" id="1_5eext"]
+[ext_resource type="PackedScene" uid="uid://cggh8lj64gh8n" path="res://scenes/tower_blue.tscn" id="2_vfpa8"]
+[ext_resource type="PackedScene" uid="uid://ovgdes8vifut" path="res://scenes/robot.tscn" id="3_g04bj"]
+[ext_resource type="Script" uid="uid://27ki15qfkryi" path="res://code/tutorial_3.gd" id="4_g04bj"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_vfpa8"]
+resource_local_to_scene = true
+vertices = PackedVector3Array(-10.26025, 3.0030003, -10.760751, -11.011001, 3.2532501, -9.75975, -11.5115, 3.2532501, -8.5085, -11.5115, 3.2532501, -6.0060005, -8.008, 2.5025, -11.76175, -9.5095005, 3.2532501, -9.5095005, -12.512501, 3.2532501, -5.5055003, -13.5135, 3.2532501, -3.5035002, -13.0130005, 3.2532501, 0, -5.2552505, 2.002, -14.264251, -6.75675, 2.002, -13.5135, -0.75075006, 2.7527502, -12.762751, -2.002, 2.5025, -14.014001, 2.5025, 3.0030003, -11.2612505, 0.25025, 2.7527502, -12.762751, 3.2532501, 3.2532501, -8.75875, 6.2562504, 3.2532501, -5.75575, 4.7547503, 3.2532501, -7.7577505, 7.2572503, 3.2532501, 0, -14.264251, 3.2532501, 5.2552505, -13.26325, 3.2532501, 7.2572503, -12.262251, 3.2532501, 7.7577505, -13.26325, 3.2532501, 1.5015001, -14.264251, 3.2532501, 3.0030003, -11.76175, 2.7527502, 10.26025, -11.011001, 2.7527502, 11.2612505, -9.009001, 3.2532501, 12.012001, -3.0030003, 3.2532501, 15.515501, -1.5015001, 3.2532501, 15.515501, 0, 3.2532501, 14.7647505, 1.001, 3.2532501, 13.5135, 8.25825, 3.2532501, 3.2532501, 8.008, 3.2532501, 1.001, 7.0070004, 3.2532501, 5.5055003, 4.25425, 3.2532501, 10.760751, 3.0030003, 3.2532501, 12.762751, 5.75575, 3.2532501, 9.75975, 7.0070004, 3.2532501, 7.2572503, -7.7577505, 3.2532501, 13.5135)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 4), PackedInt32Array(2, 4, 5), PackedInt32Array(2, 5, 3), PackedInt32Array(6, 3, 7), PackedInt32Array(7, 3, 8), PackedInt32Array(10, 9, 4), PackedInt32Array(4, 9, 12), PackedInt32Array(4, 12, 11), PackedInt32Array(14, 13, 11), PackedInt32Array(11, 13, 15), PackedInt32Array(17, 16, 15), PackedInt32Array(15, 16, 18), PackedInt32Array(4, 11, 5), PackedInt32Array(5, 11, 3), PackedInt32Array(3, 11, 15), PackedInt32Array(3, 15, 8), PackedInt32Array(8, 15, 18), PackedInt32Array(20, 19, 21), PackedInt32Array(21, 19, 23), PackedInt32Array(21, 23, 22), PackedInt32Array(25, 24, 26), PackedInt32Array(26, 24, 21), PackedInt32Array(28, 27, 29), PackedInt32Array(29, 27, 30), PackedInt32Array(32, 31, 18), PackedInt32Array(18, 31, 33), PackedInt32Array(26, 21, 27), PackedInt32Array(27, 21, 34), PackedInt32Array(34, 21, 8), PackedInt32Array(34, 8, 18), PackedInt32Array(34, 35, 30), PackedInt32Array(33, 37, 36), PackedInt32Array(21, 22, 8), PackedInt32Array(27, 38, 26), PackedInt32Array(34, 30, 27), PackedInt32Array(36, 34, 33), PackedInt32Array(33, 34, 18)]
+
+[node name="Tutorial Simulation III" unique_id=1276502586 instance=ExtResource("1_5eext")]
+
+[node name="NavigationRegion3D" parent="." index="0" unique_id=1963598391]
+navigation_mesh = SubResource("NavigationMesh_vfpa8")
+
+[node name="Terrain3D" parent="NavigationRegion3D" index="0" unique_id=2063523170]
+data_directory = "res://maps/tutorial_simulation_iii"
+
+[node name="End Tower" parent="." index="2" unique_id=477450545]
+process_mode = 4
+visible = false
+
+[node name="Tower" parent="." index="5" unique_id=989064708 instance=ExtResource("2_vfpa8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.098, 3, 8.927)
+
+[node name="Tower2" parent="." index="6" unique_id=1788956141 instance=ExtResource("2_vfpa8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6066308, 3, -1.6190672)
+
+[node name="Robot" parent="." index="7" unique_id=2051323718 instance=ExtResource("3_g04bj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.989588, 4.0000005, 7.9624066)
+
+[node name="Tutorial 3" type="Node3D" parent="." index="8" unique_id=2076202566]
+script = ExtResource("4_g04bj")
